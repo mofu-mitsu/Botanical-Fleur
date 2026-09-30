@@ -1,0 +1,6 @@
+{
+  "name": "Botanical Fleur - 誕生花と花言葉",
+  "description": "366日の誕生花と花言葉をカレンダーやガチャで楽しめるボタニカルアプリ。おしゃれなお花カードの画像保存やSNS共有、お花ギフト検索にも対応。",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
