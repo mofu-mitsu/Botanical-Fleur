@@ -23,6 +23,7 @@ import {
   ArrowRight,
   Clock,
   ExternalLink,
+  Home,
 } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
 
@@ -213,6 +214,23 @@ export default function HomePage() {
                 <span className="sm:hidden">図鑑</span>
               </button>
             </nav>
+          </div>
+
+          {/* パンくずリスト (ホーム < Botanical Fleur) */}
+          <div className="border-t border-emerald-100/60 bg-emerald-50/50 px-2.5 sm:px-6 py-1 mt-1 text-[11px] sm:text-xs">
+            <div className="max-w-6xl mx-auto flex items-center gap-1.5 font-medium text-emerald-800">
+              <a
+                href="https://mofu-mitsu.github.io/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-1 text-emerald-700 hover:text-emerald-950 hover:underline transition-colors shrink-0"
+              >
+                <Home className="w-3.5 h-3.5" />
+                <span>ホーム</span>
+              </a>
+              <span className="text-emerald-400 font-bold select-none">&lt;</span>
+              <span className="text-emerald-950 font-bold truncate">Botanical Fleur</span>
+            </div>
           </div>
         </header>
 
@@ -605,6 +623,16 @@ export default function HomePage() {
             366日のお花と花言葉を通じて、日々に小さな彩りと温かい物語をお届けします。
           </p>
           <div className="pt-2 flex items-center justify-center gap-4 text-[11px] text-slate-500">
+            <a
+              href="https://mofu-mitsu.github.io/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-emerald-700 underline cursor-pointer inline-flex items-center gap-1"
+            >
+              <Home className="w-3 h-3" />
+              <span>ホーム</span>
+            </a>
+            <span>•</span>
             <button
               onClick={() => {
                 setViewMode('home');

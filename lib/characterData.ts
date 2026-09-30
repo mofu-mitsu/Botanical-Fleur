@@ -1531,7 +1531,7 @@ export const CHARACTERS_MAP: Record<string, CharacterProfile[]> = {
       "name": "あめり",
       "month": 2,
       "day": 6,
-      "flowerName": "ピンクのスミレ",
+      "flowerName": "ギョリュウバイ",
       "mbti": "INTP",
       "socionics": "ILI",
       "enneagram": "5w4",
@@ -1540,7 +1540,7 @@ export const CHARACTERS_MAP: Record<string, CharacterProfile[]> = {
       "themeColor": "#e11d48",
       "accentColor": "#fda4af",
       "imageFileName": "ameri.png",
-      "comment": "2月6日……私の誕生花は、ピンクのスミレ。花言葉は『愛』……やって。……そんなこと言われても、私にはよう分からんけど……。遠くから眺めとるくらいが、ちょうどいいかな……。"
+      "comment": "……2月6日。私の誕生花は、ギョリュウバイ……。花言葉は『蜜月』……やって。……蜜月って、仲のいい人たちが楽しく過ごす時間のこと、だよね……。……あ、えっと……お誕生日、おめでとう……ちゃんと言えた……。"
     }
   ],
   "2-10": [

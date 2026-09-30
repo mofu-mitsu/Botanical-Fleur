@@ -29,16 +29,21 @@ export async function GET(request: NextRequest) {
   const keywords = extractKeywords(rawKeyword);
   const primaryKeyword = keywords[0] || '誕生花';
 
-  const appId = process.env.RAKUTEN_APP_ID;
+  const appId = process.env.RAKUTEN_APPLICATION_ID || process.env.RAKUTEN_APP_ID;
   const accessKey = process.env.RAKUTEN_ACCESS_KEY;
   const affiliateId = process.env.RAKUTEN_AFFILIATE_ID;
 
   // If real Rakuten credentials exist, call the Rakuten API for each keyword
-  if (appId && accessKey) {
+  if (appId) {
     try {
       const allItems: RakutenItem[] = [];
       for (const kw of keywords.slice(0, 2)) {
-        const url = new URL('https://openapi.rakuten.co.jp/ichibams/api/IchibaItem/Search/20260701');
+        // Use OpenAPI endpoint if accessKey is present, otherwise standard Rakuten Ichiba API
+        const endpoint = accessKey
+          ? 'https://openapi.rakuten.co.jp/ichibams/api/IchibaItem/Search/20260701'
+          : 'https://app.rakuten.co.jp/services/api/IchibaItem/Search/20220601';
+
+        const url = new URL(endpoint);
         url.searchParams.set('applicationId', appId);
         if (affiliateId) {
           url.searchParams.set('affiliateId', affiliateId);
@@ -47,8 +52,13 @@ export async function GET(request: NextRequest) {
         url.searchParams.set('format', 'json');
         url.searchParams.set('hits', keywords.length > 1 ? '3' : '6');
 
+        const headers: Record<string, string> = {};
+        if (accessKey) {
+          headers['accessKey'] = accessKey;
+        }
+
         const res = await fetch(url.toString(), {
-          headers: { accessKey: accessKey },
+          headers,
           cache: 'no-store',
         });
 

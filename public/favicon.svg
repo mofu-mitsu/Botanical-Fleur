@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="64" y2="64" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#047857"/>
+      <stop offset="50%" stop-color="#059669"/>
+      <stop offset="100%" stop-color="#0d9488"/>
+    </linearGradient>
+    <linearGradient id="petal" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="100%" stop-color="#fef08a"/>
+    </linearGradient>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="2" stdDeviation="2" flood-opacity="0.3"/>
+    </filter>
+  </defs>
+  
+  <!-- 丸角背景 -->
+  <rect width="64" height="64" rx="16" fill="url(#bg)"/>
+  
+  <!-- 花びらデザイン -->
+  <g transform="translate(32, 32)" filter="url(#shadow)">
+    <!-- 8枚の繊細な花びら -->
+    <ellipse cx="0" cy="-14" rx="5" ry="11" fill="url(#petal)" opacity="0.95"/>
+    <ellipse cx="10" cy="-10" rx="5" ry="11" fill="url(#petal)" opacity="0.95" transform="rotate(45 10 -10)"/>
+    <ellipse cx="14" cy="0" rx="5" ry="11" fill="url(#petal)" opacity="0.95" transform="rotate(90 14 0)"/>
+    <ellipse cx="10" cy="10" rx="5" ry="11" fill="url(#petal)" opacity="0.95" transform="rotate(135 10 10)"/>
+    <ellipse cx="0" cy="14" rx="5" ry="11" fill="url(#petal)" opacity="0.95" transform="rotate(180 0 14)"/>
+    <ellipse cx="-10" cy="10" rx="5" ry="11" fill="url(#petal)" opacity="0.95" transform="rotate(225 -10 10)"/>
+    <ellipse cx="-14" cy="0" rx="5" ry="11" fill="url(#petal)" opacity="0.95" transform="rotate(270 -14 0)"/>
+    <ellipse cx="-10" cy="-10" rx="5" ry="11" fill="url(#petal)" opacity="0.95" transform="rotate(315 -10 -10)"/>
+    
+    <!-- 花芯 -->
+    <circle cx="0" cy="0" r="6" fill="#facc15"/>
+    <circle cx="0" cy="0" r="3" fill="#ea580c"/>
+    <circle cx="-1.5" cy="-1.5" r="1" fill="#ffffff" opacity="0.8"/>
+  </g>
+</svg>

@@ -127,740 +127,36 @@ export const SPECIAL_FLOWERS: Record<string, FlowerData> = {
   ],
   "rarity": "Normal"
 },
-  "6-30": {
-  "id": "6-30",
-  "name": "ビヨウヤナギ（未央柳・美容柳）",
-  "reading": "びようやなぎ",
-  "scientificName": "Hypericum chinense",
-  "month": 6,
-  "day": 30,
-  "meanings": [
-    "気高さ",
-    "多感",
-    "諦め"
-  ],
-  "description": "初夏の雨上がりに、金糸のような無数の長い雄しべを王冠のように広げる鮮烈な黄花。「気高さ」「多感」「諦め」という、まるで純文学の短編小説のような深みある3つの言葉が響き合います。",
-  "category": "半常緑低木",
-  "svgType": "wildflower",
-  "flowerColor": "#f59e0b",
-  "secondaryColor": "#fef08a",
-  "bgGradient": "from-amber-400/15 via-yellow-200/10 to-emerald-600/10",
-  "triviaList": [
-    "「気高さ」「多感」「諦め」――黄金の花なのに最後に「諦め」が入ってくる文学的すぎる三連コンボが美しすぎる！",
-    "中国唐代の玄宗皇帝が楊貴妃と過ごした「未央宮（びおうきゅう）」の柳の葉に似ていることから名付けられた雅な伝説を持ちます。",
-    "花の中心から噴水のように伸びる約60本もの長い雄しべが、初夏の光を浴びてキラキラと輝きます。"
-  ],
-  "rarity": "Normal"
-},
-  "6-2": {
-  "id": "6-2",
-  "name": "マツヨイグサ（待宵草）",
-  "reading": "まつよいぐさ",
-  "scientificName": "Oenothera stricta",
-  "month": 6,
-  "day": 2,
-  "meanings": [
-    "ほのかな恋",
-    "無言の愛",
-    "移り気"
-  ],
-  "description": "夕暮れを待ちかねるように黄色の艶やかな花を開き、朝には萎んで淡いオレンジに染まる宵のロマン草。「ほのかな恋」「無言の愛」「移り気」という、夜に寄り添う抒情的な花言葉を持ちます。",
-  "category": "夜咲き植物・二年草",
-  "svgType": "evening_primrose",
-  "flowerColor": "#facc15",
-  "secondaryColor": "#fed7aa",
-  "bgGradient": "from-indigo-900/15 via-amber-400/10 to-purple-600/10",
-  "triviaList": [
-    "竹久夢二の叙情詩「待てど暮らせど来ぬ人を 宵待草のやるせなさ…」で全国的に愛されるようになった夜咲き草です。",
-    "夕方に開き、夜の闇の中で月光を浴びて咲き誇り、翌朝萎むときに赤みを帯びていく変化がドラマチック！",
-    "9/2ヒルザキツキミソウ（昼咲き）と対をなす、夜のロマンを一身に背負った名花です。"
-  ],
-  "rarity": "Normal"
-},
-  "5-22": {
-  "id": "5-22",
-  "name": "アスチルベ（泡盛草）",
-  "reading": "あすちるべ",
-  "scientificName": "Astilbe",
-  "month": 5,
-  "day": 22,
-  "meanings": [
-    "繊細",
-    "自由",
-    "恋の訪れ",
-    "落ち着いた明るさ"
-  ],
-  "description": "初夏の風にふわりと揺れる、煙るようなピンクや白の泡立つ円錐花序が優美なユキノシタ科の多年草。「繊細」「自由」「恋の訪れ」「落ち着いた明るさ」という、心癒やす優しい花言葉を持ちます。",
-  "category": "多年草",
-  "svgType": "wildflower",
-  "flowerColor": "#f472b6",
-  "secondaryColor": "#fdf2f8",
-  "bgGradient": "from-pink-400/15 via-rose-300/10 to-teal-400/10",
-  "triviaList": [
-    "学名の「Astilbe」はギリシャ語の「a（無）＋stilbe（輝き）」＝「輝きがないほど控えめで繊細」という意味から名付けられました。",
-    "和名は「泡盛草（アワモリソウ）」！泡のように湧き上がる柔らかな花姿がガーデニングでも大人気です。",
-    "梅雨時のしっとりした庭園にも美しく映え、雨滴をまとう姿は「落ち着いた明るさ」そのものです。"
-  ],
-  "rarity": "Normal"
-},
-  "5-10": {
-  "id": "5-10",
-  "name": "アカンサス（ハアザミ）",
-  "reading": "あかんさす",
-  "scientificName": "Acanthus mollis",
-  "month": 5,
-  "day": 10,
-  "meanings": [
-    "永遠の命",
-    "芸術",
-    "技巧",
-    "建築",
-    "離れない結び目",
-    "美を好む",
-    "芸術への愛",
-    "愛着",
-    "気品あるふるまい",
-    "不死"
-  ],
-  "description": "古代ギリシャ建築のコリント式列柱の彫刻モチーフとしてあまりにも有名な歴史的名草。「永遠の命」「芸術」「技巧」「建築」「芸術への愛」「不死」など、植物界屈指の文化人すぎる花言葉の宝庫！",
-  "category": "大型多年草",
-  "svgType": "wildflower",
-  "flowerColor": "#8b5cf6",
-  "secondaryColor": "#e2e8f0",
-  "bgGradient": "from-slate-700/15 via-indigo-400/10 to-emerald-600/10",
-  "triviaList": [
-    "🏛️「建築」「技巧」「芸術」「不死」…植物なのに花言葉が完全に文化人・哲学者レベルの圧倒的威厳！",
-    "古代ギリシャの墓標に生えたアカンサスに彫刻家カリマコスが着想を得て、古代寺院の柱頭彫刻になった伝説を持ちます。",
-    "ダイナミックな濃緑の切れ込み葉と、1mを超える堂々たる花穂を立ち上げる姿はまさに王者の風格です。"
-  ],
-  "rarity": "Super Rare"
-},
-  "4-28": {
-  "id": "4-28",
-  "name": "ヒメハギ（姫萩）",
-  "reading": "ひめはぎ",
-  "scientificName": "Polygala japonica",
-  "month": 4,
-  "day": 28,
-  "meanings": [
-    "小さく張る",
-    "隠者",
-    "信じる心"
-  ],
-  "description": "春の日当たりの良い草地に、萩に似た濃い紅紫色の愛らしい小花を咲かせるヒメハギ科の常緑多年草。地に寄り添い「小さく張る」ように逞しく広がり、素朴な気品を静かに放ちます。",
-  "category": "野草・高山植物",
-  "svgType": "wild_herb",
-  "flowerColor": "#a855f7",
-  "secondaryColor": "#f3e8ff",
-  "bgGradient": "from-purple-500/15 via-violet-300/10 to-emerald-500/10",
-  "triviaList": [
-    "日当たりのよい野山にマット状に「小さく張る」ように生える、春の愛らしい自生植物です。",
-    "花びらに見える紫色の部分は実は萼片（がくへん）で、先端のヒゲ状のフリンジがとても繊細で凝った造形をしています。",
-    "根は「遠志（おんじ）」と呼ばれる生薬の原料にもなり、古くから記憶や精神を整える薬草としても重宝されました。"
-  ],
-  "rarity": "Normal"
-},
-  "4-21": {
-  "id": "4-21",
-  "name": "ミムラス（モンキーフラワー）",
-  "reading": "みむらす",
-  "scientificName": "Mimulus",
-  "month": 4,
-  "day": 21,
-  "meanings": [
-    "おしゃべり",
-    "笑顔を見せて",
-    "援助の申し出"
-  ],
-  "description": "別名「モンキーフラワー」！おどけた猿のようなユーモラスな表情の花を咲かせるゴマノハグサ科の植物。「おしゃべり」「笑顔を見せて」「援助の申し出」という、誰をも笑顔にする陽気な魅力に溢れています。",
-  "category": "草花",
-  "svgType": "wildflower",
-  "flowerColor": "#f97316",
-  "secondaryColor": "#fef08a",
-  "bgGradient": "from-amber-500/15 via-orange-300/10 to-yellow-400/10",
-  "triviaList": [
-    "ギリシャ語の「mimos（道化師・猿）」が学名の語源！正面から見ると本当におどけたお猿の顔に見えるのが面白すぎます🐒",
-    "「おしゃべり」「笑顔を見せて」の花言葉通り、周りをパッと明るく励ましてくれるキャラクター性抜群の花です。",
-    "湿り気のある場所を好み、鮮やかな赤・黄・オレンジのスポット模様が入った個性的な花弁が愛されます。"
-  ],
-  "rarity": "Normal"
-},
-  "3-31": {
-  "id": "3-31",
-  "name": "ムルチコーレ",
-  "reading": "むるちこーれ",
-  "scientificName": "Coleostephus multicaulis",
-  "month": 3,
-  "day": 31,
-  "meanings": [
-    "誠実",
-    "高潔",
-    "誠実なあなたでいて"
-  ],
-  "description": "春の陽光を浴びて丸く愛らしい鮮黄色の小花を無数に咲かせるキク科の一年草。「誠実」「高潔」「誠実なあなたでいて」という、春の旅立ちに寄り添うまっすぐな祈りを宿します。",
-  "category": "草花",
-  "svgType": "daisy",
-  "flowerColor": "#eab308",
-  "secondaryColor": "#fef9c3",
-  "bgGradient": "from-yellow-400/15 via-amber-300/10 to-teal-400/10",
-  "triviaList": [
-    "学名の「multicaulis」は「多数の茎」を意味し、株元からたくさんの枝を伸ばして一面の黄色い花畑を作ります。",
-    "3月31日という年度末・別れの節目に咲き誇り、「誠実なあなたでいて」という温かなエールを贈ります。",
-    "花芯まで鮮やかな黄色で、小さな太陽が地面いっぱいに散らばったような明るい元気をくれます。"
-  ],
-  "rarity": "Normal"
-},
-  "3-25": {
-  "id": "3-25",
-  "name": "ジャケツイバラ（蛇結茨）",
-  "reading": "じゃけついばら",
-  "scientificName": "Biancaea decapetala",
-  "month": 3,
-  "day": 25,
-  "meanings": [
-    "賢者"
-  ],
-  "description": "鋭いトゲのつるが蛇同士が絡み合うように茂り、春に鮮烈な黄色い花を総状に咲かせるマメ科のつる性落葉低木。名前のインパクトとクセの強さに対し、花言葉が一語「賢者」という凄まじいギャップ！",
-  "category": "つる性木本",
-  "svgType": "wildflower",
-  "flowerColor": "#eab308",
-  "secondaryColor": "#fef08a",
-  "bgGradient": "from-amber-400/15 via-yellow-300/10 to-emerald-600/10",
-  "triviaList": [
-    "枝が複雑に絡み合う姿が「蛇がもつれ合っている（蛇結）」ように見えることから名付けられた強烈な名前！",
-    "トゲだらけで誰も寄せ付けない要塞のような植物なのに、花言葉はまさかの一語「賢者」！ギャップが最高に面白いです。",
-    "春に咲く鮮やかな黄色い花房は美しく、生薬「雲実（うんじつ）」としても用いられる奥深い知恵を秘めた木です。"
-  ],
-  "rarity": "Normal"
-},
-  "1-13": {
-  "id": "1-13",
-  "name": "センリョウ（千両）",
-  "reading": "せんりょう",
-  "scientificName": "Sarcandra glabra",
-  "month": 1,
-  "day": 13,
-  "meanings": [
-    "可憐",
-    "利益",
-    "財産",
-    "裕福",
-    "恵まれた才能"
-  ],
-  "description": "冬の寒さの中で艶やかな緑の葉の上に、輝く赤い実を上向きにつける縁起木。「可憐」「利益」「財産」「裕福」「恵まれた才能」という、豊かさと知性を寿ぐ花言葉を持ちます。",
-  "category": "常緑小低木",
-  "svgType": "berry",
-  "flowerColor": "#dc2626",
-  "secondaryColor": "#16a34a",
-  "bgGradient": "from-emerald-600/15 via-red-500/10 to-amber-400/10",
-  "triviaList": [
-    "マンリョウ（万両）が実を下向きに垂らすのに対し、センリョウは葉の上に実を上向きにつけるのが大きな特徴です。",
-    "お正月の縁起木として「千両万両」と富貴を祈願して飾られる、おめでたさ抜群の常緑低木！",
-    "「可憐」と「利益・財産」という、愛らしさと実利的な豊かさが共存するユニークな花言葉です。"
-  ],
-  "rarity": "Normal"
-},
-  "12-17": {
-  "id": "12-17",
-  "name": "ローゼル（ハイビスカス・ローゼル）",
-  "reading": "ろーぜる",
-  "scientificName": "Hibiscus sabdariffa",
-  "month": 12,
-  "day": 17,
-  "meanings": [
-    "常に新しい美",
-    "新しい恋",
-    "信頼"
-  ],
-  "description": "ハイビスカスティーの原料として名高いアオイ科の植物。淡いクリーム色の花を咲かせた後、深紅のルビーのように輝く肉厚な萼（がく）を結びます。「常に新しい美」「新しい恋」「信頼」の花言葉を持ちます。",
-  "category": "ハーブ・花",
-  "svgType": "hibiscus",
-  "flowerColor": "#9f1239",
-  "secondaryColor": "#ffe4e6",
-  "bgGradient": "from-rose-600/15 via-red-400/10 to-amber-500/10",
-  "triviaList": [
-    "クレオパトラも愛飲したと伝えられるルビーレッドのハイビスカスティーの正体です。",
-    "クエン酸やビタミンCを豊富に含み、疲労回復や美肌に嬉しい爽快な酸味が特徴です。",
-    "次々と新しい花を咲かせ、鮮やかな紅い萼を結ぶことから「常に新しい美」と讃えられます。"
-  ],
-  "rarity": "Normal"
-},
-  "11-13": {
-  "id": "11-13",
-  "name": "ナナミノキ（七実の木）",
-  "reading": "ななみのき",
-  "scientificName": "Ilex chinensis",
-  "month": 11,
-  "day": 13,
-  "meanings": [
-    "清廉",
-    "節制",
-    "貞節"
-  ],
-  "description": "冬の訪れとともに艶やかな赤い果実を枝先にたわわに結ぶモチノキ科の常緑高木。「七実」の名にふさわしい豊饒な姿と、「清廉」「節制」「貞節」という凛とした誇りを宿します。",
-  "category": "樹木",
-  "svgType": "holly",
-  "flowerColor": "#b91c1c",
-  "secondaryColor": "#fee2e2",
-  "bgGradient": "from-red-600/15 via-rose-300/10 to-emerald-600/10",
-  "triviaList": [
-    "枝先に赤い実が多数集まって実る様子から「ナナミノキ（七実の木）」と名付けられました。",
-    "雌雄異株で、初夏に淡い紫白色の小花を咲かせ、秋から冬にかけて野鳥たちに赤い実を恵みます。",
-    "寒風の中でも葉を青々と保ち、実を赤く輝かせる凛とした姿から「清廉」「節制」が生まれました。"
-  ],
-  "rarity": "Normal"
-},
-  "11-10": {
-  "id": "11-10",
-  "name": "ガマ（蒲）",
-  "reading": "がま",
-  "scientificName": "Typha latifolia",
-  "month": 11,
-  "day": 10,
-  "meanings": [
-    "救護",
-    "慈愛",
-    "従順"
-  ],
-  "description": "池や川辺の浅瀬に群生し、フランクフルトに似た円柱状の茶色い穂をつける水生植物。『因幡の白兎』で大国主命が兎にガマの穂綿にくるまるよう授けた神話から「救護」「慈愛」を象徴します。",
-  "category": "水生植物",
-  "svgType": "cattail",
-  "flowerColor": "#78350f",
-  "secondaryColor": "#fed7aa",
-  "bgGradient": "from-amber-700/15 via-orange-400/10 to-emerald-600/10",
-  "triviaList": [
-    "池や湿地に生える棒のような素朴な姿なのに、白兎を救った神話から「救護・慈愛」の聖人花言葉！",
-    "熟した穂をほぐすと、信じられないほど大量のふわふわな綿毛（冠毛）が飛び出します。",
-    "花粉は「蒲黄（ほおう）」という生薬として傷口の止血薬に使われ、まさに神話通りの薬効を持ちます。"
-  ],
-  "rarity": "Normal"
-},
-  "11-9": {
-  "id": "11-9",
-  "name": "ムラサキシキブ（紫式部）",
-  "reading": "むらさきしきぶ",
-  "scientificName": "Callicarpa japonica",
-  "month": 11,
-  "day": 9,
-  "meanings": [
-    "聡明",
-    "上品",
-    "愛され上手"
-  ],
-  "description": "晩秋の野山に紫色の光沢ある小粒な実を枝いっぱいに結ぶ落葉低木。『源氏物語』の作者・紫式部にちなむ優雅な名を持ち、「聡明」「上品」「愛され上手」の花言葉を誇ります。",
-  "category": "樹木",
-  "svgType": "berry",
-  "flowerColor": "#9333ea",
-  "secondaryColor": "#f3e8ff",
-  "bgGradient": "from-purple-600/15 via-violet-300/10 to-indigo-500/10",
-  "triviaList": [
-    "名前は平安の文学者「紫式部」にちなみ、雅やかな紫の実の美しさを讃えて名付けられました。",
-    "夏には淡い薄紫の小花が咲き、秋が深まるにつれて果実が紫の宝石のように艶やかに輝きます。",
-    "庭木や盆栽、生け花の素材としても古来日本人に深く愛されてきた風情ある低木です。"
-  ],
-  "rarity": "Normal"
-},
-  "11-7": {
-  "id": "11-7",
-  "name": "ユーカリ",
-  "reading": "ゆーかり",
-  "scientificName": "Eucalyptus globulus",
-  "month": 11,
-  "day": 7,
-  "meanings": [
-    "新生",
-    "再生",
-    "思い出"
-  ],
-  "description": "銀青色の丸い香気ある葉を茂らせるオーストラリア原産の常緑樹。山火事の後に真っ先に芽吹いて森を甦らせる奇跡の生命力から、「新生」「再生」「思い出」の花言葉を持ちます。",
-  "category": "樹木・ハーブ",
-  "svgType": "eucalyptus",
-  "flowerColor": "#059669",
-  "secondaryColor": "#a7f3d0",
-  "bgGradient": "from-teal-600/15 via-emerald-300/10 to-cyan-500/10",
-  "triviaList": [
-    "ユーカリの精油（シネオール）は爽快な芳香があり、アロマやのど飴でも広く親しまれています。",
-    "オーストラリアの森林火災の後、地下の芽から素早く緑を再生させることから「再生」の象徴となりました。",
-    "ドライフラワーやスワッグの素材としても大人気で、インテリアをスタイリッシュに彩ります。"
-  ],
-  "rarity": "Normal"
-},
-  "11-6": {
-  "id": "11-6",
-  "name": "シノブ（忍・羊歯）",
-  "reading": "しのぶ",
-  "scientificName": "Davallia mariesii",
-  "month": 11,
-  "day": 6,
-  "meanings": [
-    "忍耐",
-    "誠実",
-    "謙虚"
-  ],
-  "description": "樹木や岩盤に着生し、涼やかな緑の切れ込み葉を広げるシダ植物。「つりしのぶ」として江戸の庶民に愛され、乾燥や寒さにじっと耐える姿から「忍耐」「誠実」「謙虚」を象徴します。",
-  "category": "シダ植物",
-  "svgType": "fern",
-  "flowerColor": "#15803d",
-  "secondaryColor": "#bbf7d0",
-  "bgGradient": "from-emerald-700/15 via-teal-400/10 to-green-600/15",
-  "triviaList": [
-    "江戸時代に夏の風物詩として大流行した「吊りしのぶ」で名高い伝統の観葉シダです。",
-    "水が切れて葉が枯れ落ちても、水を与えると再び美しい緑葉を再生させる驚異の「忍耐」力を持ちます。",
-    "銀白色の毛に覆われた根茎が特徴的で、猫の手や兎の足に見立てられて愛好されます。"
-  ],
-  "rarity": "Normal"
-},
-  "10-20": {
-  "id": "10-20",
-  "name": "アサ（麻）",
-  "reading": "あさ",
-  "scientificName": "Cannabis sativa",
-  "month": 10,
-  "day": 20,
-  "meanings": [
-    "運命",
-    "宿命",
-    "あなたのそばに"
-  ],
-  "description": "古代縄文時代より日本人の衣食住や神事に不可欠な伝統繊維植物。繊維作物でありながら「運命」「宿命」「あなたのそばに」という恋愛ドラマの主人公のようなドラマチックな花言葉を持ちます。",
-  "category": "繊維・伝統作物",
-  "svgType": "hemp",
-  "flowerColor": "#84cc16",
-  "secondaryColor": "#dcfce7",
-  "bgGradient": "from-lime-500/15 via-emerald-300/10 to-teal-500/10",
-  "triviaList": [
-    "繊維作物なのに花言葉は「運命・宿命・あなたのそばに」！恋愛ドラマの主人公のような劇的さ。",
-    "神社の注連縄（しめなわ）や神事の鈴緒にも用いられ、古来「清浄潔白」の象徴とされてきました。",
-    "非常に成長が早く、真っ直ぐにスクスク伸びることから赤ちゃんの産着の麻の葉模様にも使われます。"
-  ],
-  "rarity": "Normal"
-},
-  "9-14": {
-  "id": "9-14",
-  "name": "フシグロセンノウ（節黒仙翁）",
-  "reading": "ふしぐろせんのう",
-  "scientificName": "Lychnis miqueliana",
-  "month": 9,
-  "day": 14,
-  "meanings": [
-    "恋のときめき",
-    "転職",
-    "機転"
-  ],
-  "description": "秋の山野の木陰に、鮮烈な朱赤色の花をひときわ目立たせて咲かせるナデシコ科の山野草。「恋のときめき♡」「機転」に並んで、誕生花界でも急に現実的な「転職」の花言葉を持つ異色の名花！",
-  "category": "山野草",
-  "svgType": "dianthus",
-  "flowerColor": "#ea580c",
-  "secondaryColor": "#ffedd5",
-  "bgGradient": "from-orange-500/15 via-amber-300/10 to-rose-500/10",
-  "triviaList": [
-    "🌺「恋のときめき♡」🌺「転職」🌺「機転」と並び、転職だけ急に現実的で超異色の注目花！",
-    "茎の節が暗紫色に黒ずむことから「節黒（フシグロ）」の名が付きました。",
-    "京都の仙翁寺に伝わった花とされる仙翁花の一種で、古くから茶花として愛された雅な花です。"
-  ],
-  "rarity": "Normal"
-},
-  "9-2": {
-  "id": "9-2",
-  "name": "ヒルザキツキミソウ（昼咲月見草）",
-  "reading": "ひるざきつきみそう",
-  "scientificName": "Oenothera speciosa",
-  "month": 9,
-  "day": 2,
-  "meanings": [
-    "無言の愛",
-    "自由な心",
-    "固く結ばれた愛"
-  ],
-  "description": "月見草の仲間でありながら、昼間の陽光を浴びて淡いピンク色の優しい杯状の花を咲かせる北米原産の多年草。「無言の愛」「自由な心」「固く結ばれた愛」の花言葉を持ちます。",
-  "category": "野草・園芸花",
-  "svgType": "evening_primrose",
-  "flowerColor": "#f472b6",
-  "secondaryColor": "#fdf2f8",
-  "bgGradient": "from-pink-500/15 via-rose-300/10 to-teal-400/10",
-  "triviaList": [
-    "月見草（宵待草）は夜に咲きますが、本種は昼間に咲くため「昼咲」と名付けられました。",
-    "淡いピンクの和紙のような花びらが風に揺れる姿は、素朴で愛らしい気品があります。",
-    "群生して咲き広がる様子から「固く結ばれた愛」という絆を誓う花言葉が生まれました。"
-  ],
-  "rarity": "Normal"
-},
-  "7-23": {
-  "id": "7-23",
-  "name": "ブーゲンビリア",
-  "reading": "ぶーげんびりあ",
-  "scientificName": "Bougainvillea spectabilis",
-  "month": 7,
-  "day": 23,
-  "meanings": [
-    "情熱",
-    "魅力",
-    "あなたしか見えない"
-  ],
-  "description": "南国の街並みをマゼンタや真紅に染め上げる熱帯のつる植物。「あなたしか見えない」という一途で燃えるような恋心と、圧倒的な「情熱」「魅力」を放ちます。",
-  "category": "熱帯植物",
-  "svgType": "bougainvillea",
-  "flowerColor": "#db2777",
-  "secondaryColor": "#fbcfe8",
-  "bgGradient": "from-pink-600/15 via-rose-400/10 to-amber-500/10",
-  "triviaList": [
-    "鮮やかに色づいている部分は花びらではなく「苞（ほう）」で、本当の花は中心にある小さな白い筒状花です。",
-    "フランスの探検家ブーガンヴィルがブラジルで発見したことから命名されました。",
-    "「あなたしか見えない」という情熱的な花言葉は、遠目からでも目を奪われる鮮烈な姿に由来します。"
-  ],
-  "rarity": "Normal"
-},
-  "6-24": {
-  "id": "6-24",
-  "name": "サクランボ（桜桃）",
-  "reading": "さくらんぼ",
-  "scientificName": "Prunus avium",
-  "month": 6,
-  "day": 24,
-  "meanings": [
-    "小さな恋人",
-    "善良な教育",
-    "上品",
-    "真実の心"
-  ],
-  "description": "初夏の木漏れ日の中でルビーのように艶やかに実るサクランボ。二つ寄り添って実る愛らしい姿から「小さな恋人」「善良な教育」「上品」の花言葉を持ちます。初夏の名物コンビ・グミが補足席で見守ります。",
-  "category": "果樹",
-  "svgType": "cherry",
-  "flowerColor": "#e11d48",
-  "secondaryColor": "#fecdd3",
-  "bgGradient": "from-rose-500/15 via-red-400/10 to-amber-300/10",
-  "subFlowers": [
-    {
-      "name": "グミ（茱萸）",
-      "reading": "ぐみ",
-      "meanings": [
-        "用心深い",
-        "野性味",
-        "心の純潔"
-      ],
-      "note": "初夏の野山に甘酸っぱく実る里山の果実。6/1びっくりグミと並ぶ名物席！"
-    }
-  ],
-  "triviaList": [
-    "🍒二つ並んで揺れる果実の姿から「小さな恋人」というロマンチックな花言葉が生まれました！",
-    "木材としても緻密で美しい「チェリー材」は、高級家具や伝統工芸品の素材として職人たちに深く愛用されます。",
-    "6/24の補足席には野性味あふれる「グミ」が同席し、初夏の甘酸っぱい果実の饗宴を彩ります。"
-  ],
-  "rarity": "Normal"
-},
-
-  "6-8": {
-  "id": "6-8",
-  "name": "デイゴ（梯梧）",
-  "reading": "でいご",
-  "scientificName": "Erythrina variegata",
-  "month": 6,
-  "day": 8,
-  "meanings": [
-    "活力",
-    "生命力",
-    "夢",
-    "愛"
-  ],
-  "description": "南国の青空を焦がすように真紅の情熱的な花を咲かせるマメ科の高木。沖縄県の県花としても名高く、「活力」「生命力」「夢」「愛」に満ちた太陽の樹です。",
-  "category": "花木・熱帯植物",
-  "svgType": "tropical",
-  "flowerColor": "#ef4444",
-  "secondaryColor": "#fca5a5",
-  "bgGradient": "from-red-600/15 via-rose-400/10 to-amber-500/10",
-  "triviaList": [
-    "名曲『島唄』の歌詞「でいごの花が咲き…」でも全国的に有名な南国情緒の象徴です。",
-    "刀のような深紅の尖った花弁が集まって咲き、島の人々に活気と勇気を与え続けています。",
-    "デイゴの木材は軽くて狂いが少ないため、琉球漆器の素地としても最高級品とされます。"
-  ],
-  "rarity": "Normal"
-},
-  "6-3": {
-  "id": "6-3",
-  "name": "ドクダミ（十薬）",
-  "reading": "どくだみ",
-  "scientificName": "Houttuynia cordata",
-  "month": 6,
-  "day": 3,
-  "meanings": [
-    "白い追憶",
-    "野生",
-    "自己犠牲"
-  ],
-  "description": "初夏の木陰や道端に清楚な十字の白花（苞）を咲かせる逞しい多年草。見た目は素朴なのに「自己犠牲」まで背負った重厚さと、どこでも力強く根を張る「野生」が共存します。",
-  "category": "薬用植物・野草",
-  "svgType": "houttuynia",
-  "flowerColor": "#f8fafc",
-  "secondaryColor": "#22c55e",
-  "bgGradient": "from-emerald-600/15 via-teal-300/10 to-slate-200/15",
-  "triviaList": [
-    "見た目は素朴なのに「自己犠牲」まで背負ってるのが深すぎる！野生の生命力も納得です。",
-    "白い花びらに見える部分は総苞片（葉が変化したもの）で、真ん中の黄色い穂に真の花が集まっています。",
-    "十の薬効を持つことから生薬名「十薬（じゅうやく）」と呼ばれ、古くから健康茶として愛用されています。"
-  ],
-  "rarity": "Normal"
-},
-  "6-1": {
-  "id": "6-1",
-  "name": "びっくりグミ（大王茱萸）",
-  "reading": "びっくりぐみ",
-  "scientificName": "Elaeagnus multiflora var.",
-  "month": 6,
-  "day": 1,
-  "meanings": [
-    "用心深い",
-    "野性味",
-    "心の純潔"
-  ],
-  "description": "初夏に大粒のルビー色に熟す果実をつけるグミの代表種。6月24日のグミと並び「グミ、月2回いる」名物席！用心深くトゲを構えつつ、心の純潔と野性味を宿します。",
-  "category": "果樹",
-  "svgType": "gumi",
-  "flowerColor": "#dc2626",
-  "secondaryColor": "#fee2e2",
-  "bgGradient": "from-red-500/15 via-rose-300/10 to-amber-500/10",
-  "triviaList": [
-    "名前の通り、普通のグミの実の倍以上の大きな実をつけることから「びっくり」と名付けられました。",
-    "6/1びっくりグミ＆6/24グミで、サイト内で「グミが月2回いる」面白いペアリング！",
-    "果皮にある銀色の斑点（星状毛）で雨風から実を守る「用心深さ」が花言葉の由来です。"
-  ],
-  "rarity": "Normal"
-},
-  "5-16": {
-  "id": "5-16",
-  "name": "ヤマブキ（山吹）",
-  "reading": "やまぶき",
-  "scientificName": "Kerria japonica",
-  "month": 5,
-  "day": 16,
-  "meanings": [
-    "気品",
-    "崇高",
-    "待ちかねる"
-  ],
-  "description": "日本の山野の小川沿いに黄金色の一重・八重の花をこぼれるように咲かせる落葉低木。「山吹色」という日本の伝統色の起源であり、「気品」「崇高」を讃えられます。",
-  "category": "花木",
-  "svgType": "kerria",
-  "flowerColor": "#f59e0b",
-  "secondaryColor": "#fef08a",
-  "bgGradient": "from-amber-400/15 via-yellow-300/10 to-emerald-500/10",
-  "triviaList": [
-    "太田道灌の「七重八重花は咲けども山吹の実のひとつだになきぞ悲しき」の伝説で名高い花です。",
-    "八重咲きのヤマブキは雄しべが花弁に変化しているため実を結びませんが、華麗さは格別です。",
-    "黄金の花が揺れる姿は小判にも例えられ、富と崇高な気品を呼び込む吉木とされます。"
-  ],
-  "rarity": "Normal"
-},
-  "4-23": {
-  "id": "4-23",
-  "name": "ウド（独活）",
-  "reading": "うど",
-  "scientificName": "Aralia cordata",
-  "month": 4,
-  "day": 23,
-  "meanings": [
-    "おおらか",
-    "健康",
-    "淡泊"
-  ],
-  "description": "「ウドの大木」の慣用句で親しまれるウコギ科の大型多年草。桜に続いてまさかの淡白参戦！植物界の「淡白同盟」を結ぶ、爽やかでおおらか、健康的な春の山菜です。",
-  "category": "山菜・野草",
-  "svgType": "wild_herb",
-  "flowerColor": "#e2e8f0",
-  "secondaryColor": "#86efac",
-  "bgGradient": "from-emerald-500/15 via-teal-300/10 to-green-600/15",
-  "triviaList": [
-    "🌸「私は淡白です」🌿ウド「私もです」の淡白同盟！花言葉まで淡白なのが最高にユニーク。",
-    "夏から秋にかけて線香花火のような小さな球状の花序を多数咲かせます。",
-    "ほろ苦さとシャキシャキした歯ごたえが春の味覚として古来重宝されてきました。"
-  ],
-  "rarity": "Normal"
-},
-  "4-20": {
-  "id": "4-20",
-  "name": "ナシ（梨の花）",
-  "reading": "なし",
-  "scientificName": "Pyrus pyrifolia",
-  "month": 4,
-  "day": 20,
-  "meanings": [
-    "愛情",
-    "博愛",
-    "和やかな愛情"
-  ],
-  "description": "春の枝いっぱいに真っ白で清楚な五弁花を咲かせ、秋にはみずみずしく実る梨。「愛情」「博愛」「和やかな愛情」という、包み込むような温かな花言葉を持ちます。",
-  "category": "果樹",
-  "svgType": "pear",
-  "flowerColor": "#fefce8",
-  "secondaryColor": "#84cc16",
-  "bgGradient": "from-lime-400/15 via-amber-200/10 to-emerald-500/10",
-  "subFlowers": [
-    {
-      "name": "ストロベリーキャンドル（ベニバナツメクサ）",
-      "reading": "すとろべりーきゃんどる",
-      "meanings": [
-        "素朴な愛らしさ",
-        "人知れぬ恋",
-        "きらめく愛"
-      ],
-      "note": "愛らしい春のイチゴツメクサ（イチゴのような赤い穂を灯す野草）"
-    }
-  ],
-  "triviaList": [
-    "梨の白花は「梨花（りか）」と呼ばれ、雪のように美しいものの喩えとして愛されてきました。",
-    "補足席にはキャンドルの炎のように赤い穂を揺らす「ストロベリーキャンドル」が同席！",
-    "シャリシャリとした独特の食感は石細胞によるもので、食物繊維もたっぷりです。"
-  ],
-  "rarity": "Normal"
-},
-
-  "4-8": {
-  "id": "4-8",
-  "name": "ジャスミン（素馨）",
-  "reading": "じゃすみん",
-  "scientificName": "Jasminum officinale",
-  "month": 4,
-  "day": 8,
-  "meanings": [
-    "愛らしさ",
-    "優美",
-    "官能的"
-  ],
-  "description": "「香りの王」と称賛される白く可憐な星形の花。日没後に最も甘美で濃厚な芳香を放ち、「愛らしさ」「優美」「官能的」という人を惹きつけてやまない魅力の花言葉を持ちます。",
-  "category": "花木",
-  "svgType": "jasmine",
-  "flowerColor": "#f8fafc",
-  "secondaryColor": "#fef08a",
-  "bgGradient": "from-amber-200/15 via-yellow-100/10 to-emerald-500/10",
-  "triviaList": [
-    "古代ペルシャ語で「神からの贈り物（Yasmin）」を意味する名を持つ、世界最高峰の芳香花です。",
-    "ジャスミン茶（茉莉花茶）としても世界中で愛飲され、リラクゼーション効果も抜群です。",
-    "香水のトップノートからラストノートまで優雅に漂う、甘くエキゾチックな名花です。"
-  ],
-  "rarity": "Normal"
-},
-  "1-4": {
-    "id": "1-4",
-    "name": "フクジュソウ（福寿草）",
-    "reading": "ふくじゅそう",
-    "scientificName": "Adonis ramosa",
-    "month": 1,
-    "day": 4,
+    "6-30": {
+    "id": "6-30",
+    "name": "セージ（薬用サルビア）",
+    "reading": "せーじ",
+    "scientificName": "Salvia officinalis",
+    "month": 6,
+    "day": 30,
     "meanings": [
-      "永久の幸福",
-      "思い出",
-      "幸福を招く"
+      "知恵",
+      "尊敬",
+      "家族愛",
+      "救済"
     ],
-    "description": "新春の雪解けとともに黄金色に輝く花を咲かせ、古くから新年を祝う最高のおめでたい花とされてきました。幸福と長寿を象徴する縁起の良い日本の春告げ花です。",
-    "category": "花",
-    "svgType": "winter_aconite",
-    "flowerColor": "#eab308",
-    "secondaryColor": "#fef08a",
-    "bgGradient": "from-amber-400/15 via-yellow-300/10 to-emerald-500/10",
-    "anniversaryNote": "新春・お正月吉花",
+    "description": "ベルベットのようなシルバーグリーンの起毛葉と青紫色の美しい花穂を持つ万能薬草。「庭にセージを植えている家から病人は出ない」と古くから西洋で重宝されてきました。",
+    "category": "ハーブ・多年草",
+    "svgType": "sage",
+    "flowerColor": "#7c3aed",
+    "secondaryColor": "#cbd5e1",
+    "bgGradient": "from-purple-500/15 via-indigo-400/10 to-emerald-200/10",
+    "subFlowers": [
+      {
+        "name": "ビヨウヤナギ（未央柳）",
+        "meanings": ["気高さ", "多情", "薬用"],
+        "note": "黄金色の長い雄しべが美しい花"
+      }
+    ],
     "triviaList": [
-      "名前は文字通り「幸福」と「長寿」を願って付けられた縁起植物の最高峰です。",
-      "日光に当たると花が開き、曇りや夕方には閉じる性質があり、光を浴びて温まった花弁に虫を誘い込みます。",
-      "江戸時代から数多くの園芸品種が作られ、お正月の寄せ植えとして大名から庶民まで大流行しました。"
+      "学名サルビア（Salvia）はラテン語の「salvare（救う・癒す）」に由来します。",
+      "古代ローマ時代から神聖な儀式や治療薬として重用され、知恵と長寿の象徴とされています。",
+      "肉料理の臭み消しやソーセージ（Sausage）の香りづけとしても欠かせない名香草です。"
     ]
   },
   "1-10": {
@@ -935,6 +231,38 @@ export const SPECIAL_FLOWERS: Record<string, FlowerData> = {
       "名前に「菊」と付きますが、実はアネモネの仲間で花びらのように見える部分は「萼（がく）」です。",
       "中国原産で、古い時代に日本へ渡来し、京都の貴船神社周辺に多く自生したことから「貴船菊（キブネギク）」とも呼ばれます。",
       "風に揺れる細い茎と優美な花姿は、日本の茶花として千利休の時代から格別に重宝されてきました。"
+    ]
+  },
+    "1-13": {
+    "id": "1-13",
+    "name": "ローズマリー（迷迭香）",
+    "reading": "ろーずまりー",
+    "scientificName": "Salvia rosmarinus",
+    "month": 1,
+    "day": 13,
+    "meanings": [
+      "記憶",
+      "追憶",
+      "静かな力強さ",
+      "変わらぬ愛"
+    ],
+    "description": "地中海沿岸原産の芳香豊かな常緑低木。青紫色の可憐な小花を咲かせ、「海の雫（Ros marinus）」という優雅な学名を持ちます。古代から記憶力を高める神秘のハーブとして愛されてきました。",
+    "category": "ハーブ・低木",
+    "svgType": "rosemary",
+    "flowerColor": "#6366f1",
+    "secondaryColor": "#c7d2fe",
+    "bgGradient": "from-indigo-500/15 via-blue-400/10 to-teal-500/10",
+    "subFlowers": [
+      {
+        "name": "センリョウ（千両）",
+        "meanings": ["富", "財産", "恵まれた才能", "利益"],
+        "note": "冬を彩る縁起樹"
+      }
+    ],
+    "triviaList": [
+      "ラテン語の「Ros（雫）」と「Marinus（海）」が語源で、海風が吹き寄せる断崖に自生することに由来します。",
+      "シェイクスピアの戯曲『ハムレット』でも「これはローズマリー、物思いを呼び覚ます花」と語られています。",
+      "ハンガリー王妃エリザベートが愛用した若返りの水「ハンガリーウォーター」の主成分としても有名です。"
     ]
   },
   "1-15": {
@@ -1200,6 +528,17 @@ export const SPECIAL_FLOWERS: Record<string, FlowerData> = {
       "夜襲を仕掛けた敵兵がアザミのトゲを踏んで悲鳴をあげ、奇襲を防いだことからスコットランドの国花になりました。",
       "トゲがあるため近寄りがたいですが、花の根は「ヤマゴボウ」として味噌漬けなどで美味しく食べられます。",
       "ギリシャ神話では、狩猟の女神アルテミスが亡き恋人を想って流した涙からアザミが咲いたと伝えられます。"
+    ],
+    "subFlowers": [
+          {
+                "name": "ハッカ（薄荷）",
+                "meanings": [
+                      "徳",
+                      "美徳",
+                      "清涼感"
+                ],
+                "note": "爽やかなメントールが香る和種薄荷"
+          }
     ]
   },
   "3-22": {
@@ -3153,28 +2492,36 @@ export const SPECIAL_FLOWERS: Record<string, FlowerData> = {
       "ひたち海浜公園など、春に丘一面を青く染め上げる広大なネモフィラ畑は世界中から絶賛されています。"
     ]
   },
-  "2-6": {
+    "2-6": {
     "id": "2-6",
-    "name": "ピンクのスミレ",
-    "reading": "ぴんくのすみれ",
-    "scientificName": "Viola",
+    "name": "ギョリュウバイ（御柳梅）",
+    "reading": "ぎょりゅうばい",
+    "scientificName": "Leptospermum scoparium",
     "month": 2,
     "day": 6,
     "meanings": [
-      "愛",
-      "謙虚",
-      "誠実"
+      "蜜月",
+      "濃厚な愛",
+      "素朴な強さ",
+      "華やいだ生活"
     ],
-    "description": "早春の道端や野原にひっそりと、しかし温かな愛をたたえて咲く可憐なピンク色のスミレ。控えめながらも真っ直ぐな想いを伝える象徴として愛されています。",
-    "category": "花",
-    "svgType": "violet",
-    "flowerColor": "#f43f5e",
-    "secondaryColor": "#fbcfe8",
-    "bgGradient": "from-pink-400/15 via-rose-300/10 to-emerald-500/10",
+    "description": "ニュージーランド原産で高級マヌカハニーの蜜源としても名高い常緑低木。梅に似た深紅や濃いピンクの小花が枝いっぱいに咲き誇り、甘美な香りと強健な生命力を誇ります。",
+    "category": "花木",
+    "svgType": "manuka",
+    "flowerColor": "#e11d48",
+    "secondaryColor": "#fda4af",
+    "bgGradient": "from-rose-500/15 via-pink-400/10 to-amber-200/10",
+    "subFlowers": [
+      {
+        "name": "ピンクのスミレ（菫）",
+        "meanings": ["愛", "希望", "純潔"],
+        "note": "2月6日の伝統誕生花"
+      }
+    ],
     "triviaList": [
-      "スミレ全般の花言葉「謙虚」「誠実」に加え、ピンク色には特別な「愛」の言葉が託されています。",
-      "ギリシャ神話では、太陽神アポロンの求愛から逃れたニンフの純潔をゼウスがスミレに変えたという伝説があります。",
-      "ナポレオンと皇妃ジョゼフィーヌの永遠の愛の象徴としても有名です。"
+      "葉が中国の樹木「御柳（ギョリュウ）」に、花が「梅」に似ていることから名付けられました。",
+      "世界的に希少で高い抗菌力を持つ「マヌカハニー」はこのギョリュウバイの花蜜から作られます。",
+      "ニュージーランドの先住民族マオリ族は、古くからその葉を煎じて薬用茶として愛飲していました。"
     ]
   },
   "2-10": {
@@ -3657,6 +3004,17 @@ export const SPECIAL_FLOWERS: Record<string, FlowerData> = {
       "ラテン語の「matrix（子宮）」が語源で、古くから女性の体調を整えるハーブ療法に用いられてきました。",
       "英語では「Feverfew（フィーバーフュー＝熱を追放するもの）」と呼ばれ、解熱や偏頭痛の民間薬として有名です。",
       "小花が群がって楽しそうに咲く姿から「集う喜び」という温かい花言葉がつきました。"
+    ],
+    "subFlowers": [
+          {
+                "name": "ゲンペイコギク（源平小菊）",
+                "meanings": [
+                      "白緑",
+                      "移り気",
+                      "可憐"
+                ],
+                "note": "白から桃色へ花色が変わる愛らしい菊"
+          }
     ]
   },
   "6-6": {
@@ -4051,6 +3409,17 @@ export const SPECIAL_FLOWERS: Record<string, FlowerData> = {
       "西洋の伝統的な結婚式で、花嫁がオレンジの花冠やブーケを持つ習慣から「花嫁の喜び」という言葉がつきました。",
       "花から水蒸気蒸留で抽出される精油は高級香料「ネロリ」と呼ばれ、心を深く鎮める優美な香りです。",
       "木の上に花と果実が同時に実る生命力の豊かさから、繁栄と子孫繁栄の最高のお祝い樹とされます。"
+    ],
+    "subFlowers": [
+          {
+                "name": "ナツメ（棗）",
+                "meanings": [
+                      "健康",
+                      "若々しさ",
+                      "英知"
+                ],
+                "note": "健康と長寿を祝う古来の果実"
+          }
     ]
   },
   "9-8": {
@@ -4965,7 +4334,18 @@ export const SPECIAL_FLOWERS: Record<string, FlowerData> = {
       "中国原産の原種からヨーロッパで品種改良され、世界中に広まった歴史ある低木です。",
       "秋に花が終わった後も、赤褐色の萼片がプロペラのように残って長く楽しめます。"
     ],
-    "rarity": "Normal"
+    "rarity": "Normal",
+    "subFlowers": [
+          {
+                "name": "ササ（笹・七夕の笹竹）",
+                "meanings": [
+                      "ささやかな幸せ",
+                      "節度",
+                      "神聖"
+                ],
+                "note": "願いを託す七夕の伝統植物"
+          }
+    ]
   },
   "8-11": {
     "id": "8-11",
@@ -7219,7 +6599,18 @@ export const SPECIAL_FLOWERS: Record<string, FlowerData> = {
       "文字を彫る版木として使われたことから、本を出版することを「上梓（じょうし）する」と言います。",
       "敬宮愛子内親王のお印（ゴヨウツツジ）とともに、格式高い木として愛されています。"
     ],
-    "rarity": "Normal"
+    "rarity": "Normal",
+    "subFlowers": [
+          {
+                "name": "サンショウ（山椒）",
+                "meanings": [
+                      "健康",
+                      "好意",
+                      "直観"
+                ],
+                "note": "ピリリと辛い日本古来の芳香樹"
+          }
+    ]
   },
   "11-26": {
     "id": "11-26",
@@ -8117,7 +7508,18 @@ export const SPECIAL_FLOWERS: Record<string, FlowerData> = {
       "「旧友」の花言葉は、辛い刺激を分かち合ってきた気兼ねない友人関係に由来します。",
       "平凡であることを誇りとし、コツコツ堅実に日常を支え抜く人に力を与える花です。"
     ],
-    "rarity": "Normal"
+    "rarity": "Normal",
+    "subFlowers": [
+          {
+                "name": "クジャクアスター（孔雀アスター）",
+                "meanings": [
+                      "友情",
+                      "可憐",
+                      "いつも愉快"
+                ],
+                "note": "孔雀が羽を広げたように咲く星咲き菊"
+          }
+    ]
   },
   "9-12": {
     "id": "9-12",
@@ -8875,7 +8277,17 @@ export const SPECIAL_FLOWERS: Record<string, FlowerData> = {
     "flowerColor": "#eab308",
     "secondaryColor": "#78350f",
     "bgGradient": "from-amber-500/15 via-yellow-400/10 to-orange-500/10",
-    "rarity": "Rare"
+    "rarity": "Rare",
+    "subFlowers": [
+          {
+                "name": "シソ（紫蘇）",
+                "meanings": [
+                      "善良な家風",
+                      "力が蘇る"
+                ],
+                "note": "人を蘇らせる霊草"
+          }
+    ]
   },
   "7-31": {
     "id": "7-31",
@@ -9080,6 +8492,353 @@ export const SPECIAL_FLOWERS: Record<string, FlowerData> = {
 };
 
 export const GACHA_SPECIAL_FLOWERS: FlowerData[] = [
+  {
+    "id": "gacha-kamitsuremodoki",
+    "name": "カミツレモドキ（春紫菀・犬カモミール）",
+    "reading": "かみつれもどき",
+    "scientificName": "Anthemis cotula",
+    "month": 0,
+    "day": 0,
+    "meanings": [
+      "逆境に負けない",
+      "情熱",
+      "清楚"
+    ],
+    "description": "カモミール（カミツレ）にそっくりな純白の花びらと鮮やかな黄色の花芯を持つ愛らしい野草。過酷な荒地でもたくましく可憐な花を咲かせます。",
+    "category": "野草・キク科",
+    "svgType": "mayweed",
+    "flowerColor": "#ffffff",
+    "secondaryColor": "#facc15",
+    "bgGradient": "from-amber-200/20 via-yellow-100/15 to-emerald-200/10",
+    "isGachaSpecial": true,
+    "rarity": "SSR ガチャ限定"
+  },
+  {
+    "id": "gacha-nutmeg",
+    "name": "ナツメグ（肉荳蔲）",
+    "reading": "なつめぐ",
+    "scientificName": "Myristica fragrans",
+    "month": 0,
+    "day": 0,
+    "meanings": [
+      "神秘",
+      "芳香",
+      "至福",
+      "夢想"
+    ],
+    "description": "モルッカ諸島原産の高貴な香辛料樹。黄色い果実が熟して弾けると、真紅のレースのような「メース」に包まれた漆黒の種子が現れる神秘の植物です。",
+    "category": "香辛料・熱帯高木",
+    "svgType": "nutmeg",
+    "flowerColor": "#dc2626",
+    "secondaryColor": "#f59e0b",
+    "bgGradient": "from-amber-500/20 via-orange-300/15 to-red-400/10",
+    "isGachaSpecial": true,
+    "rarity": "UR ガチャ限定"
+  },
+  {
+    "id": "gacha-venus-flytrap",
+    "name": "ハエトリソウ（蠅捕草）",
+    "reading": "はえとりそう",
+    "scientificName": "Dionaea muscipula",
+    "month": 0,
+    "day": 0,
+    "meanings": [
+      "魔性の愛",
+      "誘惑",
+      "真実"
+    ],
+    "description": "二枚貝のようなトゲのある捕虫葉が、獲物が触れると0.5秒で瞬時に閉じる世界一有名な食虫植物！その驚異のメカニズムはダーウィンも大絶賛しました。",
+    "category": "珍奇植物・食虫植物",
+    "svgType": "venus_flytrap",
+    "flowerColor": "#ef4444",
+    "secondaryColor": "#22c55e",
+    "bgGradient": "from-emerald-500/20 via-rose-300/15 to-teal-400/10",
+    "isGachaSpecial": true,
+    "rarity": "UR ガチャ限定"
+  },
+  {
+    "id": "gacha-paprika",
+    "name": "パプリカ（大甘唐辛子）",
+    "reading": "ぱぷりか",
+    "scientificName": "Capsicum annuum grossum",
+    "month": 0,
+    "day": 0,
+    "meanings": [
+      "同情",
+      "君を忘れない",
+      "実りある人生"
+    ],
+    "description": "鮮やかな赤・黄・オレンジにつやめく肉厚で甘みたっぷりの西洋野菜。ビタミンCが極めて豊富で、食卓と庭を華やかに彩ります。",
+    "category": "野菜・果菜類",
+    "svgType": "paprika",
+    "flowerColor": "#ef4444",
+    "secondaryColor": "#facc15",
+    "bgGradient": "from-red-500/20 via-yellow-400/15 to-orange-400/10",
+    "isGachaSpecial": true,
+    "rarity": "SSR ガチャ限定"
+  },
+  {
+    "id": "gacha-mushroom",
+    "name": "キノコ（茸・ベニテングタケ風）",
+    "reading": "きのこ",
+    "scientificName": "Fungi",
+    "month": 0,
+    "day": 0,
+    "meanings": [
+      "不思議",
+      "自然の恵み",
+      "再生",
+      "妖精の宿る場所"
+    ],
+    "description": "深い森の樹々を繋ぐ菌糸ネットワークの結晶。まるでおとぎ話の世界から飛び出してきたような愛らしいフォルムで、生態系の命を循環させる神秘の存在です。",
+    "category": "菌類・森の恵み",
+    "svgType": "mushroom",
+    "flowerColor": "#dc2626",
+    "secondaryColor": "#ffffff",
+    "bgGradient": "from-red-500/20 via-amber-200/15 to-emerald-300/10",
+    "isGachaSpecial": true,
+    "rarity": "SSR ガチャ限定"
+  },
+  {
+    "id": "gacha-bamboo-shoot",
+    "name": "タケノコ（筍）",
+    "reading": "たけのこ",
+    "scientificName": "Bamboo shoot",
+    "month": 0,
+    "day": 0,
+    "meanings": [
+      "生命力",
+      "節操",
+      "成長",
+      "不屈"
+    ],
+    "description": "春の土中からぐんぐん天を目指して伸びる竹の若芽。一晩で数十センチも伸びる圧倒的な生命力と成長力は、古来より立身出世と健康の象徴です。",
+    "category": "野菜・春の味覚",
+    "svgType": "bamboo_shoot",
+    "flowerColor": "#92400e",
+    "secondaryColor": "#84cc16",
+    "bgGradient": "from-amber-400/20 via-lime-300/15 to-emerald-400/10",
+    "isGachaSpecial": true,
+    "rarity": "SSR ガチャ限定"
+  },
+  {
+    "id": "gacha-onion",
+    "name": "タマネギ（玉葱）",
+    "reading": "たまねぎ",
+    "scientificName": "Allium cepa",
+    "month": 0,
+    "day": 0,
+    "meanings": [
+      "不死",
+      "純粋",
+      "真実",
+      "深い慈愛"
+    ],
+    "description": "幾重にも包み重なる琥珀色のつややかな鱗茎。世界中の料理の味のベースとなり、古くはピラミッド建設の労働者たちにもスタミナ源として重宝されました。",
+    "category": "野菜・根菜類",
+    "svgType": "onion",
+    "flowerColor": "#d97706",
+    "secondaryColor": "#fef08a",
+    "bgGradient": "from-amber-500/20 via-yellow-300/15 to-orange-300/10",
+    "isGachaSpecial": true,
+    "rarity": "SSR ガチャ限定"
+  },
+  {
+    "id": "gacha-green-onion",
+    "name": "ネギ（葱・長ネギ）",
+    "reading": "ねぎ",
+    "scientificName": "Allium fistulosum",
+    "month": 0,
+    "day": 0,
+    "meanings": [
+      "微笑み",
+      "愛嬌",
+      "健康",
+      "邪気払い"
+    ],
+    "description": "白と緑のコントラストが美しい日本の伝統和野菜。丸い愛らしいネギ坊主の花を咲かせ、古くから風邪を吹き飛ばす滋養と厄除けの象徴とされてきました。",
+    "category": "野菜・和香味",
+    "svgType": "green_onion",
+    "flowerColor": "#16a34a",
+    "secondaryColor": "#ffffff",
+    "bgGradient": "from-emerald-500/20 via-teal-200/15 to-green-300/10",
+    "isGachaSpecial": true,
+    "rarity": "SSR ガチャ限定"
+  },
+  {
+    "id": "gacha-taro",
+    "name": "サトイモ（里芋）",
+    "reading": "さといも",
+    "scientificName": "Colocasia esculenta",
+    "month": 0,
+    "day": 0,
+    "meanings": [
+      "繁栄",
+      "親孝行",
+      "子孫繁栄",
+      "愛嬌"
+    ],
+    "description": "雨粒をキラキラ弾く大きな蓮のような葉と、親芋の周りにたくさんの子芋・孫芋が実る姿から、子孫繁栄と家族円満の象徴としてお月見やお祝い事に欠かせません。",
+    "category": "野菜・伝統芋",
+    "svgType": "taro",
+    "flowerColor": "#78350f",
+    "secondaryColor": "#15803d",
+    "bgGradient": "from-emerald-600/20 via-amber-300/15 to-teal-400/10",
+    "isGachaSpecial": true,
+    "rarity": "SSR ガチャ限定"
+  },
+  {
+    "id": "gacha-rush-grass",
+    "name": "イグサ（藺草・畳草）",
+    "reading": "いぐさ",
+    "scientificName": "Juncus decipiens",
+    "month": 0,
+    "day": 0,
+    "meanings": [
+      "従順",
+      "清らかな心",
+      "落ち着き",
+      "やすらぎ"
+    ],
+    "description": "和室の畳の原料として日本の暮らしを支えてきた湿地植物。森林浴と同じフィトンチッドの芳香を放ち、心を芯から落ち着かせてくれます。",
+    "category": "工芸作物・水辺植物",
+    "svgType": "rush_grass",
+    "flowerColor": "#15803d",
+    "secondaryColor": "#a7f3d0",
+    "bgGradient": "from-emerald-600/20 via-green-300/15 to-teal-400/10",
+    "isGachaSpecial": true,
+    "rarity": "SSR ガチャ限定"
+  },
+  {
+    "id": "gacha-foxtail-millet",
+    "name": "アワ（粟・五穀）",
+    "reading": "あわ",
+    "scientificName": "Setaria italica",
+    "month": 0,
+    "day": 0,
+    "meanings": [
+      "結束",
+      "豊穣",
+      "救済",
+      "生命の糧"
+    ],
+    "description": "日本最古の主食の一つである五穀の筆頭。エノコログサを原種とし、黄金色に重そうにたわわに実る穂先は豊かな実りと繁栄のシンボルです。",
+    "category": "穀物・古代五穀",
+    "svgType": "foxtail_millet",
+    "flowerColor": "#eab308",
+    "secondaryColor": "#fef08a",
+    "bgGradient": "from-amber-400/20 via-yellow-200/15 to-emerald-300/10",
+    "isGachaSpecial": true,
+    "rarity": "SSR ガチャ限定"
+  },
+  {
+    "id": "gacha-rice",
+    "name": "コメ（稲・米・瑞穂）",
+    "reading": "こめ",
+    "scientificName": "Oryza sativa",
+    "month": 0,
+    "day": 0,
+    "meanings": [
+      "神聖",
+      "実り",
+      "豊かな実り",
+      "感謝"
+    ],
+    "description": "「実るほど頭を垂れる稲穂かな」。黄金色に波打つ日本の秋の原風景。一粒の籾から千粒の実をつける無限の豊かさと、八十八の手間暇をかけた命の結晶です。",
+    "category": "主食・穀物",
+    "svgType": "rice",
+    "flowerColor": "#facc15",
+    "secondaryColor": "#ca8a04",
+    "bgGradient": "from-yellow-400/20 via-amber-300/15 to-emerald-400/10",
+    "isGachaSpecial": true,
+    "rarity": "UR ガチャ限定"
+  },
+  {
+    "id": "gacha-wheat",
+    "name": "ムギ（麦・大麦・小麦）",
+    "reading": "むぎ",
+    "scientificName": "Triticum",
+    "month": 0,
+    "day": 0,
+    "meanings": [
+      "富",
+      "繁栄",
+      "希望",
+      "協調"
+    ],
+    "description": "まっすぐに天へ伸びる長いヒゲ（禾）を持つ黄金の麦穂。「麦踏み」に耐えて冬を越す強靭な生命力を持ち、パンやビールなど世界中の食文化を支えています。",
+    "category": "穀物・世界四大主穀",
+    "svgType": "wheat",
+    "flowerColor": "#f59e0b",
+    "secondaryColor": "#fef3c7",
+    "bgGradient": "from-amber-500/20 via-yellow-300/15 to-orange-200/10",
+    "isGachaSpecial": true,
+    "rarity": "SSR ガチャ限定"
+  },
+  {
+    "id": "gacha-bur-reed",
+    "name": "ミクリ（三稜草・実栗）",
+    "reading": "みくり",
+    "scientificName": "Sparganium erectum",
+    "month": 0,
+    "day": 0,
+    "meanings": [
+      "秘めた想い",
+      "救い",
+      "神秘"
+    ],
+    "description": "水辺に佇み、小さな栗のイガのような緑のトゲトゲ球状花をつける希少な抽水植物。水質を浄化し、水生昆虫たちのオアシスとなる尊い自然の宝物です。",
+    "category": "水生植物・絶滅危惧種",
+    "svgType": "bur_reed",
+    "flowerColor": "#65a30d",
+    "secondaryColor": "#bef264",
+    "bgGradient": "from-emerald-500/20 via-teal-300/15 to-cyan-400/10",
+    "isGachaSpecial": true,
+    "rarity": "UR ガチャ限定"
+  },
+  {
+    "id": "gacha-adzuki",
+    "name": "アズキ（小豆）",
+    "reading": "あずき",
+    "scientificName": "Vigna angularis",
+    "month": 0,
+    "day": 0,
+    "meanings": [
+      "希望",
+      "魔除け",
+      "幸運",
+      "健康"
+    ],
+    "description": "黄色い可憐な蝶形の花を咲かせ、深紅の粒を実らせる日本の伝統豆。その赤色は邪気を祓う太陽の力と信じられ、赤飯や和菓子として祝いの席を彩ります。",
+    "category": "豆類・伝統和作物",
+    "svgType": "adzuki",
+    "flowerColor": "#991b1b",
+    "secondaryColor": "#facc15",
+    "bgGradient": "from-rose-600/20 via-red-300/15 to-amber-200/10",
+    "isGachaSpecial": true,
+    "rarity": "SSR ガチャ限定"
+  },
+  {
+    "id": "gacha-sesame",
+    "name": "ゴマ（胡麻）",
+    "reading": "ごま",
+    "scientificName": "Sesamum indicum",
+    "month": 0,
+    "day": 0,
+    "meanings": [
+      "たくましさ",
+      "救いの主",
+      "不老長寿"
+    ],
+    "description": "「開けゴマ！」の呪文で有名な世界最古の油料植物。淡いピンクの釣り鐘状の愛らしい花を咲かせ、栄養満点のゴマ粒が詰まった鞘を実らせます。",
+    "category": "油料作物・古香",
+    "svgType": "sesame",
+    "flowerColor": "#f472b6",
+    "secondaryColor": "#ffffff",
+    "bgGradient": "from-pink-400/20 via-amber-200/15 to-teal-300/10",
+    "isGachaSpecial": true,
+    "rarity": "SSR ガチャ限定"
+  },
   {
   "id": "gacha-matatabi",
   "name": "またたび（木天蓼）",
@@ -9462,11 +9221,51 @@ export function getFlowerByDate(month: number, day: number): FlowerData {
   };
 }
 
+export function getAllGachaPool(): FlowerData[] {
+  const pool: FlowerData[] = [...Object.values(SPECIAL_FLOWERS)];
+  pool.push(...GACHA_SPECIAL_FLOWERS);
+
+  // 補足植物（subFlowers）も独立したガチャ排出アイテムとして追加！
+  Object.values(SPECIAL_FLOWERS).forEach((f) => {
+    if (f.subFlowers && f.subFlowers.length > 0) {
+      f.subFlowers.forEach((sub, idx) => {
+        let subSvg = f.svgType;
+        if (sub.name.includes('ナツメ')) subSvg = 'jujube';
+        else if (sub.name.includes('ゲンペイコギク')) subSvg = 'erigeron';
+        else if (sub.name.includes('サンショウ')) subSvg = 'sansho';
+        else if (sub.name.includes('ハッカ')) subSvg = 'hakka';
+        else if (sub.name.includes('シソ')) subSvg = 'shiso';
+        else if (sub.name.includes('笹') || sub.name.includes('ササ')) subSvg = 'bamboo_grass';
+        else if (sub.name.includes('スミレ')) subSvg = 'violet';
+        else if (sub.name.includes('センリョウ')) subSvg = 'senryo';
+        else if (sub.name.includes('クジャクアスター')) subSvg = 'peacock_aster';
+        else if (sub.name.includes('ビヨウヤナギ')) subSvg = 'hypericum';
+
+        pool.push({
+          id: `sub-${f.id}-${idx}`,
+          name: sub.name,
+          reading: sub.name.replace(/（.*?）|\(.*?\)/g, ''),
+          month: f.month,
+          day: f.day,
+          meanings: sub.meanings || f.meanings,
+          description: `${f.month}月${f.day}日のもう一つの誕生花。${sub.note ? sub.note + '。' : ''}${f.name}とともに親しまれる伝統の花言葉です。`,
+          category: `${f.month}月${f.day}日 補足誕生花`,
+          svgType: subSvg,
+          flowerColor: f.flowerColor,
+          secondaryColor: f.secondaryColor || '#ffffff',
+          bgGradient: f.bgGradient || 'from-emerald-500/15 via-teal-400/10 to-green-600/15',
+          rarity: '補足誕生花',
+          isGachaSpecial: false,
+        });
+      });
+    }
+  });
+
+  return pool;
+}
+
 export function getRandomFlower(includeGachaSpecials = true): FlowerData {
-  const pool = Object.values(SPECIAL_FLOWERS);
-  if (includeGachaSpecials) {
-    pool.push(...GACHA_SPECIAL_FLOWERS);
-  }
+  const pool = getAllGachaPool();
   const randomIndex = Math.floor(Math.random() * pool.length);
   return pool[randomIndex];
 }

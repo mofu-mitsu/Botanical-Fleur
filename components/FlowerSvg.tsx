@@ -2314,6 +2314,631 @@ export const FlowerSvg: React.FC<FlowerSvgProps> = ({
           </g>
         );
 
+
+      // カミツレモドキ（春紫菀・犬カモミール）: カモミールに似た純白の小花と繊細な羽状葉
+      case 'mayweed':
+      case 'chamomile_dog':
+        return (
+          <g>
+            <path d="M100 185 L100 95" stroke="#15803d" strokeWidth="3" />
+            <path d="M100 140 Q60 130 50 145" stroke="#16a34a" strokeWidth="1.8" fill="none" />
+            <path d="M100 120 Q140 110 150 125" stroke="#16a34a" strokeWidth="1.8" fill="none" />
+            <g transform="translate(100, 95)">
+              {[0, 24, 48, 72, 96, 120, 144, 168, 192, 216, 240, 264, 288, 312, 336].map((ang, i) => (
+                <ellipse
+                  key={i}
+                  cx={Math.cos(ang * Math.PI / 180) * 25}
+                  cy={Math.sin(ang * Math.PI / 180) * 25}
+                  rx="5.5"
+                  ry="20"
+                  fill="#ffffff"
+                  stroke="#e2e8f0"
+                  strokeWidth="0.8"
+                  transform={`rotate(${ang + 90} ${Math.cos(ang * Math.PI / 180) * 25} ${Math.sin(ang * Math.PI / 180) * 25})`}
+                />
+              ))}
+              <circle cx="0" cy="0" r="14" fill="#facc15" />
+              <circle cx="0" cy="0" r="9" fill="#eab308" />
+            </g>
+          </g>
+        );
+
+      // ナツメグ（肉荳蔲）: 割れた黄色い果実から覗く真紅のメースと黒い種子
+      case 'nutmeg':
+        return (
+          <g>
+            <path d="M100 65 L100 45" stroke="#78350f" strokeWidth="4" strokeLinecap="round" />
+            <path d="M100 55 Q135 45 145 65 Q125 75 100 55" fill="#15803d" />
+            {/* 割れた外果皮（黄色〜アプリコット） */}
+            <path d="M60 85 C45 105 45 140 75 155 C90 162 96 150 96 115 C96 85 80 75 60 85 Z" fill="#f59e0b" />
+            <path d="M140 85 C155 105 155 140 125 155 C110 162 104 150 104 115 C104 85 120 75 140 85 Z" fill="#d97706" />
+            {/* 中央の黒い種子と真紅のレース状メース */}
+            <ellipse cx="100" cy="115" rx="18" ry="24" fill="#1e1b4b" />
+            {/* 網目状に包む赤いメース */}
+            <path d="M100 95 Q85 115 100 135" stroke="#dc2626" strokeWidth="3.5" fill="none" strokeLinecap="round" />
+            <path d="M86 108 Q100 115 114 108" stroke="#ef4444" strokeWidth="3" fill="none" strokeLinecap="round" />
+            <path d="M90 125 Q100 120 110 125" stroke="#dc2626" strokeWidth="3" fill="none" strokeLinecap="round" />
+          </g>
+        );
+
+      // ハエトリソウ（食虫植物）: パクッと開いたトゲ付きの二枚貝状の捕虫葉
+      case 'venus_flytrap':
+        return (
+          <g>
+            <path d="M100 185 Q90 150 100 120" stroke="#15803d" strokeWidth="5" />
+            <g transform="translate(100, 105)">
+              {/* 二枚の捕虫葉（外側緑、内側鮮紅色） */}
+              <ellipse cx="-20" cy="0" rx="22" ry="16" fill="#15803d" transform="rotate(-25 -20 0)" />
+              <ellipse cx="-18" cy="0" rx="17" ry="12" fill="#ef4444" transform="rotate(-25 -18 0)" />
+              <ellipse cx="20" cy="0" rx="22" ry="16" fill="#15803d" transform="rotate(25 20 0)" />
+              <ellipse cx="18" cy="0" rx="17" ry="12" fill="#ef4444" transform="rotate(25 18 0)" />
+              {/* 縁の鋭いトゲ（櫛状の歯） */}
+              {[-12, -6, 0, 6, 12].map((dy, i) => (
+                <g key={i}>
+                  <line x1="-36" y1={dy - 5} x2="-45" y2={dy - 12} stroke="#86efac" strokeWidth="2.5" strokeLinecap="round" />
+                  <line x1="36" y1={dy - 5} x2="45" y2={dy - 12} stroke="#86efac" strokeWidth="2.5" strokeLinecap="round" />
+                </g>
+              ))}
+              {/* 感覚毛（中心の3本のトリガー） */}
+              <circle cx="-16" cy="0" r="1.5" fill="#facc15" />
+              <circle cx="16" cy="0" r="1.5" fill="#facc15" />
+            </g>
+          </g>
+        );
+
+      // ウサギゴケ: ピョンと耳を立てた白い子ウサギのような超可愛い花
+      case 'usagigoke':
+        return (
+          <g>
+            {/* 苔の緑の絨毯 */}
+            <ellipse cx="100" cy="180" rx="65" ry="12" fill="#15803d" />
+            <ellipse cx="100" cy="180" rx="55" ry="8" fill="#22c55e" />
+            {/* 細いワイヤーのような花茎 */}
+            <path d="M100 180 Q105 130 95 85" stroke="#16a34a" strokeWidth="2.2" fill="none" />
+            {/* ウサギの花（頭・長い耳・前足・尻尾） */}
+            <g transform="translate(95, 82)">
+              {/* 長い2本のウサギの耳（上向き花弁） */}
+              <path d="M-5 -8 C-8 -26 -16 -40 -12 -42 C-8 -44 -3 -26 -2 -8 Z" fill="#ffffff" stroke="#fbcfe8" strokeWidth="1" />
+              <path d="M5 -8 C8 -26 16 -40 12 -42 C8 -44 3 -26 2 -8 Z" fill="#ffffff" stroke="#fbcfe8" strokeWidth="1" />
+              <path d="M-8 -32 Q-7 -20 -4 -12" stroke="#fda4af" strokeWidth="1.2" />
+              <path d="M8 -32 Q7 -20 4 -12" stroke="#fda4af" strokeWidth="1.2" />
+              {/* ふっくらした丸い顔と身体 */}
+              <circle cx="0" cy="0" r="12" fill="#ffffff" stroke="#e2e8f0" strokeWidth="1" />
+              {/* ピンクの小さな鼻口 */}
+              <circle cx="0" cy="2" r="2.5" fill="#fb7185" />
+              {/* 下部のスカート状の唇弁（ウサギの足） */}
+              <ellipse cx="-7" cy="14" rx="6" ry="10" fill="#ffffff" stroke="#e2e8f0" strokeWidth="0.8" />
+              <ellipse cx="7" cy="14" rx="6" ry="10" fill="#ffffff" stroke="#e2e8f0" strokeWidth="0.8" />
+              {/* 黄色のワンポイント */}
+              <circle cx="0" cy="6" r="2" fill="#facc15" />
+            </g>
+          </g>
+        );
+
+      // パプリカ: つやつやと丸みのある大きなベル型パプリカと緑のヘタ
+      case 'paprika':
+        return (
+          <g>
+            <path d="M100 75 L100 55 Q106 48 114 48" stroke="#15803d" strokeWidth="6" strokeLinecap="round" fill="none" />
+            <polygon points="100,75 88,82 92,72 82,68 94,66 100,58 106,66 118,68 108,72 112,82" fill="#166534" />
+            {/* パプリカの3〜4つの丸いコブ */}
+            <ellipse cx="78" cy="122" rx="22" ry="36" fill="#dc2626" />
+            <ellipse cx="122" cy="122" rx="22" ry="36" fill="#dc2626" />
+            <ellipse cx="100" cy="125" rx="26" ry="38" fill="#ef4444" />
+            {/* 光沢ハイライト */}
+            <path d="M88 95 Q82 120 88 140" stroke="#fca5a5" strokeWidth="3" strokeLinecap="round" fill="none" opacity="0.8" />
+            <ellipse cx="112" cy="105" rx="5" ry="10" fill="#fecaca" opacity="0.6" />
+          </g>
+        );
+
+      // キノコ: 赤い水玉の可愛い傘（ベニテングタケ風）と白い柄
+      case 'mushroom':
+        return (
+          <g>
+            {/* 地面の苔草 */}
+            <ellipse cx="100" cy="180" rx="55" ry="10" fill="#15803d" />
+            {/* 白い太い柄 */}
+            <path d="M92 180 C88 145 92 115 95 105 L105 105 C108 115 112 145 108 180 Z" fill="#f8fafc" stroke="#e2e8f0" strokeWidth="1" />
+            {/* 柄のツバ */}
+            <ellipse cx="100" cy="135" rx="14" ry="4" fill="#e2e8f0" />
+            {/* 赤い傘（半球ドーム） */}
+            <path d="M45 105 C45 60 155 60 155 105 C155 112 45 112 45 105 Z" fill="#dc2626" />
+            {/* 白い水玉模様 */}
+            <circle cx="100" cy="75" r="8" fill="#ffffff" />
+            <circle cx="72" cy="85" r="7" fill="#ffffff" />
+            <circle cx="128" cy="85" r="7" fill="#ffffff" />
+            <circle cx="56" cy="100" r="5" fill="#ffffff" />
+            <circle cx="144" cy="100" r="5" fill="#ffffff" />
+            <circle cx="95" cy="98" r="6" fill="#ffffff" />
+          </g>
+        );
+
+      // タケノコ（筍）: 幾重にも重なる茶褐色の皮と緑の穂先
+      case 'bamboo_shoot':
+        return (
+          <g>
+            {/* 土台 */}
+            <ellipse cx="100" cy="180" rx="45" ry="10" fill="#78350f" />
+            {/* タケノコ本体（砲弾型） */}
+            <path d="M70 180 C65 140 85 95 100 60 C115 95 135 140 130 180 Z" fill="#92400e" />
+            {/* 重なるタケノコの皮（互い違いの層） */}
+            {[
+              { y: 160, l: '#78350f', w: 56 },
+              { y: 135, l: '#a16207', w: 46 },
+              { y: 110, l: '#b45309', w: 36 },
+              { y: 85, l: '#65a30d', w: 24 }
+            ].map((lvl, i) => (
+              <path
+                key={i}
+                d={`M${100 - lvl.w / 2} ${lvl.y + 15} Q100 ${lvl.y - 10} ${100 + lvl.w / 2} ${lvl.y + 15}`}
+                stroke="#d97706"
+                strokeWidth="2.5"
+                fill="none"
+              />
+            ))}
+            {/* てっぺんの新鮮な緑の穂先 */}
+            <polygon points="100,55 93,75 107,75" fill="#84cc16" />
+          </g>
+        );
+
+      // タマネギ: つややかな琥珀色の皮をかぶった丸い玉ねぎと緑の芽、根っこ
+      case 'onion':
+        return (
+          <g>
+            {/* てっぺんの緑の芽 */}
+            <path d="M100 70 L100 42 Q105 35 110 35" stroke="#16a34a" strokeWidth="4" strokeLinecap="round" fill="none" />
+            <path d="M98 65 L92 48" stroke="#22c55e" strokeWidth="3" strokeLinecap="round" />
+            {/* まあるい琥珀色の玉ねぎ本体 */}
+            <ellipse cx="100" cy="120" rx="42" ry="46" fill="#d97706" />
+            <ellipse cx="100" cy="120" rx="38" ry="44" fill="#f59e0b" />
+            {/* 縦の皮の筋目 */}
+            <path d="M100 76 Q70 120 100 164" stroke="#b45309" strokeWidth="1.8" fill="none" />
+            <path d="M100 76 Q130 120 100 164" stroke="#b45309" strokeWidth="1.8" fill="none" />
+            <path d="M100 76 L100 164" stroke="#b45309" strokeWidth="1.8" fill="none" />
+            {/* つやのハイライト */}
+            <path d="M80 95 Q72 120 80 140" stroke="#fef08a" strokeWidth="3" strokeLinecap="round" fill="none" opacity="0.7" />
+            {/* 底の根っこ（ヒゲ根） */}
+            <path d="M95 166 L90 180 M100 166 L100 184 M105 166 L110 180" stroke="#a16207" strokeWidth="2" strokeLinecap="round" />
+          </g>
+        );
+
+      // ネギ: 白い根元からスッと伸びる鮮やかな緑の長ネギ
+      case 'green_onion':
+        return (
+          <g>
+            {/* 白い軟白部（下部） */}
+            <path d="M92 185 L92 115 L108 115 L108 185 Z" fill="#f8fafc" stroke="#e2e8f0" strokeWidth="1" />
+            <path d="M95 185 L90 195 M100 185 L100 198 M105 185 L110 195" stroke="#cbd5e1" strokeWidth="2" strokeLinecap="round" />
+            {/* 緑の葉身部（中空の美しい筒状葉） */}
+            <path d="M92 115 L80 40 L94 40 L100 115 Z" fill="#15803d" />
+            <path d="M100 115 L106 45 L118 45 L108 115 Z" fill="#16a34a" />
+            <path d="M86 40 Q84 30 80 25" stroke="#22c55e" strokeWidth="3" fill="none" strokeLinecap="round" />
+            <path d="M112 45 Q116 35 120 28" stroke="#22c55e" strokeWidth="3" fill="none" strokeLinecap="round" />
+          </g>
+        );
+
+      // サトイモ: 大きなハート型の葉（水滴を弾く）と茶色の親芋・子芋
+      case 'taro':
+        return (
+          <g>
+            {/* 親芋・子芋（下部） */}
+            <ellipse cx="85" cy="155" rx="22" ry="26" fill="#78350f" />
+            <ellipse cx="120" cy="162" rx="16" ry="18" fill="#92400e" />
+            <path d="M70 148 Q85 145 100 150" stroke="#5c2c16" strokeWidth="2" fill="none" />
+            <path d="M72 162 Q85 160 98 165" stroke="#5c2c16" strokeWidth="2" fill="none" />
+            {/* 茎 */}
+            <path d="M85 155 Q90 110 95 75" stroke="#15803d" strokeWidth="4.5" fill="none" />
+            {/* 大きなハート型の里芋の葉 */}
+            <g transform="translate(95, 70)">
+              <path
+                d="M0 0 C-40 -40 -50 20 -20 40 C-5 48 0 55 0 55 C0 55 5 48 20 40 C50 20 40 -40 0 0 Z"
+                fill="#16a34a"
+                transform="rotate(180)"
+              />
+              <circle cx="0" cy="-20" r="4" fill="#a7f3d0" />
+              {/* 葉脈 */}
+              <line x1="0" y1="-20" x2="-25" y2="-40" stroke="#86efac" strokeWidth="1.5" />
+              <line x1="0" y1="-20" x2="25" y2="-40" stroke="#86efac" strokeWidth="1.5" />
+              <line x1="0" y1="-20" x2="-30" y2="-5" stroke="#86efac" strokeWidth="1.5" />
+              <line x1="0" y1="-20" x2="30" y2="-5" stroke="#86efac" strokeWidth="1.5" />
+            </g>
+          </g>
+        );
+
+      // イグサ: まっすぐ直立する滑らかな深緑の細い茎群
+      case 'rush_grass':
+        return (
+          <g>
+            {[-35, -25, -15, -5, 5, 15, 25, 35].map((dx, i) => (
+              <g key={i}>
+                <line
+                  x1={100 + dx}
+                  y1="185"
+                  x2={100 + dx * 0.9}
+                  y2={45 + Math.abs(dx) * 0.5}
+                  stroke={i % 2 === 0 ? '#15803d' : '#166534'}
+                  strokeWidth="3"
+                  strokeLinecap="round"
+                />
+                {/* 側生する小さな茶褐色の小穂 */}
+                {i === 2 && <circle cx={100 + dx * 0.9 + 4} cy="75" r="3" fill="#a16207" />}
+                {i === 5 && <circle cx={100 + dx * 0.9 - 4} cy="65" r="3.5" fill="#a16207" />}
+              </g>
+            ))}
+          </g>
+        );
+
+      // アワ（粟）: 黄金色にたわわに実って重そうに垂れる粒々の穂
+      case 'foxtail_millet':
+        return (
+          <g>
+            <path d="M70 185 Q85 130 115 85 Q135 60 155 65" stroke="#ca8a04" strokeWidth="3.5" fill="none" />
+            {/* 太くたわわな粟の穂（重みで垂れる） */}
+            <g transform="translate(138, 75) rotate(40)">
+              <ellipse cx="0" cy="0" rx="16" ry="38" fill="#eab308" />
+              {/* 無数の黄金の粟粒 */}
+              {[-30, -20, -10, 0, 10, 20, 30].map((y, i) => (
+                <g key={i}>
+                  <circle cx="-7" cy={y} r="3" fill="#facc15" />
+                  <circle cx="0" cy={y - 2} r="3" fill="#fef08a" />
+                  <circle cx="7" cy={y} r="3" fill="#facc15" />
+                  <line x1="-12" y1={y} x2="-18" y2={y - 3} stroke="#ca8a04" strokeWidth="1.2" />
+                  <line x1="12" y1={y} x2="18" y2={y - 3} stroke="#ca8a04" strokeWidth="1.2" />
+                </g>
+              ))}
+            </g>
+          </g>
+        );
+
+      // コメ（稲・米・瑞穂）: 実るほど頭を垂れる黄金の稲穂
+      case 'rice':
+        return (
+          <g>
+            {/* しなる茎 */}
+            <path d="M75 185 Q90 120 125 75 Q145 55 160 62" stroke="#ca8a04" strokeWidth="3" fill="none" />
+            {/* 垂れ下がる無数の籾（米粒） */}
+            {[
+              { x: 125, y: 75, a: 30 },
+              { x: 135, y: 70, a: 45 },
+              { x: 145, y: 68, a: 60 },
+              { x: 155, y: 72, a: 80 },
+              { x: 162, y: 82, a: 105 },
+              { x: 165, y: 95, a: 125 }
+            ].map((pt, i) => (
+              <g key={i} transform={`translate(${pt.x}, ${pt.y}) rotate(${pt.a})`}>
+                <ellipse cx="0" cy="6" rx="3.5" ry="7" fill="#facc15" stroke="#eab308" strokeWidth="0.8" />
+                <line x1="0" y1="13" x2="0" y2="18" stroke="#ca8a04" strokeWidth="0.8" />
+                <ellipse cx="-5" cy="12" rx="3" ry="6" fill="#fef08a" stroke="#ca8a04" strokeWidth="0.8" />
+              </g>
+            ))}
+            {/* 稲の細長い葉 */}
+            <path d="M80 155 Q50 125 35 135" stroke="#65a30d" strokeWidth="2.5" fill="none" />
+          </g>
+        );
+
+      // ムギ（麦）: まっすぐ伸びる長い禾（のぎ）が凛々しい黄金の麦穂
+      case 'wheat':
+        return (
+          <g>
+            <path d="M100 185 L100 50" stroke="#ca8a04" strokeWidth="3" />
+            {/* 交互に並ぶ麦粒と長い禾（ヒゲ） */}
+            {[130, 115, 100, 85, 70, 55].map((y, i) => (
+              <g key={i}>
+                {/* 左小穂 */}
+                <ellipse cx="94" cy={y} rx="5" ry="8" fill="#f59e0b" transform="rotate(-30 94 ${y})" />
+                <line x1="91" y1={y - 6} x2="70" y2={y - 25} stroke="#ca8a04" strokeWidth="1.5" />
+                {/* 右小穂 */}
+                <ellipse cx="106" cy={y - 6} rx="5" ry="8" fill="#f59e0b" transform="rotate(30 106 ${y - 6})" />
+                <line x1="109" y1={y - 12} x2="130" y2={y - 31} stroke="#ca8a04" strokeWidth="1.5" />
+              </g>
+            ))}
+            {/* てっぺんから伸びる直立禾 */}
+            <line x1="100" y1="50" x2="100" y2="25" stroke="#ca8a04" strokeWidth="1.8" />
+          </g>
+        );
+
+      // ミクリ: 小さな栗のイガのような緑のトゲトゲ球状花が連なる姿
+      case 'bur_reed':
+        return (
+          <g>
+            <path d="M100 185 L100 55" stroke="#15803d" strokeWidth="3.5" />
+            {/* 2〜3個のイガ球（栗のイガ状のトゲボール） */}
+            {[
+              { y: 135, r: 12 },
+              { y: 95, r: 15 },
+              { y: 62, r: 10 }
+            ].map((ball, idx) => (
+              <g key={idx} transform={`translate(100, ${ball.y})`}>
+                <circle cx="0" cy="0" r={ball.r} fill="#65a30d" />
+                {[0, 30, 60, 90, 120, 150, 180, 210, 240, 270, 300, 330].map((ang, i) => (
+                  <line
+                    key={i}
+                    x1="0"
+                    y1="0"
+                    x2={Math.cos(ang * Math.PI / 180) * (ball.r + 8)}
+                    y2={Math.sin(ang * Math.PI / 180) * (ball.r + 8)}
+                    stroke="#bef264"
+                    strokeWidth="1.8"
+                    strokeLinecap="round"
+                  />
+                ))}
+                <circle cx="0" cy="0" r={ball.r * 0.6} fill="#84cc16" />
+              </g>
+            ))}
+          </g>
+        );
+
+      // アズキ（小豆）: 黄色い蝶形花とぶら下がる細長い鞘、小豆粒
+      case 'adzuki':
+        return (
+          <g>
+            <path d="M100 185 Q95 125 100 80" stroke="#15803d" strokeWidth="3" />
+            <path d="M100 135 Q65 125 55 140" stroke="#16a34a" strokeWidth="2" fill="none" />
+            {/* ぶら下がるサヤ */}
+            <path d="M96 115 Q80 140 75 165" stroke="#78350f" strokeWidth="5" strokeLinecap="round" fill="none" />
+            {/* 黄色い小豆の花 */}
+            <g transform="translate(105, 82)">
+              <ellipse cx="0" cy="-10" rx="14" ry="12" fill="#facc15" />
+              <ellipse cx="-6" cy="2" rx="8" ry="7" fill="#eab308" />
+              <ellipse cx="6" cy="2" rx="8" ry="7" fill="#eab308" />
+              <circle cx="0" cy="2" r="3.5" fill="#ca8a04" />
+            </g>
+            {/* つやつやの小豆の赤い粒（右下） */}
+            <g transform="translate(135, 145)">
+              <ellipse cx="0" cy="0" rx="9" ry="7" fill="#991b1b" />
+              <line x1="-4" y1="0" x2="4" y2="0" stroke="#ffffff" strokeWidth="1.2" />
+            </g>
+          </g>
+        );
+
+      // ゴマ（胡麻）: 釣鐘状の淡いピンクの花と縦に実る鞘、胡麻粒
+      case 'sesame':
+        return (
+          <g>
+            <path d="M100 185 L100 60" stroke="#15803d" strokeWidth="4" />
+            {/* 節につく長楕円のゴマの鞘 */}
+            <ellipse cx="90" cy="135" rx="5" ry="12" fill="#15803d" transform="rotate(-15 90 135)" />
+            <ellipse cx="110" cy="115" rx="5" ry="12" fill="#166534" transform="rotate(15 110 115)" />
+            {/* 釣鐘状の淡いピンクのゴマの花 */}
+            <g transform="translate(100, 75)">
+              <path d="M-12 0 C-15 -18 15 -18 12 0 C16 12 -16 12 -12 0 Z" fill="#fbcfe8" stroke="#f472b6" strokeWidth="1" />
+              <ellipse cx="0" cy="10" rx="12" ry="5" fill="#f43f5e" />
+              <circle cx="0" cy="8" r="3" fill="#fef08a" />
+            </g>
+            {/* プチプチ胡麻粒 */}
+            <circle cx="132" cy="145" r="2.5" fill="#fef08a" />
+            <circle cx="138" cy="150" r="2.5" fill="#fef08a" />
+            <circle cx="130" cy="155" r="2.5" fill="#fef08a" />
+          </g>
+        );
+
+      // ナツメ（棗）: つやつやした赤褐色の楕円果実と緑の小葉
+      case 'jujube':
+        return (
+          <g>
+            <path d="M80 65 Q100 70 145 60" stroke="#78350f" strokeWidth="4" strokeLinecap="round" fill="none" />
+            {/* 互生する光沢のある小葉 */}
+            <ellipse cx="90" cy="55" rx="12" ry="7" fill="#15803d" transform="rotate(-15 90 55)" />
+            <ellipse cx="125" cy="52" rx="12" ry="7" fill="#166534" transform="rotate(15 125 52)" />
+            {/* ナツメの果実（つやつや赤褐色） */}
+            <ellipse cx="100" cy="115" rx="24" ry="32" fill="#991b1b" />
+            <ellipse cx="100" cy="115" rx="22" ry="30" fill="#b91c1c" />
+            <path d="M88 95 Q82 115 88 132" stroke="#fca5a5" strokeWidth="3" strokeLinecap="round" fill="none" opacity="0.75" />
+          </g>
+        );
+
+      // ゲンペイコギク（源平小菊）: 白とピンクの花が同時に咲き乱れる源平咲き
+      case 'erigeron':
+        return (
+          <g>
+            <path d="M100 185 Q90 140 85 95" stroke="#15803d" strokeWidth="2.5" fill="none" />
+            <path d="M100 145 Q115 120 125 105" stroke="#15803d" strokeWidth="2.5" fill="none" />
+            {/* 白い花（左） */}
+            <g transform="translate(80, 85) scale(0.75)">
+              {[0, 30, 60, 90, 120, 150, 180, 210, 240, 270, 300, 330].map((ang, i) => (
+                <ellipse key={i} cx={Math.cos(ang * Math.PI / 180) * 22} cy={Math.sin(ang * Math.PI / 180) * 22} rx="4" ry="18" fill="#ffffff" stroke="#e2e8f0" strokeWidth="0.8" transform={`rotate(${ang + 90} ${Math.cos(ang * Math.PI / 180) * 22} ${Math.sin(ang * Math.PI / 180) * 22})`} />
+              ))}
+              <circle cx="0" cy="0" r="10" fill="#facc15" />
+            </g>
+            {/* 桃色の花（右） */}
+            <g transform="translate(125, 100) scale(0.75)">
+              {[0, 30, 60, 90, 120, 150, 180, 210, 240, 270, 300, 330].map((ang, i) => (
+                <ellipse key={i} cx={Math.cos(ang * Math.PI / 180) * 22} cy={Math.sin(ang * Math.PI / 180) * 22} rx="4" ry="18" fill="#f472b6" stroke="#db2777" strokeWidth="0.8" transform={`rotate(${ang + 90} ${Math.cos(ang * Math.PI / 180) * 22} ${Math.sin(ang * Math.PI / 180) * 22})`} />
+              ))}
+              <circle cx="0" cy="0" r="10" fill="#facc15" />
+            </g>
+          </g>
+        );
+
+      // サンショウ（山椒）: 羽状複葉のギザギザ小葉と赤い山椒の実
+      case 'sansho':
+        return (
+          <g>
+            <path d="M100 185 L100 55" stroke="#78350f" strokeWidth="3" />
+            {/* 羽状複葉（左右に対生する小さなギザギザ葉） */}
+            {[140, 115, 90, 65].map((y, i) => (
+              <g key={i}>
+                <ellipse cx="82" cy={y} rx="12" ry="6" fill="#15803d" transform="rotate(-15 82 ${y})" />
+                <ellipse cx="118" cy={y} rx="12" ry="6" fill="#166534" transform="rotate(15 118 ${y})" />
+              </g>
+            ))}
+            <ellipse cx="100" cy="50" rx="10" ry="5" fill="#22c55e" />
+            {/* ピリリと辛い赤い山椒の実 */}
+            <circle cx="106" cy="85" r="4.5" fill="#dc2626" />
+            <circle cx="112" cy="92" r="4" fill="#ef4444" />
+            <circle cx="94" cy="92" r="4" fill="#b91c1c" />
+          </g>
+        );
+
+      // ハッカ（薄荷）: 節ごとに密集して淡紫色の小花が咲く和種薄荷
+      case 'hakka':
+        return (
+          <g>
+            <path d="M100 185 L100 55" stroke="#15803d" strokeWidth="3.5" />
+            {/* 節ごとの爽快な緑葉 */}
+            {[135, 95].map((y, i) => (
+              <g key={i}>
+                <ellipse cx="70" cy={y} rx="18" ry="8" fill="#10b981" transform="rotate(-15 70 ${y})" />
+                <ellipse cx="130" cy={y} rx="18" ry="8" fill="#059669" transform="rotate(15 130 ${y})" />
+                {/* 葉の付け根にリング状に密集する淡紫色の小花群 */}
+                {[0, 45, 90, 135, 180, 225, 270, 315].map((ang, j) => (
+                  <circle key={j} cx={100 + Math.cos(ang * Math.PI / 180) * 8} cy={y + Math.sin(ang * Math.PI / 180) * 5} r="3" fill="#c4b5fd" />
+                ))}
+              </g>
+            ))}
+          </g>
+        );
+
+      // シソ（紫蘇）: 縮れのある紫〜緑のシソの葉
+      case 'shiso':
+        return (
+          <g>
+            <path d="M100 185 L100 65" stroke="#4c0519" strokeWidth="4" />
+            {/* ギザギザの縮れたシソ葉（赤紫〜深緑） */}
+            <g transform="translate(100, 100)">
+              <ellipse cx="-22" cy="0" rx="26" ry="18" fill="#831843" transform="rotate(-20 -22 0)" />
+              <ellipse cx="22" cy="0" rx="26" ry="18" fill="#500724" transform="rotate(20 22 0)" />
+              <ellipse cx="0" cy="-24" rx="22" ry="16" fill="#701a75" />
+              {/* 縮れ葉のギザギザライン */}
+              <line x1="-22" y1="0" x2="-44" y2="0" stroke="#f472b6" strokeWidth="1.2" />
+              <line x1="22" y1="0" x2="44" y2="0" stroke="#f472b6" strokeWidth="1.2" />
+            </g>
+          </g>
+        );
+
+      // ササ（笹竹）: 七夕の笹飾り！細い竹枝と瑞々しい笹葉
+      case 'bamboo_grass':
+        return (
+          <g>
+            <path d="M75 185 Q90 120 115 55" stroke="#65a30d" strokeWidth="3" fill="none" />
+            {/* 笹の葉（先が尖った瑞々しい葉が段状に広がる） */}
+            {[
+              { x: 92, y: 135, a: -40 },
+              { x: 95, y: 135, a: -10 },
+              { x: 104, y: 95, a: 30 },
+              { x: 108, y: 95, a: 60 },
+              { x: 114, y: 60, a: -30 },
+              { x: 115, y: 60, a: 15 }
+            ].map((lf, i) => (
+              <g key={i} transform={`translate(${lf.x}, ${lf.y}) rotate(${lf.a})`}>
+                <polygon points="0,0 -8,-35 0,-48 8,-35" fill={i % 2 === 0 ? '#15803d' : '#22c55e'} />
+                <line x1="0" y1="0" x2="0" y2="-45" stroke="#86efac" strokeWidth="0.8" />
+              </g>
+            ))}
+          </g>
+        );
+
+      // ギョリュウバイ（御柳梅・マヌカ）: 梅に似た深紅・濃いピンクの小花が枝いっぱいに咲き誇る
+      case 'manuka':
+      case 'tea_tree':
+        return (
+          <g>
+            <path d="M100 185 Q95 130 90 65" stroke="#78350f" strokeWidth="4" fill="none" />
+            <path d="M96 140 Q75 120 65 105" stroke="#78350f" strokeWidth="2.5" fill="none" />
+            <path d="M93 110 Q115 95 130 85" stroke="#78350f" strokeWidth="2.5" fill="none" />
+            {/* びっしり咲く梅のような5弁の深紅花 */}
+            {[
+              { x: 65, y: 105, s: 0.75 },
+              { x: 88, y: 70, s: 0.8 },
+              { x: 95, y: 105, s: 0.9 },
+              { x: 130, y: 85, s: 0.75 },
+              { x: 92, y: 135, s: 0.8 }
+            ].map((fl, idx) => (
+              <g key={idx} transform={`translate(${fl.x}, ${fl.y}) scale(${fl.s})`}>
+                {[0, 72, 144, 216, 288].map((ang, i) => (
+                  <circle key={i} cx={Math.cos(ang * Math.PI / 180) * 14} cy={Math.sin(ang * Math.PI / 180) * 14} r="8" fill="#e11d48" stroke="#be123c" strokeWidth="0.8" />
+                ))}
+                <circle cx="0" cy="0" r="5" fill="#4c0519" />
+                <circle cx="0" cy="0" r="2" fill="#facc15" />
+              </g>
+            ))}
+          </g>
+        );
+
+      // ローズマリー: 針状の細い葉と淡い青紫色の唇形小花
+      case 'rosemary':
+        return (
+          <g>
+            <path d="M100 185 L100 65" stroke="#78350f" strokeWidth="3.5" />
+            {/* 針状の細い葉（松葉状） */}
+            {[145, 125, 105, 85].map((y, i) => (
+              <g key={i}>
+                <line x1="100" y1={y} x2="68" y2={y - 12} stroke="#15803d" strokeWidth="2.5" strokeLinecap="round" />
+                <line x1="100" y1={y} x2="132" y2={y - 12} stroke="#166534" strokeWidth="2.5" strokeLinecap="round" />
+                {/* 葉の付け根に咲く青紫色の小さな唇形花 */}
+                <circle cx="92" cy={y - 4} r="3.5" fill="#6366f1" />
+                <circle cx="108" cy={y - 4} r="3.5" fill="#818cf8" />
+              </g>
+            ))}
+          </g>
+        );
+
+      // センリョウ（千両）: 濃い緑の葉の上にちょこんと乗る鮮やかな真紅の丸い実
+      case 'senryo':
+        return (
+          <g>
+            <path d="M100 185 L100 100" stroke="#78350f" strokeWidth="3.5" />
+            {/* 対生するギザギザの濃緑葉 */}
+            <g transform="translate(100, 100)">
+              <ellipse cx="-32" cy="0" rx="30" ry="14" fill="#14532d" transform="rotate(-15 -32 0)" />
+              <ellipse cx="32" cy="0" rx="30" ry="14" fill="#166534" transform="rotate(15 32 0)" />
+              {/* 葉の上に上向きに実る鮮やかな真紅の千両の実 */}
+              <circle cx="-6" cy="-12" r="5.5" fill="#dc2626" />
+              <circle cx="6" cy="-12" r="5.5" fill="#ef4444" />
+              <circle cx="0" cy="-22" r="5.5" fill="#dc2626" />
+              <circle cx="-12" cy="-18" r="4.5" fill="#b91c1c" />
+              <circle cx="12" cy="-18" r="4.5" fill="#b91c1c" />
+              <circle cx="0" cy="-30" r="5" fill="#ef4444" />
+            </g>
+          </g>
+        );
+
+      // クジャクアスター: 孔雀が羽を広げたように群がり咲く小さな白〜薄紫の花
+      case 'peacock_aster':
+        return (
+          <g>
+            <path d="M100 185 L100 105" stroke="#15803d" strokeWidth="3" />
+            {/* 扇状に群がり咲く小花群 */}
+            {[
+              { x: 100, y: 70 },
+              { x: 75, y: 90 },
+              { x: 125, y: 90 },
+              { x: 60, y: 115 },
+              { x: 140, y: 115 }
+            ].map((pt, idx) => (
+              <g key={idx} transform={`translate(${pt.x}, ${pt.y}) scale(0.65)`}>
+                {[0, 36, 72, 108, 144, 180, 216, 252, 288, 324].map((ang, i) => (
+                  <ellipse key={i} cx={Math.cos(ang * Math.PI / 180) * 18} cy={Math.sin(ang * Math.PI / 180) * 18} rx="3.5" ry="14" fill="#f8fafc" stroke="#c7d2fe" strokeWidth="0.8" transform={`rotate(${ang + 90} ${Math.cos(ang * Math.PI / 180) * 18} ${Math.sin(ang * Math.PI / 180) * 18})`} />
+                ))}
+                <circle cx="0" cy="0" r="8" fill="#facc15" />
+              </g>
+            ))}
+          </g>
+        );
+
+      // セージ（薬用サルビア）: ベルベットのような起毛葉と直立する青紫の花穂
+      case 'sage':
+        return (
+          <g>
+            <path d="M100 185 L100 65" stroke="#15803d" strokeWidth="3.5" />
+            {/* 起毛のあるシルバーグリーンの葉 */}
+            {[140, 115].map((y, i) => (
+              <g key={i}>
+                <ellipse cx="68" cy={y} rx="22" ry="10" fill="#6ee7b7" transform="rotate(-20 68 ${y})" />
+                <ellipse cx="132" cy={y} rx="22" ry="10" fill="#34d399" transform="rotate(20 132 ${y})" />
+              </g>
+            ))}
+            {/* 上部に直立する青紫色の豊かな花穂 */}
+            {[90, 80, 70, 60, 50].map((y, i) => (
+              <g key={i}>
+                <ellipse cx="94" cy={y} rx="6" ry="4" fill="#7c3aed" />
+                <ellipse cx="106" cy={y} rx="6" ry="4" fill="#8b5cf6" />
+                <circle cx="100" cy={y - 2} r="3.5" fill="#a78bfa" />
+              </g>
+            ))}
+          </g>
+        );
+
       // デフォルト / 一般花（優雅なボタニカルフラワー）
       default:
         return (
