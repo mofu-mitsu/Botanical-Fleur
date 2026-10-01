@@ -37,72 +37,118 @@ export async function GET(request: NextRequest) {
   if (appId) {
     try {
       const allItems: RakutenItem[] = [];
+
+      // リクエスト元のURL/Referer（楽天APIのReferer検証用）
+      const incomingReferer = request.headers.get('referer');
+      let siteOrigin = 'https://mofu-mitsu.github.io';
+      try {
+        if (incomingReferer) {
+          siteOrigin = new URL(incomingReferer).origin;
+        } else if (request.nextUrl?.origin) {
+          siteOrigin = request.nextUrl.origin;
+        }
+      } catch {
+        // fallback
+      }
+
       for (const kw of keywords.slice(0, 2)) {
-        // Use OpenAPI endpoint if accessKey is present, otherwise standard Rakuten Ichiba API
-        const endpoint = accessKey
-          ? 'https://openapi.rakuten.co.jp/ichibams/api/IchibaItem/Search/20260701'
-          : 'https://app.rakuten.co.jp/services/api/IchibaItem/Search/20220601';
-
-        const url = new URL(endpoint);
-        url.searchParams.set('applicationId', appId);
-        if (affiliateId) {
-          url.searchParams.set('affiliateId', affiliateId);
-        }
-        url.searchParams.set('keyword', `${kw} 花`);
-        url.searchParams.set('format', 'json');
-        url.searchParams.set('hits', keywords.length > 1 ? '3' : '6');
-
-        const headers: Record<string, string> = {};
+        // 1. まずOpenAPI（accessKeyがある場合）または標準APIエンドポイントを試す
+        const endpointsToTry: { url: string; useAccessKey: boolean }[] = [];
         if (accessKey) {
-          headers['accessKey'] = accessKey;
+          endpointsToTry.push({
+            url: 'https://openapi.rakuten.co.jp/ichibams/api/IchibaItem/Search/20260701',
+            useAccessKey: true,
+          });
         }
-
-        const res = await fetch(url.toString(), {
-          headers,
-          cache: 'no-store',
+        // 標準エンドポイント（Refererエラー時の確実なフォールバック先）
+        endpointsToTry.push({
+          url: 'https://app.rakuten.co.jp/services/api/IchibaItem/Search/20220601',
+          useAccessKey: false,
         });
 
-        console.log(`[Rakuten API] Fetching: ${url.origin}${url.pathname}?keyword=${kw}&appIdExists=${!!appId}&status=${res.status}`);
+        let rawItems: any[] = [];
 
-        if (res.ok) {
-          const data = await res.json();
-          let rawItems = data.Items || [];
-
-          // もし「花名 花」で0件だった場合、花名単体で再検索
-          if (rawItems.length === 0) {
-            url.searchParams.set('keyword', kw);
-            const retryRes = await fetch(url.toString(), { headers, cache: 'no-store' });
-            if (retryRes.ok) {
-              const retryData = await retryRes.json();
-              rawItems = retryData.Items || [];
+        for (const ep of endpointsToTry) {
+          try {
+            const url = new URL(ep.url);
+            url.searchParams.set('applicationId', appId);
+            if (affiliateId) {
+              url.searchParams.set('affiliateId', affiliateId);
             }
-          }
+            url.searchParams.set('keyword', `${kw} 花`);
+            url.searchParams.set('format', 'json');
+            url.searchParams.set('hits', keywords.length > 1 ? '3' : '6');
 
-          const items: RakutenItem[] = rawItems.map((entry: any) => {
-            const item = entry.Item || entry;
-            // 楽天画像URLの安全な取得
-            const img =
-              item.mediumImageUrls?.[0]?.imageUrl ||
-              (typeof item.mediumImageUrls?.[0] === 'string' ? item.mediumImageUrls[0] : '') ||
-              item.smallImageUrls?.[0]?.imageUrl ||
-              '';
-            return {
-              itemName: item.itemName || 'お花アイテム',
-              itemPrice: item.itemPrice || 0,
-              itemUrl: item.affiliateUrl || item.itemUrl || `https://search.rakuten.co.jp/search/mall/${encodeURIComponent(kw)}/`,
-              affiliateUrl: item.affiliateUrl,
-              imageUrl: img,
-              shopName: item.shopName || '楽天市場',
-              reviewAverage: item.reviewAverage || 4.5,
-              reviewCount: item.reviewCount || 0,
-              categoryKeyword: kw,
+            const reqHeaders: Record<string, string> = {
+              'Referer': incomingReferer || `${siteOrigin}/`,
+              'Origin': siteOrigin,
+              'User-Agent':
+                'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
             };
-          });
-          allItems.push(...items);
-        } else {
-          const errText = await res.text().catch(() => '');
-          console.warn(`[Rakuten API Warning] Status: ${res.status}, Body: ${errText.slice(0, 150)}`);
+            if (ep.useAccessKey && accessKey) {
+              reqHeaders['accessKey'] = accessKey;
+            }
+
+            const res = await fetch(url.toString(), {
+              headers: reqHeaders,
+              cache: 'no-store',
+            });
+
+            console.log(
+              `[Rakuten API] Fetching: ${url.origin}${url.pathname}?keyword=${kw}&appIdExists=${!!appId}&status=${res.status}`
+            );
+
+            if (res.ok) {
+              const data = await res.json();
+              rawItems = data.Items || [];
+
+              // もし「花名 花」で0件だった場合、「花名」単体で再試行
+              if (rawItems.length === 0) {
+                url.searchParams.set('keyword', kw);
+                const retryRes = await fetch(url.toString(), { headers: reqHeaders, cache: 'no-store' });
+                if (retryRes.ok) {
+                  const retryData = await retryRes.json();
+                  rawItems = retryData.Items || [];
+                }
+              }
+
+              if (rawItems.length > 0) {
+                // 取得成功したら次のエンドポイントは試さない
+                break;
+              }
+            } else {
+              const errText = await res.text().catch(() => '');
+              console.warn(`[Rakuten API Warning] Status: ${res.status}, Body: ${errText.slice(0, 160)}`);
+            }
+          } catch (fetchErr: any) {
+            console.warn(`[Rakuten Endpoint Error] ${ep.url}:`, fetchErr?.message || fetchErr);
+          }
         }
+
+        const items: RakutenItem[] = rawItems.map((entry: any) => {
+          const item = entry.Item || entry;
+          // 楽天画像URLの安全な取得
+          const img =
+            item.mediumImageUrls?.[0]?.imageUrl ||
+            (typeof item.mediumImageUrls?.[0] === 'string' ? item.mediumImageUrls[0] : '') ||
+            item.smallImageUrls?.[0]?.imageUrl ||
+            '';
+          return {
+            itemName: item.itemName || 'お花アイテム',
+            itemPrice: item.itemPrice || 0,
+            itemUrl:
+              item.affiliateUrl ||
+              item.itemUrl ||
+              `https://search.rakuten.co.jp/search/mall/${encodeURIComponent(kw)}/`,
+            affiliateUrl: item.affiliateUrl,
+            imageUrl: img,
+            shopName: item.shopName || '楽天市場',
+            reviewAverage: item.reviewAverage || 4.5,
+            reviewCount: item.reviewCount || 0,
+            categoryKeyword: kw,
+          };
+        });
+        allItems.push(...items);
       }
 
       if (allItems.length > 0) {
