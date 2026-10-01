@@ -4691,10 +4691,17 @@ export const SPECIAL_FLOWERS: Record<string, FlowerData> = {
     "flowerColor": "#a78bfa",
     "secondaryColor": "#c4b5fd",
     "bgGradient": "from-indigo-400/15 via-purple-300/10 to-emerald-500/10",
+    "subFlowers": [
+      {
+        "name": "イブキジャコウソウ（伊吹麝香草）",
+        "meanings": ["勇気", "清潔感", "神聖な愛"],
+        "note": "タイムと同属（イブキジャコウソウ属）の日本固有変種。伊吹山などに自生し麝香のような芳香を放つ"
+      }
+    ],
     "triviaList": [
       "ギリシャ語の「thumos（勇気・気概）」が語源とされ、中世の騎士に女性が刺繍して贈りました。",
-      "抗菌・防腐作用に優れたチモール成分を含み、料理やアロマテラピーの万能ハーブとして親しまれます。",
-      "初夏に淡いピンクや紫の小花を一面に咲かせ、蜜源植物としてもハチたちに大人気です。"
+      "日本には同属の「イブキジャコウソウ」が伊吹山などの岩場に自生し、歩くと靴に麝香（じゃこう）の甘い香りが移ると讃えられます。",
+      "抗菌・防腐作用に優れたチモール成分を含み、料理やアロマテラピーの万能ハーブとして親しまれます。"
     ],
     "rarity": "Normal"
   },
@@ -9846,6 +9853,7 @@ export function getAllGachaPool(): FlowerData[] {
         else if (sub.name.includes('えんどう豆') || sub.name.includes('エンドウ')) subSvg = 'sweet_pea';
         else if (sub.name.includes('ハツユキソウ')) subSvg = 'snowdrop';
         else if (sub.name.includes('ストロベリーキャンドル')) subSvg = 'clover';
+        else if (sub.name.includes('イブキジャコウソウ')) subSvg = 'ibuki_thyme';
 
         pool.push({
           id: `sub-${f.id}-${idx}`,

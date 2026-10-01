@@ -12,7 +12,7 @@ interface FlowerViewLogPayload {
 export function logFlowerViewToGas(payload: FlowerViewLogPayload) {
   if (typeof window === 'undefined') return;
 
-  const gasUrl = process.env.NEXT_PUBLIC_GAS_WEBAPP_URL;
+  const gasUrl = process.env.NEXT_PUBLIC_GAS_WEBAPP_URL || 'https://script.google.com/macros/s/AKfycbwX9GY4QZS4CjoLLa6AiexWvCQpq9TBBA0uQhKSM-HaHS-8qySYygUqm9fdxpK-s6CE/exec';
   if (!gasUrl) return;
 
   try {

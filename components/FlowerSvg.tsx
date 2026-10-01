@@ -3402,6 +3402,49 @@ export const FlowerSvg: React.FC<FlowerSvgProps> = ({
           </g>
         );
 
+
+      // イブキジャコウソウ（伊吹麝香草・クリーピングタイム）: 岩場を這うようにピンク紫の小花が密集して咲く可憐な高山ハーブ
+      case 'ibuki_thyme':
+      case 'thyme':
+        return (
+          <g>
+            {/* 地を這う細い茎 */}
+            <path d="M45 160 Q80 155 100 165 Q130 150 160 165" stroke="#78350f" strokeWidth="2.5" fill="none" />
+            <path d="M70 160 Q75 120 70 85" stroke="#15803d" strokeWidth="2.5" fill="none" />
+            <path d="M100 165 Q100 115 100 75" stroke="#15803d" strokeWidth="3" fill="none" />
+            <path d="M130 160 Q125 120 130 85" stroke="#15803d" strokeWidth="2.5" fill="none" />
+            {/* 対生する小さな卵形の芳香葉 */}
+            {[
+              { x: 65, y: 135 }, { x: 75, y: 135 },
+              { x: 92, y: 135 }, { x: 108, y: 135 },
+              { x: 122, y: 135 }, { x: 138, y: 135 },
+              { x: 92, y: 105 }, { x: 108, y: 105 }
+            ].map((lf, i) => (
+              <ellipse key={i} cx={lf.x} cy={lf.y} rx="5" ry="8" fill="#16a34a" />
+            ))}
+            {/* 枝先に頭状に密集して咲くピンク紫色の唇形小花群 */}
+            {[
+              { x: 100, y: 65, s: 1.1 },
+              { x: 70, y: 80, s: 0.85 },
+              { x: 130, y: 80, s: 0.85 },
+            ].map((head, hIdx) => (
+              <g key={hIdx} transform={`translate(${head.x}, ${head.y}) scale(${head.s})`}>
+                <circle cx="0" cy="0" r="16" fill="#f472b6" opacity="0.3" />
+                {[-10, 0, 10].map((dx, i) => (
+                  <circle key={i} cx={dx} cy="-8" r="6" fill="#ec4899" />
+                ))}
+                {[-12, -4, 4, 12].map((dx, i) => (
+                  <circle key={i} cx={dx} cy="2" r="5.5" fill="#f472b6" />
+                ))}
+                {[-8, 0, 8].map((dx, i) => (
+                  <circle key={i} cx={dx} cy="10" r="5" fill="#db2777" />
+                ))}
+                <circle cx="0" cy="0" r="3" fill="#ffffff" />
+              </g>
+            ))}
+          </g>
+        );
+
       // デフォルト / 一般花（優雅なボタニカルフラワー）
       default:
         return (
