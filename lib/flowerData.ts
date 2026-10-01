@@ -27,6 +27,455 @@ export interface FlowerData {
 }
 
 export const SPECIAL_FLOWERS: Record<string, FlowerData> = {
+  "12-17": {
+      "id": "12-17",
+      "name": "ローゼル（ハイビスカス・ローゼル）",
+      "reading": "ろーぜる",
+      "scientificName": "Hibiscus sabdariffa",
+      "month": 12,
+      "day": 17,
+      "meanings": [
+          "常に愛らしい",
+          "新しい恋",
+          "繊細な美"
+      ],
+      "description": "ルビーのように輝く肉厚の真紅の萼（がく）を持つハーブ。ハイビスカスティーの原料として古くからクレオパトラにも愛されました。",
+      "category": "ハーブ・低木",
+      "svgType": "roselle",
+      "flowerColor": "#be123c",
+      "secondaryColor": "#f43f5e",
+      "bgGradient": "from-rose-600/15 via-red-400/10 to-amber-300/10"
+  },
+  "11-13": {
+      "id": "11-13",
+      "name": "ナナミノキ（七実の木）",
+      "reading": "ななみのき",
+      "scientificName": "Ilex chinensis",
+      "month": 11,
+      "day": 13,
+      "meanings": [
+          "名誉",
+          "栄光",
+          "祝福",
+          "大望"
+      ],
+      "description": "冬に光沢のある深紅の美しい果実を枝いっぱいにたわわに実らせるモチノキ科の常緑高木。勝利と実りの象徴です。",
+      "category": "花木・常緑高木",
+      "svgType": "holly",
+      "flowerColor": "#dc2626",
+      "secondaryColor": "#15803d",
+      "bgGradient": "from-red-600/15 via-rose-400/10 to-emerald-500/10"
+  },
+  "11-10": {
+      "id": "11-10",
+      "name": "ガマ（蒲・因幡の白兎）",
+      "reading": "がま",
+      "scientificName": "Typha latifolia",
+      "month": 11,
+      "day": 10,
+      "meanings": [
+          "救護",
+          "慈愛",
+          "従順",
+          "予言"
+      ],
+      "description": "水辺にフランクフルトのような茶色の穂をつける湿地植物。『古事記』で大国主命が傷ついた白兎を包んで救った神話で有名です。",
+      "category": "水生植物",
+      "svgType": "cattail",
+      "flowerColor": "#78350f",
+      "secondaryColor": "#15803d",
+      "bgGradient": "from-amber-600/15 via-emerald-400/10 to-teal-500/10"
+  },
+  "11-9": {
+      "id": "11-9",
+      "name": "ムラサキシキブ（紫式部）",
+      "reading": "むらさきしきぶ",
+      "scientificName": "Callicarpa japonica",
+      "month": 11,
+      "day": 9,
+      "meanings": [
+          "聡明",
+          "気品",
+          "上品",
+          "愛され上手"
+      ],
+      "description": "秋の深まりとともに宝石のように艶やかな紫色の小粒な果実を鈴なりにつける、平安の雅を感じさせる名木です。",
+      "category": "花木",
+      "svgType": "callicarpa",
+      "flowerColor": "#7c3aed",
+      "secondaryColor": "#c4b5fd",
+      "bgGradient": "from-purple-600/15 via-indigo-400/10 to-violet-500/10"
+  },
+  "11-7": {
+      "id": "11-7",
+      "name": "ユーカリ",
+      "reading": "ゆーかり",
+      "scientificName": "Eucalyptus",
+      "month": 11,
+      "day": 7,
+      "meanings": [
+          "新生",
+          "再生",
+          "思い出",
+          "慰め"
+      ],
+      "description": "山火事の後に真っ先に芽吹く驚異の生命力を持つ銀緑色の常緑樹。爽快な芳香は心をリフレッシュさせてくれます。",
+      "category": "花木・常緑高木",
+      "svgType": "eucalyptus",
+      "flowerColor": "#6ee7b7",
+      "secondaryColor": "#059669",
+      "bgGradient": "from-teal-500/15 via-emerald-400/10 to-blue-400/10"
+  },
+  "11-6": {
+      "id": "11-6",
+      "name": "シノブ（信夫・トキワシノブ）",
+      "reading": "しのぶ",
+      "scientificName": "Davallia mariesii",
+      "month": 11,
+      "day": 6,
+      "meanings": [
+          "愛嬌",
+          "誠実",
+          "忍耐",
+          "魅惑"
+      ],
+      "description": "銀白色の毛に覆われた根茎が猫の手のように愛らしいシダ植物。夏の風鈴の「釣りしのぶ」としても江戸時代から親しまれています。",
+      "category": "シダ植物・観葉植物",
+      "svgType": "fern",
+      "flowerColor": "#15803d",
+      "secondaryColor": "#cbd5e1",
+      "bgGradient": "from-emerald-600/15 via-teal-400/10 to-cyan-500/10"
+  },
+  "10-20": {
+      "id": "10-20",
+      "name": "アサ（麻・ヘンプ）",
+      "reading": "あさ",
+      "scientificName": "Cannabis sativa",
+      "month": 10,
+      "day": 20,
+      "meanings": [
+          "運命",
+          "感謝",
+          "健やか",
+          "結果"
+      ],
+      "description": "日本の伝統的な神事や繊維文化を数千年にわたり支えてきた神聖な植物。ぐんぐん真っ直ぐに育つ生命力の象徴です。",
+      "category": "伝統繊維作物",
+      "svgType": "hemp",
+      "flowerColor": "#15803d",
+      "secondaryColor": "#86efac",
+      "bgGradient": "from-emerald-600/15 via-green-400/10 to-teal-500/10"
+  },
+    "9-14": {
+    "id": "9-14",
+    "name": "フシグロセンノウ（節黒仙翁）",
+    "reading": "ふしぐろせんのう",
+    "scientificName": "Lychnis miqueliana",
+    "month": 9,
+    "day": 14,
+    "meanings": ["転機", "誠実", "機転", "豊かな才能"],
+    "description": "茎の節が黒紫色に染まることから名付けられた、山野の木陰に鮮やかな朱赤色の花を咲かせるナデシコ科の日本固有植物です。茶花としても古くから愛好されてきました。",
+    "category": "山野草・多年草",
+    "svgType": "lychnis_miqueliana",
+    "flowerColor": "#ea580c",
+    "secondaryColor": "#f97316",
+    "bgGradient": "from-orange-500/15 via-red-400/10 to-amber-300/10",
+    "subFlowers": [
+      {
+        "name": "リコリス（彼岸花・曼珠沙華）",
+        "meanings": ["情熱", "独立", "再会", "想うはあなた一人"],
+        "note": "秋分の頃に真紅の大輪を開く"
+      }
+    ],
+    "triviaList": [
+      "京都の仙翁寺で愛育されたことから「仙翁」の名がつき、節が黒い特徴からフシグロセンノウと呼ばれます。"
+    ]
+  },
+  "9-2": {
+      "id": "9-2",
+      "name": "ヒルザキツキミソウ（昼咲月見草）",
+      "reading": "ひるざきつきみそう",
+      "scientificName": "Oenothera speciosa",
+      "month": 9,
+      "day": 2,
+      "meanings": [
+          "自由な心",
+          "無言の愛",
+          "清純"
+      ],
+      "description": "夜ではなく昼間に可憐な淡いピンク色の花をパッと開く月見草。風に揺れる姿は清々しく爽やかです。",
+      "category": "野草",
+      "svgType": "wildflower",
+      "flowerColor": "#fbcfe8",
+      "secondaryColor": "#fef08a",
+      "bgGradient": "from-pink-300/15 via-rose-200/10 to-teal-400/10"
+  },
+  "7-23": {
+      "id": "7-23",
+      "name": "ブーゲンビリア",
+      "reading": "ぶーげんびりあ",
+      "scientificName": "Bougainvillea",
+      "month": 7,
+      "day": 23,
+      "meanings": [
+          "情熱",
+          "あなたしか見えない",
+          "魅力"
+      ],
+      "description": "太陽の光を浴びて鮮やかなマゼンタピンクの紙のような苞を咲き乱れさせる、南国の生命力あふれるつる性花木です。",
+      "category": "熱帯花木",
+      "svgType": "bougainvillea",
+      "flowerColor": "#db2777",
+      "secondaryColor": "#ffffff",
+      "bgGradient": "from-pink-500/15 via-rose-400/10 to-orange-400/10"
+  },
+  "6-3": {
+      "id": "6-3",
+      "name": "ドクダミ（十薬）",
+      "reading": "どくだみ",
+      "scientificName": "Houttuynia cordata",
+      "month": 6,
+      "day": 3,
+      "meanings": [
+          "野生",
+          "白い追憶",
+          "自己犠牲"
+      ],
+      "description": "十字型に見える純白の美しい苞葉とハート形の葉を持つ日本の名薬草。「十の薬効がある」として十薬とも呼ばれます。",
+      "category": "野草・薬草",
+      "svgType": "wildflower",
+      "flowerColor": "#ffffff",
+      "secondaryColor": "#facc15",
+      "bgGradient": "from-emerald-500/15 via-teal-300/10 to-green-500/10"
+  },
+  "6-2": {
+      "id": "6-2",
+      "name": "マツヨイグサ（待宵草）",
+      "reading": "まつよいぐさ",
+      "scientificName": "Oenothera stricta",
+      "month": 6,
+      "day": 2,
+      "meanings": [
+          "物言わぬ恋",
+          "浴後の美人",
+          "移り気"
+      ],
+      "description": "夕暮れ時にそっと黄色い花を開き、朝には萎んで淡い紅色に染まる幻想的でロマンチックな月見草の仲間です。",
+      "category": "野草",
+      "svgType": "wildflower",
+      "flowerColor": "#facc15",
+      "secondaryColor": "#fef08a",
+      "bgGradient": "from-yellow-400/15 via-amber-200/10 to-indigo-400/10"
+  },
+  "6-1": {
+      "id": "6-1",
+      "name": "びっくりグミ（大王茱萸・ダイオウグミ）",
+      "reading": "びっくりぐみ",
+      "scientificName": "Elaeagnus multiflora var. hortensis",
+      "month": 6,
+      "day": 1,
+      "meanings": [
+          "心の純潔",
+          "野生美",
+          "大望"
+      ],
+      "description": "普通のグミの倍以上もある大きな赤い実をつけることから「びっくり」と名付けられた、初夏の甘酸っぱい果樹です。",
+      "category": "果樹",
+      "svgType": "fruit",
+      "flowerColor": "#dc2626",
+      "secondaryColor": "#ef4444",
+      "bgGradient": "from-red-500/15 via-amber-300/10 to-emerald-400/10"
+  },
+  "5-22": {
+      "id": "5-22",
+      "name": "アスチルベ（泡盛草）",
+      "reading": "あすちるべ",
+      "scientificName": "Astilbe",
+      "month": 5,
+      "day": 22,
+      "meanings": [
+          "恋の訪れ",
+          "自由",
+          "気まま",
+          "熱心な気持ち"
+      ],
+      "description": "ふんわりと立ち上がる円錐花序が泡立つ波のように幻想的で美しい宿根草。シェードガーデンの女王です。",
+      "category": "宿根草",
+      "svgType": "wildflower",
+      "flowerColor": "#f472b6",
+      "secondaryColor": "#fda4af",
+      "bgGradient": "from-pink-400/15 via-rose-300/10 to-purple-400/10"
+  },
+  "5-16": {
+      "id": "5-16",
+      "name": "ヤマブキ（山吹）",
+      "reading": "やまぶき",
+      "scientificName": "Kerria japonica",
+      "month": 5,
+      "day": 16,
+      "meanings": [
+          "気品",
+          "崇高",
+          "金運",
+          "待ち焦がれる"
+      ],
+      "description": "「山吹色」の語源となった黄金色の鮮やかな五弁花。しなやかに垂れ下がる枝一面に咲き誇ります。",
+      "category": "花木",
+      "svgType": "wildflower",
+      "flowerColor": "#eab308",
+      "secondaryColor": "#facc15",
+      "bgGradient": "from-yellow-400/15 via-amber-300/10 to-emerald-400/10"
+  },
+  "5-10": {
+      "id": "5-10",
+      "name": "アカンサス（葉アザミ）",
+      "reading": "あかんさす",
+      "scientificName": "Acanthus mollis",
+      "month": 5,
+      "day": 10,
+      "meanings": [
+          "芸術",
+          "技巧",
+          "不死",
+          "離れない結びつき"
+      ],
+      "description": "古代ギリシャ建築のコリント式円柱の彫刻モチーフとして有名な堂々たる植物。夏にダイナミックな花穂を立ち上げます。",
+      "category": "宿根草",
+      "svgType": "wildflower",
+      "flowerColor": "#9333ea",
+      "secondaryColor": "#e2e8f0",
+      "bgGradient": "from-purple-500/15 via-teal-400/10 to-emerald-500/10"
+  },
+  "4-28": {
+      "id": "4-28",
+      "name": "ヒメハギ（姫萩）",
+      "reading": "ひめはぎ",
+      "scientificName": "Polygala japonica",
+      "month": 4,
+      "day": 28,
+      "meanings": [
+          "隠者",
+          "信じる心",
+          "控えめな美徳"
+      ],
+      "description": "日当たりのよい野山に咲く、萩に似た紫紅色の小さな可憐な花。漢方では生薬「遠志」として重用されます。",
+      "category": "野草・薬草",
+      "svgType": "wildflower",
+      "flowerColor": "#c084fc",
+      "secondaryColor": "#f472b6",
+      "bgGradient": "from-purple-500/15 via-indigo-300/10 to-pink-400/10"
+  },
+  "4-23": {
+      "id": "4-23",
+      "name": "ウド（独活）",
+      "reading": "うど",
+      "scientificName": "Aralia cordata",
+      "month": 4,
+      "day": 23,
+      "meanings": [
+          "忘れてはいけない思い",
+          "柔軟",
+          "清らかな愛"
+      ],
+      "description": "春の山菜として名高いウコギ科の多年草。夏には線香花火のような球状の繊細な白花を咲かせます。",
+      "category": "山菜・薬用植物",
+      "svgType": "wildflower",
+      "flowerColor": "#f8fafc",
+      "secondaryColor": "#86efac",
+      "bgGradient": "from-emerald-500/15 via-lime-300/10 to-teal-500/10",
+      "subFlowers": [
+          {
+              "name": "えんどう豆（エンドウ）",
+              "meanings": [
+                  "いつまでも続く楽しみ",
+                  "永遠の悲しみ",
+                  "必ずくる幸福"
+              ],
+              "note": "春を告げる甘い豆"
+          }
+      ],
+      "triviaList": [
+          "「ウドの大木」という慣用句がありますが、実は木ではなく巨大な多年草です。"
+      ]
+  },
+  "4-20": {
+      "id": "4-20",
+      "name": "ナシ（梨の花と実）",
+      "reading": "なし",
+      "scientificName": "Pyrus pyrifolia",
+      "month": 4,
+      "day": 20,
+      "meanings": [
+          "愛情",
+          "博愛",
+          "慰め",
+          "和やかな愛情"
+      ],
+      "description": "春に純白の清らかな花を一斉に咲かせ、秋に瑞々しく甘い果実を実らせる日本の伝統的な果樹です。",
+      "category": "果樹",
+      "svgType": "fruit",
+      "flowerColor": "#ffffff",
+      "secondaryColor": "#fef08a",
+      "bgGradient": "from-amber-400/15 via-yellow-200/10 to-teal-500/10",
+      "subFlowers": [
+          {
+              "name": "ストロベリーキャンドル（クリムソンクローバー）",
+              "meanings": [
+                  "素朴な愛らしさ",
+                  "胸に灯る光",
+                  "人知れぬ愛"
+              ],
+              "note": "イチゴのような真紅の花穂"
+          }
+      ],
+      "triviaList": [
+          "梨の白花は和歌や古典でも春の季語として愛されてきました。"
+      ]
+  },
+  "3-31": {
+      "id": "3-31",
+      "name": "ムルチコーレ（黄花小菊）",
+      "reading": "むるちこーれ",
+      "scientificName": "Coleostephus multicaulis",
+      "month": 3,
+      "day": 31,
+      "meanings": [
+          "明るい笑顔",
+          "誠実",
+          "元気"
+      ],
+      "description": "春の訪れとともに鮮やかな黄金色の小花を無数に咲かせるキク科の植物。見る人に太陽のような明るい笑顔を届けます。",
+      "category": "春の花",
+      "svgType": "marguerite",
+      "flowerColor": "#facc15",
+      "secondaryColor": "#eab308",
+      "bgGradient": "from-yellow-400/15 via-amber-300/10 to-emerald-400/10",
+      "triviaList": [
+          "「ムルチコーレ」はラテン語で「多くの茎を持つ」という意味です。"
+      ]
+  },
+  "3-25": {
+      "id": "3-25",
+      "name": "ジャケツイバラ（蛇結茨）",
+      "reading": "じゃけついばら",
+      "scientificName": "Biancaea decapetala",
+      "month": 3,
+      "day": 25,
+      "meanings": [
+          "賢者",
+          "情熱",
+          "神秘"
+      ],
+      "description": "鋭い棘のあるつるが蛇のように絡み合い、春に黄金色の鮮烈な花房を立ち上げるマメ科の力強い植物です。",
+      "category": "つる性木本",
+      "svgType": "wildflower",
+      "flowerColor": "#eab308",
+      "secondaryColor": "#facc15",
+      "bgGradient": "from-amber-500/15 via-yellow-400/10 to-emerald-500/10",
+      "triviaList": [
+          "枝が蛇が絡み合ったように見えることから名付けられました。"
+      ]
+  },
   "12-14": {
   "id": "12-14",
   "name": "フユザクラ（冬桜）",
@@ -929,29 +1378,29 @@ export const SPECIAL_FLOWERS: Record<string, FlowerData> = {
       "ヨーロッパでも「5月のバラ」として愛され、ウェディングブーケの王道として高い人気を誇ります。"
     ]
   },
-  "6-22": {
+    "6-22": {
     "id": "6-22",
-    "name": "スイカズラ（ハニーサックル）",
-    "reading": "すいかずら",
-    "scientificName": "Lonicera japonica",
+    "name": "アジサイ（紫陽花）",
+    "reading": "あじさい",
+    "scientificName": "Hydrangea macrophylla",
     "month": 6,
     "day": 22,
-    "meanings": [
-      "愛の絆",
-      "友愛",
-      "献身的な愛"
+    "meanings": ["移り気", "辛抱強さ", "団結", "和気あいあい"],
+    "description": "雨の季節にしっとりと咲き誇る日本の初夏の象徴。土壌の酸度によって青から紫、ピンクへと七変化する幻想的な花色が魅了します。",
+    "category": "花木・落葉低木",
+    "svgType": "hydrangea",
+    "flowerColor": "#38bdf8",
+    "secondaryColor": "#818cf8",
+    "bgGradient": "from-sky-500/15 via-indigo-300/10 to-teal-400/10",
+    "subFlowers": [
+      {
+        "name": "ガザニア（勲章菊）",
+        "meanings": ["あなたを誇りに思う", "身近な愛", "きらびやか"],
+        "note": "勲章のような鮮烈な輝きを放つ夏の花"
+      }
     ],
-    "description": "花の奥に甘い蜜を含み、子どもが蜜を吸ったことから「吸い葛（すいかずら）」と呼ばれたつる植物。咲き始めは白く、やがて黄色に変化することから「金銀花」とも称されます。",
-    "category": "観葉・ハーブ",
-    "svgType": "honeysuckle",
-    "flowerColor": "#eab308",
-    "secondaryColor": "#fef08a",
-    "bgGradient": "from-yellow-400/15 via-emerald-300/10 to-teal-500/10",
-    "anniversaryNote": "夏至の頃",
     "triviaList": [
-      "花を根元から引き抜いて吸うと極上の甘い蜜が出ることから「吸い葛（スイカズラ）」と名付けられました。",
-      "1本の枝に白い花と黄色い花が同時に咲く姿から、中国では縁起の良い「金銀花（きんぎんか）」として漢方に使われます。",
-      "甘く魅惑的な夜の香りは遠くまで漂い、ヨーロッパの妖精伝説にも頻繁に登場します。"
+      "アジサイの青〜赤の色彩変化は、土壌中のアルミニウムイオンを吸い上げる量によって変化します。"
     ]
   },
   "6-23": {
@@ -1832,26 +2281,24 @@ export const SPECIAL_FLOWERS: Record<string, FlowerData> = {
     "bgGradient": "from-lime-400/15 via-emerald-400/10 to-green-500/10",
     "rarity": "Normal"
   },
-  "3-30": {
+    "3-30": {
     "id": "3-30",
-    "name": "アルメリア（浜簪）",
-    "reading": "あるめりあ",
-    "scientificName": "Armeria maritima",
+    "name": "エニシダ（金雀枝）",
+    "reading": "えにしだ",
+    "scientificName": "Cytisus scoparius",
     "month": 3,
     "day": 30,
-    "meanings": [
-      "思いやり",
-      "共感",
-      "心遣い",
-      "滞在"
-    ],
-    "description": "海岸の岩場などの厳しい環境でも、丸くかんざしのように小さなピンクの花を密集させて咲かせます。寄り添い合う花々の姿から「思いやり」「共感」の花言葉が生まれました。",
-    "category": "花",
-    "svgType": "armeria",
-    "flowerColor": "#d946ef",
-    "secondaryColor": "#f0abfc",
-    "bgGradient": "from-fuchsia-400/15 via-purple-300/10 to-emerald-500/10",
-    "rarity": "Rare"
+    "meanings": ["謙遜", "清潔", "博愛", "恋の予感"],
+    "description": "春の陽光を浴びて枝いっぱいに黄金色の蝶形花を咲かせるヨーロッパ原産の花木。箒のような細い枝先に無数の小鳥が止まっているように見えます。",
+    "category": "花木・落葉低木",
+    "svgType": "scotch_broom",
+    "flowerColor": "#facc15",
+    "secondaryColor": "#ca8a04",
+    "bgGradient": "from-yellow-400/15 via-amber-300/10 to-emerald-400/10",
+    "triviaList": [
+      "魔女が夜空を飛ぶ箒（ほうき）の材料にされたという伝説があり、英語では「Broom」と呼ばれます。",
+      "イギリスのプランタジネット朝の王家の紋章（プランタ・ゲニスタ）としても歴史に名を刻んでいます。"
+    ]
   },
   "4-18": {
     "id": "4-18",
@@ -2400,25 +2847,30 @@ export const SPECIAL_FLOWERS: Record<string, FlowerData> = {
     "bgGradient": "from-emerald-500/15 via-teal-400/15 to-green-300/10",
     "rarity": "Rare"
   },
-  "12-22": {
+    "12-22": {
     "id": "12-22",
     "name": "セントポーリア（アフリカスミレ）",
     "reading": "せんとぽーりあ",
     "scientificName": "Saintpaulia",
     "month": 12,
     "day": 22,
-    "meanings": [
-      "小さな愛",
-      "深窓の美女",
-      "親しみ深い"
-    ],
-    "description": "ビロードのようなふっくらした葉と、紫やピンクの愛らしい小花を咲かせる室内園芸の女王。お部屋の中でそっと寄り添ってくれる「小さな愛」の象徴です。",
-    "category": "花",
+    "meanings": ["小さな愛", "深窓の美女", "親しみ深い"],
+    "description": "ビロードのような起毛葉と鮮やかな小花が愛らしく「室内園芸の女王」と讃えられます。控えめながら気品ある美しさを放ちます。",
+    "category": "観葉植物・多年草",
     "svgType": "saintpaulia",
-    "flowerColor": "#7c3aed",
-    "secondaryColor": "#c4b5fd",
-    "bgGradient": "from-purple-500/15 via-violet-300/10 to-emerald-500/10",
-    "rarity": "Rare"
+    "flowerColor": "#8b5cf6",
+    "secondaryColor": "#fbcfe8",
+    "bgGradient": "from-purple-500/15 via-indigo-300/10 to-teal-400/10",
+    "subFlowers": [
+      {
+        "name": "ジニア（百日草）",
+        "meanings": ["不在の友を思う", "絆", "幸福"],
+        "note": "百日もの長い間咲き続ける丈夫な花"
+      }
+    ],
+    "triviaList": [
+      "東アフリカのタンザニアの山岳地帯で発見され、発見者のサン・ポール男爵にちなんで名付けられました。"
+    ]
   },
   "1-7": {
     "id": "1-7",
@@ -2469,28 +2921,38 @@ export const SPECIAL_FLOWERS: Record<string, FlowerData> = {
     ]
   },
   "1-28": {
-    "id": "1-28",
-    "name": "ネモフィラ",
-    "reading": "ねもふぃら",
-    "scientificName": "Nemophila menziesii",
-    "month": 1,
-    "day": 28,
-    "meanings": [
-      "どこでも成功",
-      "可憐",
-      "あなたを許す"
-    ],
-    "description": "澄み渡る春空のようなスカイブルーの花びらを一面に咲かせる愛らしい一年草。北米原産で、英語では「Baby blue eyes（赤ちゃんの青い瞳）」と親しまれています。",
-    "category": "花",
-    "svgType": "nemophila",
-    "flowerColor": "#38bdf8",
-    "secondaryColor": "#bae6fd",
-    "bgGradient": "from-sky-400/15 via-blue-300/10 to-teal-500/10",
-    "triviaList": [
-      "英語では「Baby blue eyes（赤ちゃんの澄んだ青い瞳）」という愛称で親しまれています。",
-      "「どこでも成功」という花言葉は、日当たりと水はけが良ければどこでも元気に絨毯のように広がる丈夫さに由来します。",
-      "ひたち海浜公園など、春に丘一面を青く染め上げる広大なネモフィラ畑は世界中から絶賛されています。"
-    ]
+      "id": "1-28",
+      "name": "ネモフィラ（瑠璃唐草）",
+      "reading": "ねもふぃら",
+      "scientificName": "Nemophila menziesii",
+      "month": 1,
+      "day": 28,
+      "meanings": [
+          "可憐",
+          "どこでも成功",
+          "清々しい心"
+      ],
+      "description": "空と大地を繋ぐような澄んだスカイブルーの花びらを持つ可憐な春の使者。群生して咲く姿はまるで青い絨毯のようです。",
+      "category": "草花",
+      "svgType": "nemophila",
+      "flowerColor": "#38bdf8",
+      "secondaryColor": "#ffffff",
+      "bgGradient": "from-sky-500/15 via-blue-400/10 to-teal-500/10",
+      "subFlowers": [
+          {
+              "name": "ハツユキソウ（初雪草）",
+              "meanings": [
+                  "好奇心",
+                  "祝福",
+                  "穏やかな生活"
+              ],
+              "note": "雪をかぶったような白斑の美しい葉"
+          }
+      ],
+      "triviaList": [
+          "ギリシャ語の「nemos（小さな森）」と「phileo（愛する）」が語源です。",
+          "英語では「Baby blue eyes（赤ちゃんの青い瞳）」と親しまれています。"
+      ]
   },
     "2-6": {
     "id": "2-6",
@@ -3223,28 +3685,29 @@ export const SPECIAL_FLOWERS: Record<string, FlowerData> = {
     ],
     "rarity": "Normal"
   },
-  "8-5": {
+    "8-5": {
     "id": "8-5",
-    "name": "エリカ（ヒース）",
-    "reading": "えりか",
-    "scientificName": "Erica",
+    "name": "オシロイバナ（白粉花・夕化粧）",
+    "reading": "おしろいばな",
+    "scientificName": "Mirabilis jalapa",
     "month": 8,
     "day": 5,
-    "meanings": [
-      "孤独",
-      "寂しさ",
-      "心地よい言葉"
-    ],
-    "description": "ヨーロッパの荒涼としたヒース（荒野）に群生し、釣鐘型の愛らしい小花を枝いっぱいに無数に咲かせるツツジ科低木。厳しい荒野で風にそよぐ姿は静かな思索を誘います。",
-    "category": "花",
-    "svgType": "heather",
+    "meanings": ["臆病", "内気", "あなたを想う", "慎み深い恋"],
+    "description": "夕方4時頃から涼しい風とともに甘い香りを放って咲くことから「夕化粧」「Four o'clock」とも呼ばれます。黒い種の中の白い粉はおしろいに見立てられました。",
+    "category": "多年草・一年草",
+    "svgType": "four_o_clock",
     "flowerColor": "#ec4899",
-    "secondaryColor": "#fbcfe8",
-    "bgGradient": "from-pink-400/15 via-purple-300/10 to-teal-500/10",
+    "secondaryColor": "#facc15",
+    "bgGradient": "from-pink-500/15 via-yellow-300/10 to-emerald-400/10",
+    "subFlowers": [
+      {
+        "name": "エリカ（ヒース）",
+        "meanings": ["孤独", "寂寥", "心地よい言葉"],
+        "note": "荒野に咲く小さな釣鐘状の花"
+      }
+    ],
     "triviaList": [
-      "エミリー・ブロンテの名作小説『嵐が丘』の舞台となったイギリスの荒野「ヒース」に咲き乱れる植物です。",
-      "白のエリカは自生しているのが極めて珍しいため、スコットランドでは見つけると幸運になれると言われます。",
-      "小さなベルのような小花が鈴なりに咲く姿は可憐で、秋から早春にかけて長く咲き続けます。"
+      "一本の株から赤、黄、白など異なる色の花が咲き分けたり、絞り模様が入ったりする不思議な植物です。"
     ]
   },
   "8-7": {
@@ -6278,30 +6741,30 @@ export const SPECIAL_FLOWERS: Record<string, FlowerData> = {
     ],
     "rarity": "Normal"
   },
-  "8-6": {
+    "8-6": {
     "id": "8-6",
-    "name": "モルセラ（貝殻サルビア・アイルランドの鐘）",
-    "reading": "もるせら",
-    "scientificName": "Moluccella laevis",
+    "name": "トレニア（夏菫・花鶴草）",
+    "reading": "とれにあ",
+    "scientificName": "Torenia fournieri",
     "month": 8,
     "day": 6,
-    "meanings": [
-      "感謝",
-      "希望",
-      "永遠の感謝"
+    "meanings": ["ひらめき", "愛嬌", "温和", "可憐"],
+    "description": "夏から秋にかけてスミレに似た愛らしい唇形花を咲かせる花壇の主役。雌しべの先端に触れるとパタンと閉じるユニークな仕組みを持ちます。",
+    "category": "一年草",
+    "svgType": "torenia",
+    "flowerColor": "#6366f1",
+    "secondaryColor": "#c7d2fe",
+    "bgGradient": "from-indigo-500/15 via-blue-300/10 to-teal-400/10",
+    "subFlowers": [
+      {
+        "name": "モルセラ（貝殻サルビア・アイルランドの鐘）",
+        "meanings": ["感謝", "希望", "幸運"],
+        "note": "緑の貝殻のような萼が連なる花"
+      }
     ],
-    "description": "緑色の貝殻やラッパのような丸い萼が茎にタワー状に連なる不思議な植物。英名「Bells of Ireland」と呼ばれ、幸運と感謝を象徴します。",
-    "category": "観葉・ハーブ",
-    "svgType": "bellflower",
-    "flowerColor": "#22c55e",
-    "secondaryColor": "#86efac",
-    "bgGradient": "from-emerald-400/15 via-green-200/10 to-teal-500/10",
     "triviaList": [
-      "見た目がちょっと不思議な緑の植物なのに、花言葉は「永遠の感謝」「希望」と素直で温かいギャップが魅力！",
-      "花びらのように見える部分は実は「萼（がく）」で、中心にある小さな白い花を守っています。",
-      "爽快なハーブの香りを放ち、ドライフラワーにしても緑色が美しく残ります。"
-    ],
-    "rarity": "Normal"
+      "スウェーデンの植物学者オーロフ・トレーン（Olof Toren）の名にちなんで命名されました。"
+    ]
   },
   "8-20": {
     "id": "8-20",
@@ -6855,28 +7318,29 @@ export const SPECIAL_FLOWERS: Record<string, FlowerData> = {
     ],
     "rarity": "Normal"
   },
-    "3-2": {
+      "3-2": {
     "id": "3-2",
-    "name": "オキザリス（カタバミ）",
-    "reading": "おきざりす",
-    "scientificName": "Oxalis",
+    "name": "アルメリア（浜簪・ハマカンザシ）",
+    "reading": "あるめりあ",
+    "scientificName": "Armeria maritima",
     "month": 3,
     "day": 2,
-    "meanings": [
-      "決してあなたを捨てません",
-      "輝く心",
-      "喜び"
+    "meanings": ["思いやり", "同情", "可憐", "共感"],
+    "description": "「海に近い」という意味のケルト語が語源。小さなピンクや白の小花がまん丸くかんざしのように集まって咲く愛らしい花です。",
+    "category": "宿根草・多年草",
+    "svgType": "armeria",
+    "flowerColor": "#ec4899",
+    "secondaryColor": "#fbcfe8",
+    "bgGradient": "from-pink-500/15 via-rose-300/10 to-purple-200/10",
+    "subFlowers": [
+      {
+        "name": "オキザリス（カタバミ）",
+        "meanings": ["決してあなたを捨てません", "輝く心", "喜び"],
+        "note": "ハート型の三つ葉が愛らしい球根草"
+      }
     ],
-    "description": "ハート形の三つ葉が愛らしい、陽の光を浴びて元気に花を開く可憐な球根植物。「決してあなたを捨てません」「輝く心」という健気で誠実な花言葉を持ちます。",
-    "category": "草花",
-    "svgType": "oxalis",
-    "flowerColor": "#f472b6",
-    "secondaryColor": "#fef08a",
-    "bgGradient": "from-pink-500/15 via-rose-300/10 to-amber-200/10",
     "triviaList": [
-      "夜や曇りの日、雨の日には傘のように花と葉を閉じて眠る「就眠運動」をします。",
-      "葉に含まれるシュウ酸（Oxalic acid）から「Oxalis」と名付けられ、昔は鏡や金属を磨くのにも使われました。",
-      "日本でも家紋の「片喰（カタバミ）紋」として戦国武将たちに親しまれ、子孫繁栄の象徴とされています。"
+      "ヨーロッパの海岸の砂丘や断崖に自生し、潮風に耐えて力強く花を咲かせます。"
     ]
   },
   "3-1": {
@@ -7819,30 +8283,30 @@ export const SPECIAL_FLOWERS: Record<string, FlowerData> = {
     ],
     "rarity": "Normal"
   },
-  "12-5": {
+    "12-5": {
     "id": "12-5",
     "name": "シンビジウム",
     "reading": "しんびじうむ",
     "scientificName": "Cymbidium",
     "month": 12,
     "day": 5,
-    "meanings": [
-      "飾らない心",
-      "素朴",
-      "高貴な美人"
-    ],
-    "description": "寒さに強く、冬から春にかけて豪華で肉厚な花を花茎いっぱいに咲かせる洋ラン。凛として媚びない佇まいから「飾らない心」と内面の高潔さを象徴します。",
-    "category": "花",
+    "meanings": ["飾らない心", "素朴", "高貴な美人"],
+    "description": "冬を華やかに彩る四大洋ランの一つ。優雅に立ち上がる花茎にロウ細工のような上品な花を連ねて咲かせます。",
+    "category": "洋ラン",
     "svgType": "orchid",
-    "flowerColor": "#0284c7",
-    "secondaryColor": "#bae6fd",
-    "bgGradient": "from-sky-600/15 via-teal-400/10 to-slate-700/10",
-    "triviaList": [
-      "洋ランの中でも抜群の耐寒性を誇り、暖房のない玄関先でも1〜2ヶ月以上咲き続けるタフさです。",
-      "花言葉の「飾らない心」は、胡蝶蘭のような過度な華美さに走らず落ち着いた気品を保つことから。",
-      "無愛想で不器用に見えても、実用と本質を何よりも重んじる誠実な心を持っています。"
+    "flowerColor": "#f472b6",
+    "secondaryColor": "#fef08a",
+    "bgGradient": "from-pink-500/15 via-rose-300/10 to-amber-200/10",
+    "subFlowers": [
+      {
+        "name": "ブタクサ（豚草）",
+        "meanings": ["よりを戻す", "直感", "幸福な日々"],
+        "note": "秋風に揺れるたくましいキク科植物"
+      }
     ],
-    "rarity": "Normal"
+    "triviaList": [
+      "ギリシャ語の「kymbe（舟）」に由来し、唇弁（リップ）が小さな舟のような窪みを持つことから命名されました。"
+    ]
   },
   "12-16": {
     "id": "12-16",
@@ -8492,6 +8956,138 @@ export const SPECIAL_FLOWERS: Record<string, FlowerData> = {
 };
 
 export const GACHA_SPECIAL_FLOWERS: FlowerData[] = [
+  {
+    "id": "gacha-purslane",
+    "name": "スベリヒユ（滑莧・ヒョウ）",
+    "reading": "すべりひゆ",
+    "scientificName": "Portulaca oleracea",
+    "month": 0,
+    "day": 0,
+    "meanings": [
+      "いつも元気",
+      "暴れん坊",
+      "無邪気",
+      "生命力"
+    ],
+    "description": "炎天下のアスファルトの隙間でも元気に黄色い小花を咲かせる驚異の野草。オメガ3脂肪酸が植物界で最も豊富に含まれるスーパーフードとしても知られます。",
+    "category": "野草・多肉植物",
+    "svgType": "purslane",
+    "flowerColor": "#facc15",
+    "secondaryColor": "#ef4444",
+    "bgGradient": "from-yellow-400/20 via-amber-200/15 to-emerald-300/10",
+    "isGachaSpecial": true,
+    "rarity": "UR ガチャ限定"
+  },
+  {
+    "id": "gacha-toadflax",
+    "name": "マツバウンラン（松葉海蘭）",
+    "reading": "まつばうんらん",
+    "scientificName": "Nuttallanthus canadensis",
+    "month": 0,
+    "day": 0,
+    "meanings": [
+      "喜び",
+      "輝き",
+      "控えめな美徳",
+      "可憐"
+    ],
+    "description": "松葉のような細い葉の間から、淡い青紫色の愛らしい小花をスッと風に揺らして咲かせる春の野草。群生するとまるで青い陽炎のように幻想的です。",
+    "category": "野草・オオバコ科",
+    "svgType": "toadflax",
+    "flowerColor": "#a78bfa",
+    "secondaryColor": "#c4b5fd",
+    "bgGradient": "from-violet-400/20 via-purple-200/15 to-teal-300/10",
+    "isGachaSpecial": true,
+    "rarity": "SSR ガチャ限定"
+  },
+  {
+    "id": "gacha-peanut",
+    "name": "ピーナッツ（落花生・南京豆）",
+    "reading": "ぴーなっつ",
+    "scientificName": "Arachis hypogaea",
+    "month": 0,
+    "day": 0,
+    "meanings": [
+      "仲良し",
+      "素朴な真心",
+      "実り",
+      "親愛"
+    ],
+    "description": "黄色い可憐な花が咲き終わったあと、花柄が土の中に潜り込んで地下で実をつける不思議なマメ科植物。「花が落ちて実が生まれる」から落花生と名付けられました。",
+    "category": "豆類・作物",
+    "svgType": "peanut",
+    "flowerColor": "#f59e0b",
+    "secondaryColor": "#ca8a04",
+    "bgGradient": "from-amber-400/20 via-yellow-200/15 to-orange-300/10",
+    "isGachaSpecial": true,
+    "rarity": "SSR ガチャ限定"
+  },
+  {
+    "id": "gacha-buntan",
+    "name": "文旦（ブンタン・土佐文旦・ポメロ）",
+    "reading": "ぶんたん",
+    "scientificName": "Citrus maxima",
+    "month": 0,
+    "day": 0,
+    "meanings": [
+      "純潔",
+      "愛らしさ",
+      "豊かな実り",
+      "幸福の香り"
+    ],
+    "description": "柑橘類の女王！純白の肉厚な甘美な花を咲かせ、太陽の恵みを凝縮した巨大で芳醇な果実を実らせます。爽やかで品のある高貴な香りが特徴です。",
+    "category": "果樹・柑橘類",
+    "svgType": "pomelo",
+    "flowerColor": "#ffffff",
+    "secondaryColor": "#facc15",
+    "bgGradient": "from-yellow-300/20 via-lime-200/15 to-amber-200/10",
+    "isGachaSpecial": true,
+    "rarity": "UR ガチャ限定"
+  },
+  {
+    "id": "gacha-marimo",
+    "name": "まりも（毬藻・阿寒湖の奇跡）",
+    "reading": "まりも",
+    "scientificName": "Aegagropila linnaei",
+    "month": 0,
+    "day": 0,
+    "meanings": [
+      "希望",
+      "不老不死",
+      "愛の奇跡",
+      "純粋な祈り"
+    ],
+    "description": "北海道阿寒湖の澄んだ湖底で、湖波に揺られながらコロコロと球状に成長する国の特別天然記念物。愛し合うアイヌの恋人たちの化身とも伝えられます。",
+    "category": "藻類・奇跡の緑",
+    "svgType": "marimo",
+    "flowerColor": "#15803d",
+    "secondaryColor": "#22c55e",
+    "bgGradient": "from-emerald-500/20 via-teal-300/15 to-cyan-300/10",
+    "isGachaSpecial": true,
+    "rarity": "UR ガチャ限定"
+  },
+  {
+    "id": "gacha-banana",
+    "name": "バナナ（甘蕉・バナナの花と実）",
+    "reading": "ばなな",
+    "scientificName": "Musa acuminata",
+    "month": 0,
+    "day": 0,
+    "meanings": [
+      "風格",
+      "奥深い愛",
+      "情熱",
+      "健康"
+    ],
+    "description": "巨大な赤紫色の苞葉の中から房状にぶら下がる黄金のバナナ。木のように見えますが実は世界最大の草本植物！世界中で最も親しまれる恵みのフルーツです。",
+    "category": "大型熱帯草本",
+    "svgType": "banana",
+    "flowerColor": "#eab308",
+    "secondaryColor": "#701a75",
+    "bgGradient": "from-yellow-400/20 via-amber-300/15 to-rose-300/10",
+    "isGachaSpecial": true,
+    "rarity": "UR ガチャ限定"
+  },
   {
     "id": "gacha-kamitsuremodoki",
     "name": "カミツレモドキ（春紫菀・犬カモミール）",
@@ -9240,6 +9836,16 @@ export function getAllGachaPool(): FlowerData[] {
         else if (sub.name.includes('センリョウ')) subSvg = 'senryo';
         else if (sub.name.includes('クジャクアスター')) subSvg = 'peacock_aster';
         else if (sub.name.includes('ビヨウヤナギ')) subSvg = 'hypericum';
+        else if (sub.name.includes('ブタクサ')) subSvg = 'ragweed';
+        else if (sub.name.includes('オキザリス')) subSvg = 'oxalis';
+        else if (sub.name.includes('モルセラ')) subSvg = 'moluccella';
+        else if (sub.name.includes('ガザニア')) subSvg = 'gazania';
+        else if (sub.name.includes('エリカ')) subSvg = 'heather';
+        else if (sub.name.includes('ジニア')) subSvg = 'zinnia';
+        else if (sub.name.includes('リコリス')) subSvg = 'spider_lily';
+        else if (sub.name.includes('えんどう豆') || sub.name.includes('エンドウ')) subSvg = 'sweet_pea';
+        else if (sub.name.includes('ハツユキソウ')) subSvg = 'snowdrop';
+        else if (sub.name.includes('ストロベリーキャンドル')) subSvg = 'clover';
 
         pool.push({
           id: `sub-${f.id}-${idx}`,

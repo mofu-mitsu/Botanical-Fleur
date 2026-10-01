@@ -1,8 +1,8 @@
 'use client';
 
 import React, { useState } from 'react';
-import { ChevronLeft, ChevronRight, Calendar as CalendarIcon, Sparkles } from 'lucide-react';
-import { SPECIAL_FLOWERS } from '@/lib/flowerData';
+import { ChevronLeft, ChevronRight, Calendar as CalendarIcon, Sparkles, Search, X } from 'lucide-react';
+import { SPECIAL_FLOWERS, getAllSpecialFlowers, FlowerData } from '@/lib/flowerData';
 import { CHARACTERS_MAP } from '@/lib/characterData';
 
 interface DateCalendarPickerProps {
@@ -18,12 +18,58 @@ export const DateCalendarPicker: React.FC<DateCalendarPickerProps> = ({
 }) => {
   const [viewMonth, setViewMonth] = useState(selectedMonth);
   const [prevSelectedMonth, setPrevSelectedMonth] = useState(selectedMonth);
+  const [searchQuery, setSearchQuery] = useState('');
 
   // 外部からの月変更（記念日ショートカット等）に同期
   if (prevSelectedMonth !== selectedMonth) {
     setPrevSelectedMonth(selectedMonth);
     setViewMonth(selectedMonth);
   }
+
+  // 補足植物も含めたクイック検索結果
+  const searchResults = React.useMemo(() => {
+    const q = searchQuery.toLowerCase().trim();
+    if (!q) return [];
+    const all = getAllSpecialFlowers();
+    const matches: { month: number; day: number; label: string; subLabel?: string }[] = [];
+
+    all.forEach((f) => {
+      if (f.month <= 0 || f.day <= 0) return;
+      const isMainMatch =
+        f.name.toLowerCase().includes(q) ||
+        (f.reading && f.reading.includes(q)) ||
+        f.meanings.some((m) => m.toLowerCase().includes(q));
+
+      if (isMainMatch) {
+        matches.push({
+          month: f.month,
+          day: f.day,
+          label: f.name,
+          subLabel: f.meanings.slice(0, 2).join('・'),
+        });
+      }
+
+      // 補足植物の一致も検出！
+      if (f.subFlowers && f.subFlowers.length > 0) {
+        f.subFlowers.forEach((sub) => {
+          if (
+            sub.name.toLowerCase().includes(q) ||
+            (sub.meanings && sub.meanings.some((m) => m.toLowerCase().includes(q))) ||
+            (sub.note && sub.note.toLowerCase().includes(q))
+          ) {
+            matches.push({
+              month: f.month,
+              day: f.day,
+              label: `🌿 ${sub.name}（${f.name}の補足）`,
+              subLabel: sub.meanings ? sub.meanings.join('・') : undefined,
+            });
+          }
+        });
+      }
+    });
+
+    return matches.slice(0, 8);
+  }, [searchQuery]);
 
   // 各月の日数（うるう年考慮で2月は29日まで選択可能）
   const getDaysInMonth = (m: number) => {
@@ -81,6 +127,59 @@ export const DateCalendarPicker: React.FC<DateCalendarPickerProps> = ({
             <ChevronRight className="w-4 h-4" />
           </button>
         </div>
+      </div>
+
+      {/* クイック検索バー（補足植物・花名・花言葉で日付ジャンプ） */}
+      <div className="relative mb-3.5">
+        <div className="relative flex items-center">
+          <Search className="w-3.5 h-3.5 text-emerald-600 absolute left-3 pointer-events-none" />
+          <input
+            type="text"
+            value={searchQuery}
+            onChange={(e) => setSearchQuery(e.target.value)}
+            placeholder="お花名や補足植物（例: えんどう豆、ハッカ、桜）で日付を検索"
+            className="w-full pl-9 pr-8 py-2 rounded-xl bg-emerald-50/60 border border-emerald-200/80 text-xs text-emerald-950 placeholder:text-emerald-700/50 focus:outline-none focus:ring-2 focus:ring-emerald-500/20"
+          />
+          {searchQuery && (
+            <button
+              onClick={() => setSearchQuery('')}
+              className="absolute right-2.5 p-1 text-slate-400 hover:text-slate-600"
+            >
+              <X className="w-3.5 h-3.5" />
+            </button>
+          )}
+        </div>
+
+        {/* 検索一致ドロップダウン */}
+        {searchResults.length > 0 && (
+          <div className="absolute top-full left-0 right-0 mt-1 z-30 bg-white rounded-2xl border border-emerald-100 shadow-xl overflow-hidden max-h-56 overflow-y-auto">
+            {searchResults.map((item, idx) => (
+              <button
+                key={idx}
+                onClick={() => {
+                  setViewMonth(item.month);
+                  onSelectDate(item.month, item.day);
+                  setSearchQuery('');
+                }}
+                className="w-full px-3.5 py-2 text-left hover:bg-emerald-50 flex items-center justify-between gap-2 border-b border-emerald-50 last:border-0 transition-colors"
+              >
+                <div className="min-w-0">
+                  <span className="text-xs font-bold text-emerald-950 block truncate">
+                    {item.label}
+                  </span>
+                  {item.subLabel && (
+                    <span className="text-[10px] text-slate-500 block truncate">
+                      {item.subLabel}
+                    </span>
+                  )}
+                </div>
+                <span className="text-xs font-bold text-emerald-700 shrink-0 bg-emerald-100/70 px-2 py-0.5 rounded-md">
+                  {item.month}月{item.day}日へ
+                </span>
+              </button>
+            ))}
+          </div>
+        )}
       </div>
 
       {/* 月クイックセレクタ */}

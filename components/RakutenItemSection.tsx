@@ -76,6 +76,14 @@ export const RakutenItemSection: React.FC<RakutenItemSectionProps> = ({ flowerNa
         // 全キーワード（＆で繋がれた名前全体）を渡し、API側で各お花ごとに商品を取得・生成
         const res = await fetch(`/api/rakuten?keyword=${encodeURIComponent(flowerName)}`);
         const data = await res.json();
+        console.log('🌸 [Rakuten API Debug]:', {
+          flowerName,
+          status: res.status,
+          isLiveApi: data.isLiveApi,
+          debug: data.debug,
+          itemsCount: data.items?.length || 0,
+          firstItem: data.items?.[0]
+        });
         if (isMounted) {
           setItems(data.items || []);
           setIsLive(data.isLiveApi || false);

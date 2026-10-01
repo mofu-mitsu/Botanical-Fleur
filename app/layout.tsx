@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import Script from 'next/script';
 import './globals.css'; // Global styles
 import { Cormorant_Garamond, Noto_Serif_JP } from 'next/font/google';
 
@@ -122,6 +123,23 @@ export default function RootLayout({
     <html lang="ja" className={`${cormorant.variable} ${notoSerif.variable}`}>
       <head>
         <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+        <meta
+          name="google-site-verification"
+          content="b7ayC_ApkqZfpMCdnvnmZPQtpDMW8FATSpv0q1T2uV4"
+        />
+        {/* Google tag (gtag.js) */}
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-GNTX973GET"
+          strategy="afterInteractive"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-GNTX973GET');
+          `}
+        </Script>
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}

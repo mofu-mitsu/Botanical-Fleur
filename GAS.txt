@@ -1,0 +1,68 @@
+// ==============================================================================
+// Botanical Fleur - Google Apps Script (GAS) 閲覧ログ自動記録スクリプト
+// ==============================================================================
+// 
+// 【設定手順】
+// 1. Google スプレッドシートを新規作成します。
+// 2. 上部メニュー「拡張機能」 > 「Apps Script」を開きます。
+// 3. 元からある「function myFunction() {}」をすべて消して、下記のコードを貼り付けます。
+// 4. 「保存」（フロッピーマーク）を押します。
+// 5. 画面右上の青いボタン「デプロイ」 > 「新しいデプロイ」をクリックします。
+// 6. 種類の選択（歯車マーク）で「ウェブアプリ」を選択します。
+//    - 説明: Botanical Fleur 閲覧ログ
+//    - 次のユーザーとして実行: 自分 (your-email@gmail.com)
+//    - アクセスできるユーザー: 全員 (Anyone)  ← ※必ず「全員」にしてください！
+// 7. 「デプロイ」ボタンを押し、アクセスを承認します。
+// 8. 発行された「ウェブアプリのURL」（https://script.google.com/macros/s/xxxx/exec）をコピーします。
+// 9. Vercelの環境変数「NEXT_PUBLIC_GAS_WEBAPP_URL」にそのURLを設定して再デプロイすれば完了です！
+// ==============================================================================
+
+function doPost(e) {
+  try {
+    var sheet = SpreadsheetApp.getActiveSpreadsheet().getActiveSheet();
+    
+    // シートが空の場合、自動的に1行目にヘッダーを作成
+    if (sheet.getLastRow() === 0) {
+      sheet.appendRow(["閲覧日時", "花名", "月", "日", "花言葉", "ページURL", "受信タイムスタンプ"]);
+      sheet.getRange(1, 1, 1, 7).setBackground("#e6f4ea").setFontWeight("bold");
+      sheet.setFrozenRows(1);
+    }
+    
+    // 受信データの解析
+    var data = {};
+    if (e && e.postData && e.postData.contents) {
+      data = JSON.parse(e.postData.contents);
+    }
+    
+    var now = Utilities.formatDate(new Date(), "Asia/Tokyo", "yyyy/MM/dd HH:mm:ss");
+    var flowerName = data.flowerName || "";
+    var month = data.month || "";
+    var day = data.day || "";
+    var meanings = data.meanings || "";
+    var pageUrl = data.url || "";
+    var rawTimestamp = data.timestamp || "";
+    
+    // データを最終行に追加
+    sheet.appendRow([
+      now,
+      flowerName,
+      month,
+      day,
+      meanings,
+      pageUrl,
+      rawTimestamp
+    ]);
+    
+    return ContentService.createTextOutput(JSON.stringify({ status: "success" }))
+      .setMimeType(ContentService.MimeType.JSON);
+      
+  } catch (error) {
+    return ContentService.createTextOutput(JSON.stringify({ status: "error", message: error.toString() }))
+      .setMimeType(ContentService.MimeType.JSON);
+  }
+}
+
+// 動作確認用テストGET
+function doGet(e) {
+  return ContentService.createTextOutput("Botanical Fleur GAS WebApp is running successfully!");
+}

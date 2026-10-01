@@ -21,13 +21,25 @@ export const FlowerListModal: React.FC<FlowerListModalProps> = ({
   const allFlowers = getAllSpecialFlowers();
 
   const filtered = allFlowers.filter((f) => {
-    const q = searchTerm.toLowerCase();
-    return (
+    const q = searchTerm.toLowerCase().trim();
+    if (!q) return true;
+    const matchesMain =
       f.name.toLowerCase().includes(q) ||
       (f.reading && f.reading.includes(q)) ||
       f.meanings.some((m) => m.toLowerCase().includes(q)) ||
-      `${f.month}月${f.day}日`.includes(q)
-    );
+      `${f.month}月${f.day}日`.includes(q) ||
+      `${f.month}/${f.day}`.includes(q);
+
+    const matchesSub =
+      f.subFlowers &&
+      f.subFlowers.some(
+        (sub) =>
+          sub.name.toLowerCase().includes(q) ||
+          (sub.meanings && sub.meanings.some((m) => m.toLowerCase().includes(q))) ||
+          (sub.note && sub.note.toLowerCase().includes(q))
+      );
+
+    return matchesMain || matchesSub;
   });
 
   return (
@@ -112,6 +124,18 @@ export const FlowerListModal: React.FC<FlowerListModalProps> = ({
                         <p className="text-[11px] text-slate-500 truncate mt-1">
                           {f.meanings.join('・')}
                         </p>
+                        {f.subFlowers && f.subFlowers.length > 0 && (
+                          <div className="flex flex-wrap gap-1 mt-1">
+                            {f.subFlowers.map((sub, sIdx) => (
+                              <span
+                                key={sIdx}
+                                className="text-[10px] bg-teal-50 text-teal-700 px-1.5 py-0.5 rounded border border-teal-100"
+                              >
+                                🌿 {sub.name}
+                              </span>
+                            ))}
+                          </div>
+                        )}
                       </div>
                     </button>
                   ))}

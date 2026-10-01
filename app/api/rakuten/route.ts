@@ -62,16 +62,36 @@ export async function GET(request: NextRequest) {
           cache: 'no-store',
         });
 
+        console.log(`[Rakuten API] Fetching: ${url.origin}${url.pathname}?keyword=${kw}&appIdExists=${!!appId}&status=${res.status}`);
+
         if (res.ok) {
           const data = await res.json();
-          const items: RakutenItem[] = (data.Items || []).map((entry: any) => {
+          let rawItems = data.Items || [];
+
+          // もし「花名 花」で0件だった場合、花名単体で再検索
+          if (rawItems.length === 0) {
+            url.searchParams.set('keyword', kw);
+            const retryRes = await fetch(url.toString(), { headers, cache: 'no-store' });
+            if (retryRes.ok) {
+              const retryData = await retryRes.json();
+              rawItems = retryData.Items || [];
+            }
+          }
+
+          const items: RakutenItem[] = rawItems.map((entry: any) => {
             const item = entry.Item || entry;
+            // 楽天画像URLの安全な取得
+            const img =
+              item.mediumImageUrls?.[0]?.imageUrl ||
+              (typeof item.mediumImageUrls?.[0] === 'string' ? item.mediumImageUrls[0] : '') ||
+              item.smallImageUrls?.[0]?.imageUrl ||
+              '';
             return {
               itemName: item.itemName || 'お花アイテム',
               itemPrice: item.itemPrice || 0,
               itemUrl: item.affiliateUrl || item.itemUrl || `https://search.rakuten.co.jp/search/mall/${encodeURIComponent(kw)}/`,
               affiliateUrl: item.affiliateUrl,
-              imageUrl: item.mediumImageUrls?.[0]?.imageUrl || item.smallImageUrls?.[0]?.imageUrl || '',
+              imageUrl: img,
               shopName: item.shopName || '楽天市場',
               reviewAverage: item.reviewAverage || 4.5,
               reviewCount: item.reviewCount || 0,
@@ -79,6 +99,9 @@ export async function GET(request: NextRequest) {
             };
           });
           allItems.push(...items);
+        } else {
+          const errText = await res.text().catch(() => '');
+          console.warn(`[Rakuten API Warning] Status: ${res.status}, Body: ${errText.slice(0, 150)}`);
         }
       }
 
@@ -90,9 +113,16 @@ export async function GET(request: NextRequest) {
           keywords,
           items: allItems,
           rakutenSearchUrl: `https://search.rakuten.co.jp/search/mall/${encodeURIComponent(primaryKeyword)}/`,
+          debug: {
+            appIdSet: !!appId,
+            accessKeySet: !!accessKey,
+            affiliateIdSet: !!affiliateId,
+            itemCount: allItems.length,
+          },
         });
       }
-    } catch (err) {
+    } catch (err: any) {
+      console.error('[Rakuten API Error]:', err?.message || err);
       console.warn('Rakuten live API error, falling back to curated items:', err);
     }
   }

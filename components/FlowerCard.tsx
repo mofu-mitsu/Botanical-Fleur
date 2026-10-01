@@ -1,10 +1,11 @@
 'use client';
 
-import React, { useRef, useState } from 'react';
+import React, { useRef, useState, useEffect } from 'react';
 import { FlowerData } from '@/lib/flowerData';
 import { FlowerSvg } from './FlowerSvg';
 import { toPng } from 'html-to-image';
 import confetti from 'canvas-confetti';
+import { logFlowerViewToGas } from '@/lib/gasLogger';
 import {
   Download,
   Share2,
@@ -17,6 +18,8 @@ import {
   Leaf,
   Lightbulb,
   RefreshCw,
+  X,
+  Smartphone,
 } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
 
@@ -29,7 +32,15 @@ const DEFAULT_TRIVIA_LIST = [
   '花瓶に飾るときは水の中に少量の砂糖や炭酸水を混ぜると、花が長持ちしやすくなります。',
   '日光が大好きな植物でも、直射日光よりレースカーテン越しの柔らかい光を好む花が多いです。',
   '花言葉は19世紀のイギリス・ビクトリア朝で花を贈る「秘密の手紙」として大流行しました。',
-  '朝一番に水を替えて茎の根元を水中で少し斜めに切る（水切り）と、ぐんぐん水を吸い上げます。'
+  '朝一番に水を替えて茎の根元を水中で少し斜めに切る（水切り）と、ぐんぐん水を吸い上げます。',
+  '植物に優しいクラシック音楽を聴かせると、成長速度や開花が良くなるという研究があります。',
+  'お花屋さんで買った花は、持ち帰ったらすぐ茎を水に浸けて30分ほど休ませるとピンと元気になります。',
+  '黄色やオレンジの花はハチを呼び寄せ、赤やピンクの花は蝶や鳥に好まれやすい色合いです。',
+  '夜になると花びらを閉じて眠る「就眠運動」は、夜露で花粉が濡れて痛むのを防ぐためです。',
+  '花瓶の水に十円玉（銅イオン）を1枚沈めておくと、水の雑菌繁殖を抑えてくれます。',
+  '誕生花の起源は古代ギリシャ・ローマ時代、人々が季節の花に神々のメッセージを重ねたのが始まりです。',
+  '甘い香りの花は夜に受粉を助ける蛾を引き寄せるため、日暮れとともに香りが強くなることが多いです。',
+  '葉のホコリを柔らかい布でそっと拭いてあげると、光合成が活発になって花持ちがグンと良くなります。'
 ];
 
 export const FlowerCard: React.FC<FlowerCardProps> = ({ flower, isToday = false }) => {
@@ -37,7 +48,21 @@ export const FlowerCard: React.FC<FlowerCardProps> = ({ flower, isToday = false 
   const [downloading, setDownloading] = useState(false);
   const [copied, setCopied] = useState(false);
   const [showShareModal, setShowShareModal] = useState(false);
-  const [triviaIndex, setTriviaIndex] = useState(0);
+  const [mobileSavedImageUrl, setMobileSavedImageUrl] = useState<string | null>(null);
+
+  // 豆知識はページ表示・更新ごとにランダムに選ばれる！
+  const [triviaIndex, setTriviaIndex] = useState(() => Math.floor(Math.random() * 20));
+
+  // 閲覧ログをGASへサイレント送信
+  useEffect(() => {
+    logFlowerViewToGas({
+      flowerName: flower.name,
+      month: flower.month,
+      day: flower.day,
+      meanings: flower.meanings,
+      reading: flower.reading,
+    });
+  }, [flower.name, flower.month, flower.day, flower.meanings, flower.reading]);
 
   // 花言葉文字列
   const meaningsText = flower.meanings.join('・');
@@ -50,10 +75,10 @@ export const FlowerCard: React.FC<FlowerCardProps> = ({ flower, isToday = false 
   const currentTrivia = activeTriviaList[triviaIndex % activeTriviaList.length];
 
   const handleNextTrivia = () => {
-    setTriviaIndex((prev) => (prev + 1) % activeTriviaList.length);
+    setTriviaIndex((prev) => prev + 1);
   };
 
-  // 画像保存ハンドラー
+  // 画像保存ハンドラー（スマホ時は長押し専用モーダル、PC時は直接ダウンロード）
   const handleDownloadImage = async () => {
     if (!cardRef.current) return;
     setDownloading(true);
@@ -67,10 +92,20 @@ export const FlowerCard: React.FC<FlowerCardProps> = ({ flower, isToday = false 
         backgroundColor: '#f8faf9',
       });
 
-      const link = document.createElement('a');
-      link.download = `flower_${flower.month}m${flower.day}d_${flower.name}.png`;
-      link.href = dataUrl;
-      link.click();
+      const isMobile =
+        typeof window !== 'undefined' &&
+        (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent) || window.innerWidth < 768);
+
+      if (isMobile) {
+        // スマホの場合は長押し保存モーダルを表示
+        setMobileSavedImageUrl(dataUrl);
+      } else {
+        // PCの場合はそのままダウンロード
+        const link = document.createElement('a');
+        link.download = `flower_${flower.month}m${flower.day}d_${flower.name}.png`;
+        link.href = dataUrl;
+        link.click();
+      }
 
       // お祝いの紙吹雪エフェクト
       confetti({
@@ -418,6 +453,59 @@ export const FlowerCard: React.FC<FlowerCardProps> = ({ flower, isToday = false 
                   className="px-4 py-2 text-xs font-semibold text-slate-500 hover:text-slate-700 rounded-xl"
                 >
                   閉じる
+                </button>
+              </div>
+            </motion.div>
+          </div>
+        )}
+
+        {/* スマホ用：画像長押し保存モーダル */}
+        {mobileSavedImageUrl && (
+          <div className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-4 bg-emerald-950/70 backdrop-blur-md">
+            <motion.div
+              initial={{ scale: 0.9, opacity: 0, y: 20 }}
+              animate={{ scale: 1, opacity: 1, y: 0 }}
+              exit={{ scale: 0.9, opacity: 0, y: 20 }}
+              className="relative w-full max-w-md bg-white rounded-3xl p-5 shadow-2xl border border-emerald-200 flex flex-col max-h-[92vh] overflow-hidden"
+            >
+              {/* 閉じるボタン */}
+              <button
+                onClick={() => setMobileSavedImageUrl(null)}
+                className="absolute top-4 right-4 p-2 rounded-full text-slate-400 hover:text-slate-700 hover:bg-slate-100 transition-colors z-20 cursor-pointer"
+                aria-label="閉じる"
+              >
+                <X className="w-5 h-5" />
+              </button>
+
+              <div className="text-center pb-2">
+                <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-100 text-emerald-800 text-xs font-bold mb-1.5">
+                  <Smartphone className="w-3.5 h-3.5" />
+                  <span>スマホで画像保存</span>
+                </div>
+                <h4 className="text-base font-extrabold text-emerald-950">
+                  画像を長押しして「画像を保存」
+                </h4>
+                <p className="text-[11px] text-slate-500 mt-0.5">
+                  写真をカメラロール・アルバムに保存できます
+                </p>
+              </div>
+
+              {/* スクロール可能な画像表示エリア */}
+              <div className="flex-1 overflow-y-auto p-1 my-2 rounded-2xl bg-emerald-50/50 flex justify-center items-center border border-emerald-100">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src={mobileSavedImageUrl}
+                  alt={`${flower.month}月${flower.day}日 ${flower.name}`}
+                  className="w-full h-auto max-h-[58vh] object-contain rounded-xl shadow-md select-none touch-auto pointer-events-auto"
+                />
+              </div>
+
+              <div className="pt-2 text-center">
+                <button
+                  onClick={() => setMobileSavedImageUrl(null)}
+                  className="w-full py-2.5 rounded-xl bg-emerald-700 hover:bg-emerald-800 text-white font-bold text-xs transition-colors shadow-sm cursor-pointer"
+                >
+                  保存完了・閉じる
                 </button>
               </div>
             </motion.div>

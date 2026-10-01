@@ -27,29 +27,24 @@ import {
 } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
 
-// 注目の記念日リスト（節分・クリスマス・ダーリンちゃん・LSI芋虫・開発者誕生日など）
+// 注目の記念日リスト（ダーリンちゃん・LSI芋虫・季節イベント・伝統祭事・特別植物）
 const SPECIAL_ANNIVERSARIES = [
-  { m: 1, d: 17, label: '1/17 開発者の誕生日', flower: '胡蝶蘭' },
+  { m: 5, d: 4, label: '5/4 ダーリンちゃんの誕生日', flower: 'ストケシア' },
   { m: 2, d: 13, label: '2/13 LSI芋虫の誕生日', flower: 'エーデルワイス' },
   { m: 2, d: 14, label: '2/14 バレンタイン', flower: 'カカオ' },
-  { m: 2, d: 19, label: '2/19 開発者家族の誕生日', flower: '白木蓮' },
-  { m: 5, d: 4, label: '5/4 ダーリンちゃんの誕生日', flower: 'ストケシア' },
-  { m: 9, d: 15, label: '9/15 お月見植物祭り', flower: 'ススキ' },
-  { m: 4, d: 5, label: '4/5 爛漫桜', flower: 'サクラ' },
-  { m: 2, d: 3, label: '2/3 節分', flower: 'セツブンソウ' },
-  { m: 12, d: 11, label: '12/11 開発者家族の誕生日', flower: 'アザレア' },
-  { m: 12, d: 25, label: '12/25 クリスマス', flower: 'ポインセチア' },
-  { m: 8, d: 18, label: '8/18 開発者のいとこの誕生日', flower: 'クコ' },
-  { m: 1, d: 1, label: '1/1 元日・スノードロップ', flower: 'スノードロップ' },
-  { m: 3, d: 3, label: '3/3 桃の節句', flower: 'モモ' },
+  { m: 3, d: 3, label: '3/3 桃の節句・ひな祭り', flower: 'モモ' },
   { m: 3, d: 14, label: '3/14 ホワイトデー', flower: 'スイートピー' },
-  { m: 4, d: 26, label: '4/26 スカビオサ', flower: 'スカビオサ' },
+  { m: 4, d: 5, label: '4/5 爛漫の桜祭り', flower: 'サクラ' },
   { m: 5, d: 5, label: '5/5 端午の節句', flower: 'ショウブ' },
-  { m: 7, d: 7, label: '7/7 七夕・アベリア', flower: 'アベリア' },
-  { m: 9, d: 9, label: '9/9 重陽の節句', flower: 'シオン' },
+  { m: 7, d: 7, label: '7/7 七夕の節句', flower: 'アベリア' },
+  { m: 9, d: 9, label: '9/9 重陽の節句（菊の節句）', flower: 'シオン' },
+  { m: 9, d: 15, label: '9/15 お月見・十五夜', flower: 'ススキ' },
   { m: 10, d: 7, label: '10/7 金木犀の芳香', flower: 'キンモクセイ' },
   { m: 10, d: 31, label: '10/31 ハロウィン', flower: 'ヘリコニア' },
   { m: 12, d: 21, label: '12/21 冬至', flower: 'スペアミント' },
+  { m: 12, d: 25, label: '12/25 クリスマス', flower: 'ポインセチア' },
+  { m: 1, d: 1, label: '1/1 元日・スノードロップ', flower: 'スノードロップ' },
+  { m: 2, d: 3, label: '2/3 節分・福寿の春', flower: 'セツブンソウ' },
 ];
 
 export default function HomePage() {

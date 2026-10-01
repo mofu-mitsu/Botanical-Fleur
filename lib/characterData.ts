@@ -546,16 +546,16 @@ export const CHARACTERS_MAP: Record<string, CharacterProfile[]> = {
       "name": "ひかる",
       "month": 3,
       "day": 30,
-      "flowerName": "アルメリア",
+      "flowerName": "エニシダ",
       "mbti": "ISFP",
       "socionics": "SEI",
       "enneagram": "7w6",
       "motif": "黒猫風船",
-      "dialogueBadge": "お人よしムードメーカー",
-      "themeColor": "#8b5cf6",
-      "accentColor": "#c4b5fd",
+      "dialogueBadge": "陽気ないたずらっ子",
+      "themeColor": "#facc15",
+      "accentColor": "#fef08a",
       "imageFileName": "hikaru.png",
-      "comment": "お、オレと同じ3月30日生まれけ？なんだか嬉しいなぁ！アルメリアはちっちゃくて丸っこくて『思いやり』って花言葉なんだと。いっぱいの優しさとハッピーを届けるかんね！"
+      "comment": "おっ！オレと同じ3月30日生まれけ？嬉しいなぁ！誕生花のエニシダは黄色い小鳥みてえで『恋の予感』って花言葉なんだと！あ、桃花ー！またちょっかい出しに来たかんなー！……え、オレ元々ハロウィンの黒猫風船だったのに桃花に噛まれて穴開いた話？言うなよそれー！ま、ハロウィンは一番ワクワクすっけどな！"
     }
   ],
   "4-2": [
@@ -2016,15 +2016,16 @@ export const CHARACTERS_MAP: Record<string, CharacterProfile[]> = {
       "name": "とろ",
       "month": 8,
       "day": 5,
-      "flowerName": "エリカ",
+      "flowerName": "オシロイバナ",
       "mbti": "ISTP",
+      "socionics": "SLI",
       "enneagram": "5w6",
       "motif": "蜘蛛",
-      "dialogueBadge": "孤高の鈴蘭",
-      "themeColor": "#db2777",
+      "dialogueBadge": "夕暮れの狙撃手",
+      "themeColor": "#ec4899",
       "accentColor": "#fbcfe8",
       "imageFileName": "toro.png",
-      "comment": "8月5日。エリカの花言葉は『孤独』……らしい。別に悪い意味じゃねえだろ。ひとりでできることなら、ひとりでやりゃいい。……弓の練習？　邪魔しなきゃ好きにすれば"
+      "comment": "8月5日……オシロイバナ。夕方涼しくなってから咲く花だ。花言葉は『臆病』だの『あなたを想う』だの……まあ、言葉なんざどうでもいい。身体動かして弓引いてる時が一番落ち着く。……何見てんだよ。邪魔すんならあっち行け。見学だけなら……黙って座ってろ。"
     }
   ],
   "8-7": [
