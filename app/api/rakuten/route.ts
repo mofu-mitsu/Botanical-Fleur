@@ -52,6 +52,12 @@ export async function GET(request: NextRequest) {
       }
 
       for (const kw of keywords.slice(0, 2)) {
+        // クレマチスの場合は「スイセイ2号（彗星2号）」を最優先で検索！
+        // なければ「クレマチス 花」「クレマチス」へと自動フォールバック
+        const searchQueriesToTry = kw.includes('クレマチス')
+          ? ['クレマチス スイセイ2号', 'クレマチス 彗星2号', `${kw} 花`, kw]
+          : [`${kw} 花`, kw];
+
         // 1. まずOpenAPI（accessKeyがある場合）または標準APIエンドポイントを試す
         const endpointsToTry: { url: string; useAccessKey: boolean }[] = [];
         if (accessKey) {
@@ -68,60 +74,53 @@ export async function GET(request: NextRequest) {
 
         let rawItems: any[] = [];
 
-        for (const ep of endpointsToTry) {
-          try {
-            const url = new URL(ep.url);
-            url.searchParams.set('applicationId', appId);
-            if (affiliateId) {
-              url.searchParams.set('affiliateId', affiliateId);
-            }
-            url.searchParams.set('keyword', `${kw} 花`);
-            url.searchParams.set('format', 'json');
-            url.searchParams.set('hits', keywords.length > 1 ? '3' : '6');
+        for (const queryTerm of searchQueriesToTry) {
+          if (rawItems.length > 0) break;
 
-            const reqHeaders: Record<string, string> = {
-              'Referer': incomingReferer || `${siteOrigin}/`,
-              'Origin': siteOrigin,
-              'User-Agent':
-                'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
-            };
-            if (ep.useAccessKey && accessKey) {
-              reqHeaders['accessKey'] = accessKey;
-            }
+          for (const ep of endpointsToTry) {
+            try {
+              const url = new URL(ep.url);
+              url.searchParams.set('applicationId', appId);
+              if (affiliateId) {
+                url.searchParams.set('affiliateId', affiliateId);
+              }
+              url.searchParams.set('keyword', queryTerm);
+              url.searchParams.set('format', 'json');
+              url.searchParams.set('hits', keywords.length > 1 ? '3' : '6');
 
-            const res = await fetch(url.toString(), {
-              headers: reqHeaders,
-              cache: 'no-store',
-            });
+              const reqHeaders: Record<string, string> = {
+                'Referer': incomingReferer || `${siteOrigin}/`,
+                'Origin': siteOrigin,
+                'User-Agent':
+                  'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
+              };
+              if (ep.useAccessKey && accessKey) {
+                reqHeaders['accessKey'] = accessKey;
+              }
 
-            console.log(
-              `[Rakuten API] Fetching: ${url.origin}${url.pathname}?keyword=${kw}&appIdExists=${!!appId}&status=${res.status}`
-            );
+              const res = await fetch(url.toString(), {
+                headers: reqHeaders,
+                cache: 'no-store',
+              });
 
-            if (res.ok) {
-              const data = await res.json();
-              rawItems = data.Items || [];
+              console.log(
+                `[Rakuten API] Fetching: ${url.origin}${url.pathname}?keyword=${encodeURIComponent(queryTerm)}&appIdExists=${!!appId}&status=${res.status}`
+              );
 
-              // もし「花名 花」で0件だった場合、「花名」単体で再試行
-              if (rawItems.length === 0) {
-                url.searchParams.set('keyword', kw);
-                const retryRes = await fetch(url.toString(), { headers: reqHeaders, cache: 'no-store' });
-                if (retryRes.ok) {
-                  const retryData = await retryRes.json();
-                  rawItems = retryData.Items || [];
+              if (res.ok) {
+                const data = await res.json();
+                const fetched = data.Items || [];
+                if (fetched.length > 0) {
+                  rawItems = fetched;
+                  break; // エンドポイントループを抜ける
                 }
+              } else {
+                const errText = await res.text().catch(() => '');
+                console.warn(`[Rakuten API Warning] Status: ${res.status}, Body: ${errText.slice(0, 160)}`);
               }
-
-              if (rawItems.length > 0) {
-                // 取得成功したら次のエンドポイントは試さない
-                break;
-              }
-            } else {
-              const errText = await res.text().catch(() => '');
-              console.warn(`[Rakuten API Warning] Status: ${res.status}, Body: ${errText.slice(0, 160)}`);
+            } catch (fetchErr: any) {
+              console.warn(`[Rakuten Endpoint Error] ${ep.url}:`, fetchErr?.message || fetchErr);
             }
-          } catch (fetchErr: any) {
-            console.warn(`[Rakuten Endpoint Error] ${ep.url}:`, fetchErr?.message || fetchErr);
           }
         }
 
@@ -176,23 +175,28 @@ export async function GET(request: NextRequest) {
   // Graceful curated fallback for each flower keyword so both appear!
   const fallbackItems: RakutenItem[] = [];
   keywords.forEach((kw) => {
+    const isClematis = kw.includes('クレマチス');
     fallbackItems.push(
       {
-        itemName: `【誕生花ギフト】季節の${kw} プレミアムフラワーアレンジメント`,
-        itemPrice: 4280,
-        itemUrl: `https://search.rakuten.co.jp/search/mall/${encodeURIComponent(kw + ' ギフト')}/`,
+        itemName: isClematis
+          ? '【極上品種】クレマチス「流星・スイセイ2号」優美な星咲き苗 ポット植え'
+          : `【誕生花ギフト】季節の${kw} プレミアムフラワーアレンジメント`,
+        itemPrice: isClematis ? 3850 : 4280,
+        itemUrl: `https://search.rakuten.co.jp/search/mall/${encodeURIComponent(isClematis ? 'クレマチス スイセイ2号' : kw + ' ギフト')}/`,
         shopName: 'ボタニカルフラワー楽天市場店',
-        reviewAverage: 4.8,
-        reviewCount: 142,
+        reviewAverage: 4.9,
+        reviewCount: 168,
         categoryKeyword: kw,
       },
       {
-        itemName: `【鉢植え・ガーデン】フレッシュな${kw} ポット苗・育成キット`,
+        itemName: isClematis
+          ? '【開花見込み株】クレマチス スイセイ2号（彗星2号）アンドロメダ系 育成キット'
+          : `【鉢植え・ガーデン】フレッシュな${kw} ポット苗・育成キット`,
         itemPrice: 2980,
-        itemUrl: `https://search.rakuten.co.jp/search/mall/${encodeURIComponent(kw + ' 苗')}/`,
+        itemUrl: `https://search.rakuten.co.jp/search/mall/${encodeURIComponent(isClematis ? 'クレマチス スイセイ2号 苗' : kw + ' 苗')}/`,
         shopName: '花と緑のガーデン楽天市場店',
-        reviewAverage: 4.7,
-        reviewCount: 89,
+        reviewAverage: 4.8,
+        reviewCount: 95,
         categoryKeyword: kw,
       },
       {

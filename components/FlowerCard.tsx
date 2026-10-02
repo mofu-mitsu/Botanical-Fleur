@@ -28,19 +28,11 @@ interface FlowerCardProps {
   isToday?: boolean;
 }
 
-const DEFAULT_TRIVIA_LIST = [
-  '花瓶に飾るときは水の中に少量の砂糖や炭酸水を混ぜると、花が長持ちしやすくなります。',
-  '日光が大好きな植物でも、直射日光よりレースカーテン越しの柔らかい光を好む花が多いです。',
-  '花言葉は19世紀のイギリス・ビクトリア朝で花を贈る「秘密の手紙」として大流行しました。',
-  '朝一番に水を替えて茎の根元を水中で少し斜めに切る（水切り）と、ぐんぐん水を吸い上げます。',
-  '植物に優しいクラシック音楽を聴かせると、成長速度や開花が良くなるという研究があります。',
-  'お花屋さんで買った花は、持ち帰ったらすぐ茎を水に浸けて30分ほど休ませるとピンと元気になります。',
-  '黄色やオレンジの花はハチを呼び寄せ、赤やピンクの花は蝶や鳥に好まれやすい色合いです。',
-  '夜になると花びらを閉じて眠る「就眠運動」は、夜露で花粉が濡れて痛むのを防ぐためです。',
-  '花瓶の水に十円玉（銅イオン）を1枚沈めておくと、水の雑菌繁殖を抑えてくれます。',
-  '誕生花の起源は古代ギリシャ・ローマ時代、人々が季節の花に神々のメッセージを重ねたのが始まりです。',
-  '甘い香りの花は夜に受粉を助ける蛾を引き寄せるため、日暮れとともに香りが強くなることが多いです。',
-  '葉のホコリを柔らかい布でそっと拭いてあげると、光合成が活発になって花持ちがグンと良くなります。'
+// お花固有の豆知識がない場合のフォールバック（一般的な水揚げ・お手入れ）
+const GENERAL_FLOWER_CARE_TRIVIA = [
+  '朝一番に水を替えて茎の根元を水中で少し斜めに切る（水切り）と、導管に空気が入らず水をぐんぐん吸い上げます。',
+  '花瓶の水に十円玉（銅イオン）を1枚沈めておくと、雑菌の繁殖を抑えて水が濁りにくくなり花持ちが良くなります。',
+  '日光が大好きな植物でも、直射日光よりレースカーテン越しの柔らかい光を好むお花が多いです。',
 ];
 
 export const FlowerCard: React.FC<FlowerCardProps> = ({ flower, isToday = false }) => {
@@ -50,8 +42,33 @@ export const FlowerCard: React.FC<FlowerCardProps> = ({ flower, isToday = false 
   const [showShareModal, setShowShareModal] = useState(false);
   const [mobileSavedImageUrl, setMobileSavedImageUrl] = useState<string | null>(null);
 
-  // 豆知識はページ表示・更新ごとにランダムに選ばれる！
-  const [triviaIndex, setTriviaIndex] = useState(() => Math.floor(Math.random() * 20));
+  // お花固有の豆知識リスト（各花に3つずつ用意されているもの）
+  const activeTriviaList = React.useMemo(() => {
+    if (flower.triviaList && flower.triviaList.length > 0) {
+      return flower.triviaList;
+    }
+    return [
+      `${flower.name}の花言葉は『${flower.meanings.join('・')}』。${flower.description}`,
+      ...GENERAL_FLOWER_CARE_TRIVIA,
+    ];
+  }, [flower.name, flower.meanings, flower.description, flower.triviaList]);
+
+  // ユーザーが手動で切り替えたオフセット
+  const [prevFlowerId, setPrevFlowerId] = useState(flower.id);
+  const [userOffset, setUserOffset] = useState(0);
+
+  // お花が切り替わったらオフセットを0にリセットして1つ目から綺麗に見せる
+  if (prevFlowerId !== flower.id) {
+    setPrevFlowerId(flower.id);
+    setUserOffset(0);
+  }
+
+  const currentTriviaIndex = userOffset % activeTriviaList.length;
+  const currentTrivia = activeTriviaList[currentTriviaIndex];
+
+  const handleNextTrivia = () => {
+    setUserOffset((prev) => prev + 1);
+  };
 
   // 閲覧ログをGASへサイレント送信
   useEffect(() => {
@@ -66,17 +83,6 @@ export const FlowerCard: React.FC<FlowerCardProps> = ({ flower, isToday = false 
 
   // 花言葉文字列
   const meaningsText = flower.meanings.join('・');
-
-  // トリビアリスト（固有のものがあればそれ、なければ汎用豆知識）
-  const activeTriviaList = (flower.triviaList && flower.triviaList.length > 0)
-    ? flower.triviaList
-    : DEFAULT_TRIVIA_LIST;
-
-  const currentTrivia = activeTriviaList[triviaIndex % activeTriviaList.length];
-
-  const handleNextTrivia = () => {
-    setTriviaIndex((prev) => prev + 1);
-  };
 
   // 画像保存ハンドラー（スマホ時は長押し専用モーダル、PC時は直接ダウンロード）
   const handleDownloadImage = async () => {
@@ -364,7 +370,7 @@ export const FlowerCard: React.FC<FlowerCardProps> = ({ flower, isToday = false 
                   <Lightbulb className="w-4 h-4 text-amber-600" />
                   <span>ボタニカル豆知識</span>
                   <span className="text-[10px] bg-amber-200/60 text-amber-800 px-1.5 py-0.5 rounded-full font-mono">
-                    {activeTriviaList.length > 1 ? `${(triviaIndex % activeTriviaList.length) + 1}/${activeTriviaList.length}` : 'Trivia'}
+                    {activeTriviaList.length > 1 ? `${currentTriviaIndex + 1}/${activeTriviaList.length}` : 'Trivia'}
                   </span>
                 </div>
                 {activeTriviaList.length > 1 && (
@@ -379,7 +385,7 @@ export const FlowerCard: React.FC<FlowerCardProps> = ({ flower, isToday = false 
                 )}
               </div>
               <motion.p
-                key={triviaIndex}
+                key={currentTriviaIndex}
                 initial={{ opacity: 0, y: 3 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.2 }}

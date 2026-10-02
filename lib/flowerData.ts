@@ -6986,7 +6986,7 @@ export const SPECIAL_FLOWERS: Record<string, FlowerData> = {
     ],
     "description": "早春に桜より少し早く淡紅色の愛らしい花を咲かせ、初夏に甘酸っぱくオレンジ色の果実を実らせます。はにかむ乙女のような可憐さと実りの豊かさを兼ね備えます。",
     "category": "樹木",
-    "svgType": "cherry_blossom",
+    "svgType": "apricot",
     "flowerColor": "#fb7185",
     "secondaryColor": "#fbcfe8",
     "bgGradient": "from-rose-400/15 via-pink-200/10 to-emerald-500/10",

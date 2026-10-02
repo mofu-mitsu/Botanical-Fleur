@@ -24,8 +24,132 @@ import {
   Clock,
   ExternalLink,
   Home,
+  RefreshCw,
 } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
+
+// トップページの「花言葉のちょっと面白いボタニカル豆知識」リスト（16種類以上の豊富なバリエーション）
+interface TopTriviaItem {
+  icon: string;
+  title: string;
+  content: string;
+  tag: string;
+}
+
+const TOP_BOTANICAL_TRIVIA_LIST: TopTriviaItem[] = [
+  {
+    icon: '🌿',
+    title: '食虫植物なのに「憩い」と「物思い」？',
+    content:
+      'サラセニアの花言葉は「憩い・息抜き」、モウセンゴケは「物思い」。虫を捕獲するアグレッシブな食虫植物でありながら、佇まいはどこか哲学的でのんびりしているギャップが世界中の植物ファンを虜にしています。',
+    tag: '食虫植物',
+  },
+  {
+    icon: '🌸',
+    title: 'ドライになっても色あせない「スターチス」',
+    content:
+      'スターチスの花言葉は「変わらぬ心」「途絶えぬ記憶」。乾燥しても鮮やかな色を保ち続けることから、大切な思い出や永遠の友情を誓う花として愛され続けています。',
+    tag: 'ドライフラワー',
+  },
+  {
+    icon: '🍫',
+    title: 'カカオの花は枝ではなく幹から直接咲く？',
+    content:
+      'チョコレートの原料カカオの花言葉は「親切」「情熱」。カカオは枝先ではなく、太い幹から直接無数の小さな花が咲く「幹生花（かんせいか）」という極めて珍しい生態を持ちます。',
+    tag: '熱帯植物',
+  },
+  {
+    icon: '🌹',
+    title: '「不可能」から「夢かなう」へ変わった青いバラ',
+    content:
+      'かつて自然界に存在しない青いバラの花言葉は「不可能」「存在しない」でした。しかし日本のサントリーが世界初の青いバラ開発に成功したことで、歴史上初めて花言葉が「夢かなう」へと書き換えられました。',
+    tag: '奇跡の品種改良',
+  },
+  {
+    icon: '🦁',
+    title: 'タンポポの英語名「ライオンの歯」の由来',
+    content:
+      'タンポポの英名「Dandelion」は、フランス語の「dent-de-lion（ライオンの歯）」が語源。ギザギザした葉の形状が百獣の王ライオンの鋭い牙に見えることから名付けられました。',
+    tag: '語源の不思議',
+  },
+  {
+    icon: '⚠️',
+    title: '黄色いカーネーションの危険な裏花言葉',
+    content:
+      '赤いカーネーションが「母への愛」を象徴する一方、黄色いカーネーションの花言葉は「軽蔑」「侮辱」。花の色ひとつで正反対の意味になるビクトリア朝の花言葉文化の奥深さです。',
+    tag: '裏花言葉',
+  },
+  {
+    icon: '🌿',
+    title: 'パセリの花言葉は「お祭り騒ぎ」と「死の予兆」？',
+    content:
+      '料理の脇役パセリの花言葉は極端で「お祭り騒ぎ」と「死の予兆」。古代ギリシャで競技の勝者に贈る祝祭の冠にも、墓地へのお供えの花輪にも使われたという二面性が理由です。',
+    tag: 'ハーブ雑学',
+  },
+  {
+    icon: '🌻',
+    title: 'ヒマワリが太陽を追うのは「若い頃」だけ',
+    content:
+      '太陽を追って東から西へ首を振るヒマワリですが、実はそれは成長期の蕾の間だけ。大輪の花が完全に開花すると首振り運動をやめ、朝日の昇る東を向いたままじっと動かなくなります。',
+    tag: '植物の生態',
+  },
+  {
+    icon: '🍓',
+    title: 'イチゴの赤い甘い部分は実は「果実」じゃない？',
+    content:
+      'イチゴの花言葉は「幸福な家庭」「尊重と愛情」。私たちが食べている甘くて赤い部分は果実ではなく、茎の先端（花托）がぷっくり膨らんだもの。表面にある粒々の一つひとつこそが本物の果実です。',
+    tag: '植物の不思議',
+  },
+  {
+    icon: '🕊️',
+    title: '平和の象徴オリーブと「ノアの箱舟」伝説',
+    content:
+      'オリーブの花言葉は「平和」「知恵」。旧約聖書の「ノアの箱舟」で、大洪水が収まり陸地が現れたことをノアに知らせるために、放たれたハトがくわえて帰ってきたのがオリーブの若葉でした。',
+    tag: '聖書と神話',
+  },
+  {
+    icon: '👑',
+    title: '「つる植物の女王」クレマチスと旅人の喜び',
+    content:
+      'クレマチスはヨーロッパで「つる植物の女王」と讃えられ、花言葉は「精神の美」「旅人の喜び」。かつてヨーロッパの宿場町では、旅人の疲れを癒やすために宿の玄関先にクレマチスが植えられました。',
+    tag: '旅の植物',
+  },
+  {
+    icon: '🎋',
+    title: '120年に一度だけ咲く竹の花のミステリー',
+    content:
+      '竹や笹の花言葉は「節度」「未来への希望」。竹の花は60年〜120年に一度しか咲かず、花を咲かせた竹林は一斉に枯れて次世代の実を残して世代交代するという神秘的な性質を持ちます。',
+    tag: '神秘の生態',
+  },
+  {
+    icon: '🪷',
+    title: '泥水が濃いほど大輪に咲くハスの清らかさ',
+    content:
+      'ハス（蓮）の花言葉は「清らかな心」「神聖」。泥水が濁っていればいるほど、濁りを養分に変えて大輪で気高く美しい花を咲かせる性質から、東洋では泥中の清浄として尊ばれてきました。',
+    tag: '東洋の美',
+  },
+  {
+    icon: '🍎',
+    title: '踏まれるほど甘く香るカモミールの不屈の魂',
+    content:
+      'カモミールの花言葉は「逆境に耐える」「苦難の中の力」。人に踏まれれば踏まれるほど甘い青リンゴのような芳香を強く放ち、元気に広がる性質から名付けられました。',
+    tag: 'アロマの歴史',
+  },
+  {
+    icon: '🪙',
+    title: '花瓶に十円玉を入れると花が長持ちする科学',
+    content:
+      '花瓶の水に十円玉（銅イオン）を1枚入れておくと、水の雑菌やバクテリアの繁殖を強力に防ぎ、茎の導管が詰まるのを防ぐため、切り花が格段に長くピンと咲き続けます。',
+    tag: 'お花のお手入れ',
+  },
+  {
+    icon: '🌙',
+    title: '夜になると花を閉じて眠る「就眠運動」の知恵',
+    content:
+      'カタバミやチューリップが夜になると花びらを閉じるのは、夜露や雨で花粉が濡れて痛んだり、夜間の冷え込みで凍えるのを防ぐため。植物自身が命と花粉を守る見事な知恵です。',
+    tag: '植物の睡眠',
+  },
+];
 
 // 注目の記念日リスト（ダーリンちゃん・LSI芋虫・季節イベント・伝統祭事・特別植物）
 const SPECIAL_ANNIVERSARIES = [
@@ -61,6 +185,11 @@ export default function HomePage() {
   const [selectedDay, setSelectedDay] = useState(todayDate.day);
   const [isListModalOpen, setIsListModalOpen] = useState(false);
   const [gachaSpecialFlower, setGachaSpecialFlower] = useState<FlowerData | null>(null);
+
+  // トップページの豆知識オフセット（初期値ランダム）
+  const [topTriviaOffset, setTopTriviaOffset] = useState(() =>
+    Math.floor(Math.random() * TOP_BOTANICAL_TRIVIA_LIST.length)
+  );
 
   // 選択された日付の誕生花
   const currentFlower = getFlowerByDate(selectedMonth, selectedDay);
@@ -146,6 +275,7 @@ export default function HomePage() {
               <button
                 onClick={() => {
                   setViewMode('home');
+                  setTopTriviaOffset((prev) => prev + 2);
                   window.scrollTo({ top: 0, behavior: 'smooth' });
                 }}
                 className={`inline-flex items-center justify-center px-2 sm:px-3 py-1 sm:py-1.5 rounded-lg sm:rounded-xl text-[11px] sm:text-xs font-bold transition-all cursor-pointer whitespace-nowrap shrink-0 ${
@@ -438,37 +568,98 @@ export default function HomePage() {
                   </div>
                 </div>
 
-                {/* ボタニカル豆知識コラム */}
-                <section className="bg-white rounded-3xl p-6 sm:p-8 border border-emerald-100 shadow-sm space-y-4">
-                  <div className="flex items-center gap-2">
-                    <span className="p-2 rounded-xl bg-emerald-100 text-emerald-800">
-                      <Info className="w-5 h-5 text-emerald-700" />
-                    </span>
-                    <h3 className="text-lg sm:text-xl font-bold text-emerald-950 font-serif">
-                      花言葉のちょっと面白いボタニカル豆知識
-                    </h3>
-                  </div>
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs sm:text-sm text-slate-700 leading-relaxed">
-                    <div className="p-4 rounded-2xl bg-emerald-50/50 border border-emerald-100/70">
-                      <h4 className="font-bold text-emerald-900 mb-1 flex items-center gap-1.5">
-                        🌿 食虫植物なのに「憩い」と「物思い」？
-                      </h4>
-                      <p>
-                        サラセニアの花言葉は「憩い・息抜き」、モウセンゴケは「物思い」。
-                        虫を捕獲するアグレッシブな食虫植物でありながら、佇まいはどこか哲学的でのんびりしているギャップが世界中の植物ファンを虜にしています。
-                      </p>
-                    </div>
-                    <div className="p-4 rounded-2xl bg-emerald-50/50 border border-emerald-100/70">
-                      <h4 className="font-bold text-emerald-900 mb-1 flex items-center gap-1.5">
-                        🌸 ドライになっても色あせない「スターチス」
-                      </h4>
-                      <p>
-                        スターチスの花言葉は「変わらぬ心」「途絶えぬ記憶」。
-                        乾燥しても鮮やかな色を保ち続けることから、大切な思い出や永遠の友情を誓う花として愛され続けています。
-                      </p>
-                    </div>
-                  </div>
-                </section>
+                {/* ボタニカル豆知識コラム（ページを開くたび・ボタンを押すたびに面白い豆知識ペアが変化！） */}
+                {(() => {
+                  const triviaItem1 =
+                    TOP_BOTANICAL_TRIVIA_LIST[
+                      topTriviaOffset % TOP_BOTANICAL_TRIVIA_LIST.length
+                    ];
+                  const triviaItem2 =
+                    TOP_BOTANICAL_TRIVIA_LIST[
+                      (topTriviaOffset + 1) % TOP_BOTANICAL_TRIVIA_LIST.length
+                    ];
+                  return (
+                    <section className="bg-white rounded-3xl p-6 sm:p-8 border border-emerald-100 shadow-sm space-y-4">
+                      <div className="flex flex-wrap items-center justify-between gap-3">
+                        <div className="flex items-center gap-2">
+                          <span className="p-2 rounded-xl bg-emerald-100 text-emerald-800">
+                            <Info className="w-5 h-5 text-emerald-700" />
+                          </span>
+                          <div>
+                            <h3 className="text-lg sm:text-xl font-bold text-emerald-950 font-serif">
+                              花言葉のちょっと面白いボタニカル豆知識
+                            </h3>
+                            <p className="text-[11px] text-slate-500">
+                              訪れるたびに新しい植物の不思議に出会えます
+                            </p>
+                          </div>
+                        </div>
+
+                        {/* 別の豆知識を見るボタン */}
+                        <button
+                          type="button"
+                          onClick={() => setTopTriviaOffset((prev) => prev + 2)}
+                          className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-emerald-50 hover:bg-emerald-100/80 text-emerald-900 border border-emerald-200 text-xs font-bold transition-all shadow-2xs active:scale-95 cursor-pointer"
+                        >
+                          <RefreshCw className="w-3.5 h-3.5 text-emerald-700" />
+                          <span>別の豆知識を見る</span>
+                        </button>
+                      </div>
+
+                      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs sm:text-sm text-slate-700 leading-relaxed">
+                        <motion.div
+                          key={`trivia-${topTriviaOffset}-1`}
+                          initial={{ opacity: 0, y: 6 }}
+                          animate={{ opacity: 1, y: 0 }}
+                          transition={{ duration: 0.2 }}
+                          className="p-4 rounded-2xl bg-emerald-50/50 border border-emerald-100/70 space-y-1.5 flex flex-col justify-between"
+                        >
+                          <div>
+                            <div className="flex items-center justify-between gap-2 mb-1">
+                              <h4 className="font-bold text-emerald-900 flex items-center gap-1.5">
+                                <span>{triviaItem1.icon}</span>
+                                <span>{triviaItem1.title}</span>
+                              </h4>
+                              {triviaItem1.tag && (
+                                <span className="text-[10px] px-2 py-0.5 rounded-full bg-emerald-100 text-emerald-800 font-semibold shrink-0">
+                                  {triviaItem1.tag}
+                                </span>
+                              )}
+                            </div>
+                            <p className="text-slate-600 leading-relaxed">
+                              {triviaItem1.content}
+                            </p>
+                          </div>
+                        </motion.div>
+
+                        <motion.div
+                          key={`trivia-${topTriviaOffset}-2`}
+                          initial={{ opacity: 0, y: 6 }}
+                          animate={{ opacity: 1, y: 0 }}
+                          transition={{ duration: 0.2, delay: 0.05 }}
+                          className="p-4 rounded-2xl bg-emerald-50/50 border border-emerald-100/70 space-y-1.5 flex flex-col justify-between"
+                        >
+                          <div>
+                            <div className="flex items-center justify-between gap-2 mb-1">
+                              <h4 className="font-bold text-emerald-900 flex items-center gap-1.5">
+                                <span>{triviaItem2.icon}</span>
+                                <span>{triviaItem2.title}</span>
+                              </h4>
+                              {triviaItem2.tag && (
+                                <span className="text-[10px] px-2 py-0.5 rounded-full bg-emerald-100 text-emerald-800 font-semibold shrink-0">
+                                  {triviaItem2.tag}
+                                </span>
+                              )}
+                            </div>
+                            <p className="text-slate-600 leading-relaxed">
+                              {triviaItem2.content}
+                            </p>
+                          </div>
+                        </motion.div>
+                      </div>
+                    </section>
+                  );
+                })()}
               </motion.div>
             )}
 

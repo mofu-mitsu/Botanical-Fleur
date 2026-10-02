@@ -287,52 +287,180 @@ export const FlowerSvg: React.FC<FlowerSvgProps> = ({
           </g>
         );
 
-      // 10/3 カエデ: 枝と幾重にも重なる赤・橙・黄金の美しい紅葉の木
+      // 10/3 カエデ: 枝と幾重にも重なる赤・橙・黄金の美しい紅葉の木（枝にしっかり付いた紅葉）
       case 'maple':
         return (
           <g>
-            {/* 木の枝・幹 */}
-            <path d="M100 185 Q98 150 102 125 Q106 100 95 75" stroke="#78350f" strokeWidth="5" strokeLinecap="round" fill="none" />
-            <path d="M102 125 Q125 110 145 115" stroke="#78350f" strokeWidth="3.5" strokeLinecap="round" fill="none" />
-            <path d="M100 140 Q75 125 55 130" stroke="#78350f" strokeWidth="3.5" strokeLinecap="round" fill="none" />
-            
-            {/* 左の橙色モミジ葉 */}
-            <g transform="translate(60, 115) scale(0.65) rotate(-20)">
+            {/* 風情ある赤褐色の小枝 */}
+            <path d="M45 185 Q70 145 95 110 Q115 85 130 65" stroke="#78350f" strokeWidth="4.5" strokeLinecap="round" fill="none" />
+            <path d="M115 85 Q115 55 105 35" stroke="#78350f" strokeWidth="3" strokeLinecap="round" fill="none" />
+            <path d="M95 110 Q120 120 150 125" stroke="#78350f" strokeWidth="3.5" strokeLinecap="round" fill="none" />
+            <path d="M70 145 Q50 135 30 130" stroke="#78350f" strokeWidth="3" strokeLinecap="round" fill="none" />
+
+            {/* 枝先の各ポイントから直接葉柄が伸びて紅葉が広がる！ */}
+            {/* 1. 左下の紅色モミジ */}
+            <g transform="translate(30, 130) scale(0.55) rotate(-45)">
+              <line x1="0" y1="0" x2="0" y2="-16" stroke="#991b1b" strokeWidth="2.5" strokeLinecap="round" />
               <path
-                d="M100 115 L85 105 L60 115 L68 95 L40 90 L65 78 L55 60 L80 68 L100 35 L120 68 L145 60 L135 78 L160 90 L132 95 L140 115 L115 105 Z"
+                d="M0 -16 L-8 -22 L-22 -18 L-16 -28 L-34 -30 L-22 -38 L-42 -45 L-26 -52 L-36 -62 L-18 -62 L-22 -76 L-8 -70 L0 -92 L8 -70 L22 -76 L18 -62 L36 -62 L26 -52 L42 -45 L22 -38 L34 -30 L16 -28 L22 -18 L8 -22 Z"
+                fill="#e11d48"
+                stroke="#9f1239"
+                strokeWidth="1.5"
+              />
+              <line x1="0" y1="-16" x2="0" y2="-88" stroke="#fecdd3" strokeWidth="1.5" />
+              <line x1="0" y1="-16" x2="-22" y2="-72" stroke="#fecdd3" strokeWidth="1.2" />
+              <line x1="0" y1="-16" x2="22" y2="-72" stroke="#fecdd3" strokeWidth="1.2" />
+              <line x1="0" y1="-16" x2="-38" y2="-44" stroke="#fecdd3" strokeWidth="1.2" />
+              <line x1="0" y1="-16" x2="38" y2="-44" stroke="#fecdd3" strokeWidth="1.2" />
+            </g>
+
+            {/* 2. 右下の黄金橙色モミジ */}
+            <g transform="translate(150, 125) scale(0.6) rotate(45)">
+              <line x1="0" y1="0" x2="0" y2="-16" stroke="#9a3412" strokeWidth="2.5" strokeLinecap="round" />
+              <path
+                d="M0 -16 L-8 -22 L-22 -18 L-16 -28 L-34 -30 L-22 -38 L-42 -45 L-26 -52 L-36 -62 L-18 -62 L-22 -76 L-8 -70 L0 -92 L8 -70 L22 -76 L18 -62 L36 -62 L26 -52 L42 -45 L22 -38 L34 -30 L16 -28 L22 -18 L8 -22 Z"
                 fill="#f97316"
                 stroke="#c2410c"
-                strokeWidth="2"
+                strokeWidth="1.5"
               />
-              <line x1="100" y1="115" x2="100" y2="40" stroke="#fef08a" strokeWidth="1.5" />
+              <line x1="0" y1="-16" x2="0" y2="-88" stroke="#fef08a" strokeWidth="1.5" />
+              <line x1="0" y1="-16" x2="-22" y2="-72" stroke="#fef08a" strokeWidth="1.2" />
+              <line x1="0" y1="-16" x2="22" y2="-72" stroke="#fef08a" strokeWidth="1.2" />
+              <line x1="0" y1="-16" x2="-38" y2="-44" stroke="#fef08a" strokeWidth="1.2" />
+              <line x1="0" y1="-16" x2="38" y2="-44" stroke="#fef08a" strokeWidth="1.2" />
             </g>
 
-            {/* 右の深紅モミジ葉 */}
-            <g transform="translate(130, 95) scale(0.7) rotate(25)">
+            {/* 3. 中央節の朱赤モミジ */}
+            <g transform="translate(85, 100) scale(0.62) rotate(-10)">
+              <line x1="0" y1="0" x2="0" y2="-16" stroke="#991b1b" strokeWidth="2.5" strokeLinecap="round" />
               <path
-                d="M100 115 L85 105 L60 115 L68 95 L40 90 L65 78 L55 60 L80 68 L100 35 L120 68 L145 60 L135 78 L160 90 L132 95 L140 115 L115 105 Z"
-                fill="#dc2626"
-                stroke="#991b1b"
-                strokeWidth="2"
-              />
-              <line x1="100" y1="115" x2="100" y2="40" stroke="#fee2e2" strokeWidth="1.5" />
-            </g>
-
-            {/* 中央上部の黄金〜緋色の大モミジ葉 */}
-            <g transform="translate(95, 60) scale(0.85)">
-              <path
-                d="M100 115 L85 105 L60 115 L68 95 L40 90 L65 78 L55 60 L80 68 L100 35 L120 68 L145 60 L135 78 L160 90 L132 95 L140 115 L115 105 Z"
+                d="M0 -16 L-8 -22 L-22 -18 L-16 -28 L-34 -30 L-22 -38 L-42 -45 L-26 -52 L-36 -62 L-18 -62 L-22 -76 L-8 -70 L0 -92 L8 -70 L22 -76 L18 -62 L36 -62 L26 -52 L42 -45 L22 -38 L34 -30 L16 -28 L22 -18 L8 -22 Z"
                 fill="#ea580c"
                 stroke="#9a3412"
-                strokeWidth="2"
+                strokeWidth="1.5"
               />
-              {/* 繊細な葉脈 */}
-              <line x1="100" y1="115" x2="100" y2="40" stroke="#fef08a" strokeWidth="2" />
-              <line x1="100" y1="95" x2="60" y2="75" stroke="#fef08a" strokeWidth="1.5" />
-              <line x1="100" y1="95" x2="140" y2="75" stroke="#fef08a" strokeWidth="1.5" />
-              <line x1="100" y1="80" x2="70" y2="60" stroke="#fef08a" strokeWidth="1.2" />
-              <line x1="100" y1="80" x2="130" y2="60" stroke="#fef08a" strokeWidth="1.2" />
+              <line x1="0" y1="-16" x2="0" y2="-88" stroke="#fef08a" strokeWidth="1.5" />
+              <line x1="0" y1="-16" x2="-22" y2="-72" stroke="#fef08a" strokeWidth="1.2" />
+              <line x1="0" y1="-16" x2="22" y2="-72" stroke="#fef08a" strokeWidth="1.2" />
+              <line x1="0" y1="-16" x2="-38" y2="-44" stroke="#fef08a" strokeWidth="1.2" />
+              <line x1="0" y1="-16" x2="38" y2="-44" stroke="#fef08a" strokeWidth="1.2" />
             </g>
+
+            {/* 4. 右上の朱色モミジ */}
+            <g transform="translate(130, 65) scale(0.68) rotate(25)">
+              <line x1="0" y1="0" x2="0" y2="-16" stroke="#991b1b" strokeWidth="2.5" strokeLinecap="round" />
+              <path
+                d="M0 -16 L-8 -22 L-22 -18 L-16 -28 L-34 -30 L-22 -38 L-42 -45 L-26 -52 L-36 -62 L-18 -62 L-22 -76 L-8 -70 L0 -92 L8 -70 L22 -76 L18 -62 L36 -62 L26 -52 L42 -45 L22 -38 L34 -30 L16 -28 L22 -18 L8 -22 Z"
+                fill="#f43f5e"
+                stroke="#be123c"
+                strokeWidth="1.5"
+              />
+              <line x1="0" y1="-16" x2="0" y2="-88" stroke="#fee2e2" strokeWidth="1.5" />
+              <line x1="0" y1="-16" x2="-22" y2="-72" stroke="#fee2e2" strokeWidth="1.2" />
+              <line x1="0" y1="-16" x2="22" y2="-72" stroke="#fee2e2" strokeWidth="1.2" />
+              <line x1="0" y1="-16" x2="-38" y2="-44" stroke="#fee2e2" strokeWidth="1.2" />
+              <line x1="0" y1="-16" x2="38" y2="-44" stroke="#fee2e2" strokeWidth="1.2" />
+            </g>
+
+            {/* 5. 最上部・主枝先の見事な真紅モミジ大葉 */}
+            <g transform="translate(105, 35) scale(0.75) rotate(-5)">
+              <line x1="0" y1="0" x2="0" y2="-16" stroke="#7f1d1d" strokeWidth="2.5" strokeLinecap="round" />
+              <path
+                d="M0 -16 L-8 -22 L-22 -18 L-16 -28 L-34 -30 L-22 -38 L-42 -45 L-26 -52 L-36 -62 L-18 -62 L-22 -76 L-8 -70 L0 -92 L8 -70 L22 -76 L18 -62 L36 -62 L26 -52 L42 -45 L22 -38 L34 -30 L16 -28 L22 -18 L8 -22 Z"
+                fill="#dc2626"
+                stroke="#991b1b"
+                strokeWidth="1.8"
+              />
+              <line x1="0" y1="-16" x2="0" y2="-88" stroke="#fee2e2" strokeWidth="1.8" />
+              <line x1="0" y1="-16" x2="-22" y2="-72" stroke="#fee2e2" strokeWidth="1.4" />
+              <line x1="0" y1="-16" x2="22" y2="-72" stroke="#fee2e2" strokeWidth="1.4" />
+              <line x1="0" y1="-16" x2="-38" y2="-44" stroke="#fee2e2" strokeWidth="1.4" />
+              <line x1="0" y1="-16" x2="38" y2="-44" stroke="#fee2e2" strokeWidth="1.4" />
+              <line x1="0" y1="-16" x2="-30" y2="-28" stroke="#fee2e2" strokeWidth="1" />
+              <line x1="0" y1="-16" x2="30" y2="-28" stroke="#fee2e2" strokeWidth="1" />
+            </g>
+          </g>
+        );
+
+      // 10/2 アンズ（杏・アプリコット）: 枝に咲く可憐な薄桃色の花と、ふっくら実る黄金・橙色のアンズ果実
+      case 'apricot':
+        return (
+          <g>
+            {/* 落ち着いた灰褐色のアンズの小枝 */}
+            <path d="M45 175 Q75 135 100 100 Q120 70 145 45" stroke="#5c3a21" strokeWidth="4.5" strokeLinecap="round" fill="none" />
+            <path d="M75 135 Q105 145 140 150" stroke="#5c3a21" strokeWidth="3.5" strokeLinecap="round" fill="none" />
+            <path d="M100 100 Q110 65 95 45" stroke="#5c3a21" strokeWidth="3" strokeLinecap="round" fill="none" />
+
+            {/* アンズの果実（丸くふっくら熟したアプリコット・大） */}
+            <g transform="translate(138, 145)">
+              <ellipse cx="0" cy="0" rx="22" ry="24" fill="#f97316" />
+              <ellipse cx="-2" cy="-1" rx="20" ry="22" fill="#fb923c" />
+              {/* アンズ特有の縦の浅い溝（縫合線） */}
+              <path d="M0 -22 Q-4 0 0 22" stroke="#ea580c" strokeWidth="1.8" fill="none" opacity="0.7" />
+              {/* 陽光のハイライト */}
+              <ellipse cx="-8" cy="-8" rx="8" ry="12" fill="#fef08a" opacity="0.6" transform="rotate(-15 -8 -8)" />
+              {/* 果実のヘタと小さな葉 */}
+              <path d="M0 -22 Q3 -30 6 -32" stroke="#78350f" strokeWidth="2" fill="none" />
+              <path d="M3 -28 Q15 -35 18 -26 Q12 -22 3 -28 Z" fill="#15803d" />
+            </g>
+
+            {/* アンズの果実（少し小ぶりなアプリコット・中） */}
+            <g transform="translate(100, 140)">
+              <ellipse cx="0" cy="0" rx="16" ry="18" fill="#f59e0b" />
+              <ellipse cx="-1" cy="-1" rx="14" ry="16" fill="#facc15" />
+              <path d="M0 -16 Q-3 0 0 16" stroke="#d97706" strokeWidth="1.5" fill="none" opacity="0.6" />
+              <path d="M0 -16 Q2 -22 4 -24" stroke="#78350f" strokeWidth="1.5" fill="none" />
+            </g>
+
+            {/* 枝先のアンズの花（反り返った萼と淡紅色の愛らしい5弁花） */}
+            {[
+              { x: 145, y: 45, s: 0.9, rot: 15 },
+              { x: 95, y: 45, s: 0.8, rot: -20 },
+              { x: 118, y: 78, s: 0.65, rot: 40 }
+            ].map((fl, idx) => (
+              <g key={idx} transform={`translate(${fl.x}, ${fl.y}) scale(${fl.s}) rotate(${fl.rot})`}>
+                {/* アンズの大きな特徴：反り返る赤褐色の萼（がく） */}
+                {[-50, -25, 0, 25, 50].map((ang, i) => (
+                  <ellipse key={i} cx={ang * 0.3} cy="12" rx="4" ry="7" fill="#7f1d1d" transform={`rotate(${ang} 0 12)`} />
+                ))}
+                {/* ふっくら丸い5枚の桜・梅似の淡いピンク花弁 */}
+                {[0, 72, 144, 216, 288].map((ang, i) => (
+                  <ellipse
+                    key={i}
+                    cx={Math.cos((ang * Math.PI) / 180) * 14}
+                    cy={Math.sin((ang * Math.PI) / 180) * 14}
+                    rx="11"
+                    ry="15"
+                    fill="#ffe4e6"
+                    stroke="#fecdd3"
+                    strokeWidth="1"
+                    transform={`rotate(${ang + 90} ${Math.cos((ang * Math.PI) / 180) * 14} ${Math.sin((ang * Math.PI) / 180) * 14})`}
+                  />
+                ))}
+                {/* 花心と放射状に広がる多数の雄しべ */}
+                <circle cx="0" cy="0" r="5" fill="#fda4af" />
+                {[0, 30, 60, 90, 120, 150, 180, 210, 240, 270, 300, 330].map((ang, i) => (
+                  <line
+                    key={i}
+                    x1="0"
+                    y1="0"
+                    x2={Math.cos((ang * Math.PI) / 180) * 9}
+                    y2={Math.sin((ang * Math.PI) / 180) * 9}
+                    stroke="#f43f5e"
+                    strokeWidth="1"
+                  />
+                ))}
+                {[0, 30, 60, 90, 120, 150, 180, 210, 240, 270, 300, 330].map((ang, i) => (
+                  <circle
+                    key={i}
+                    cx={Math.cos((ang * Math.PI) / 180) * 9.5}
+                    cy={Math.sin((ang * Math.PI) / 180) * 9.5}
+                    r="1.2"
+                    fill="#facc15"
+                  />
+                ))}
+              </g>
+            ))}
           </g>
         );
 
