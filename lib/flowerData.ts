@@ -2279,6 +2279,13 @@ export const SPECIAL_FLOWERS: Record<string, FlowerData> = {
     "flowerColor": "#84cc16",
     "secondaryColor": "#bef264",
     "bgGradient": "from-lime-400/15 via-emerald-400/10 to-green-500/10",
+    "subFlowers": [
+      {
+        "name": "ハナニラ（花韮・イフェイオン）",
+        "meanings": ["愛しい人", "別れの悲しみ", "星に願いを"],
+        "note": "3月26日の誕生花。春の野原に青白く輝く星型の六弁花を咲かせ、爽やかな芳香を放つ球根草"
+      }
+    ],
     "rarity": "Normal"
   },
     "3-30": {
@@ -2399,6 +2406,13 @@ export const SPECIAL_FLOWERS: Record<string, FlowerData> = {
     "flowerColor": "#7c3aed",
     "secondaryColor": "#a78bfa",
     "bgGradient": "from-indigo-500/15 via-violet-400/10 to-teal-500/10",
+    "subFlowers": [
+      {
+        "name": "ジャガイモ（馬鈴薯）",
+        "meanings": ["慈愛", "情け深い", "恩恵"],
+        "note": "5月17日の誕生花。ナス科特有の紫や白の星形花を咲かせ、人々の命を支えてきた大地の恵み"
+      }
+    ],
     "rarity": "Rare"
   },
   "5-18": {
@@ -2457,6 +2471,33 @@ export const SPECIAL_FLOWERS: Record<string, FlowerData> = {
   ],
   "rarity": "Normal"
 },
+  "6-8": {
+    "id": "6-8",
+    "name": "デイゴ（梯梧）",
+    "reading": "でいご",
+    "scientificName": "Erythrina variegata",
+    "month": 6,
+    "day": 8,
+    "meanings": [
+      "夢",
+      "活力",
+      "生命力",
+      "和"
+    ],
+    "description": "初夏の青空に向かって燃え立つ炎のような鮮烈な深紅の花を咲かせるマメ科の熱帯高木。沖縄県の県花として知られ、力強く咲き誇る姿から「夢」「活力」「生命力」「和」の象徴として愛されます。",
+    "category": "花木",
+    "svgType": "deigo",
+    "flowerColor": "#dc2626",
+    "secondaryColor": "#f87171",
+    "bgGradient": "from-red-600/15 via-rose-500/10 to-amber-500/10",
+    "triviaList": [
+      "沖縄県の県花に指定されており、名曲『島唄』の歌詞（でいごの花が咲き〜）でも全国的に親しまれています。",
+      "刀やオウムのくちばし、炎の舌を思わせる独特の美しい花弁（旗弁）が総状に連なって咲きます。",
+      "春から初夏にかけてデイゴの花が見事に咲き乱れる年は、台風が少なく豊作になるという南国の言い伝えがあります。"
+    ],
+    "rarity": "Normal"
+  },
+
 
   "6-29": {
     "id": "6-29",
@@ -3760,26 +3801,40 @@ export const SPECIAL_FLOWERS: Record<string, FlowerData> = {
   },
   "8-16": {
     "id": "8-16",
-    "name": "ペチュニア",
-    "reading": "ぺちゅにあ",
-    "scientificName": "Petunia",
+    "name": "デュランタ（台湾連翹）",
+    "reading": "でゅらんた",
+    "scientificName": "Duranta erecta",
     "month": 8,
     "day": 16,
     "meanings": [
-      "あなたと一緒なら心がやわらぐ",
-      "心のやすらぎ"
+      "あなたを見守る",
+      "独りよがり",
+      "歓迎"
     ],
-    "description": "初夏から秋まで街頭や花壇を溢れるほどの花で彩るナス科の一年草。アサガオに似たラッパ状の花がふんわりと株を覆い、見る人の心を優しく和ませてくれる夏の主役です。",
+    "description": "爽やかな紫青色の小花が房状に垂れ下がって咲き、初夏から秋の風に揺れる優美な花。「宝塚」という品種が特に有名で、見る人を優しく見守るように咲き誇ります。",
     "category": "花",
-    "svgType": "petunia",
-    "flowerColor": "#d946ef",
-    "secondaryColor": "#f5d0fe",
-    "bgGradient": "from-fuchsia-400/15 via-purple-300/10 to-teal-500/10",
+    "svgType": "wisteria",
+    "flowerColor": "#8b5cf6",
+    "secondaryColor": "#a78bfa",
+    "bgGradient": "from-violet-500/15 via-purple-400/10 to-teal-500/10",
+    "subFlowers": [
+      {
+        "name": "パキスタキス（ウコンサンゴ・パキスタキス・ルテア）",
+        "meanings": ["美しい娘", "愛嬌", "光明"],
+        "note": "8月16日のもう一つの誕生花。重なり合う鮮やかな黄色の苞葉から純白の小花が飛び出すトロピカルフラワー"
+      },
+      {
+        "name": "ペチュニア",
+        "meanings": ["あなたと一緒なら心がやわらぐ", "心のやすらぎ"],
+        "note": "8月16日の伝統的な誕生花。夏の花壇を色鮮やかに覆う人気のナス科草花"
+      }
+    ],
     "triviaList": [
-      "南米先住民の言葉でタバコを意味する「ペチュン」が語源で、タバコと同じナス科の近縁種です。",
-      "日本のサントリーが開発した「サフィニア」の大ヒットにより、世界のガーデニング界の定番花となりました。",
-      "雨にも夏の猛暑にも負けず、ピンチ（摘心）を繰り返すと株いっぱいに溢れ返るように咲き誇ります。"
-    ]
+      "花びらの縁が白い覆輪になる「タカラヅカ」という品種は、優雅なタカラジェンヌの袴姿に似ていることから命名されました。",
+      "花が終わると小さなオレンジ色の丸い実を鈴なりにつけ、花と実の両方を楽しめます。",
+      "イタリアの植物学者カストーレ・デュランテの名に敬意を表して命名されました。"
+    ],
+    "rarity": "Normal"
   },
   "8-17": {
     "id": "8-17",
@@ -4835,6 +4890,13 @@ export const SPECIAL_FLOWERS: Record<string, FlowerData> = {
     "flowerColor": "#8b5cf6",
     "secondaryColor": "#a78bfa",
     "bgGradient": "from-violet-500/15 via-purple-400/10 to-emerald-500/10",
+    "subFlowers": [
+      {
+        "name": "パキスタキス（ウコンサンゴ）",
+        "meanings": ["美しい娘", "愛嬌", "光明"],
+        "note": "重なり合う鮮やかな黄色の苞葉から純白の花が覗く熱帯花木"
+      }
+    ],
     "triviaList": [
       "花びらの縁が白い覆輪になる「タカラヅカ」という品種は、優雅なタカラジェンヌの袴姿に似ていることから命名されました。",
       "花が終わると小さなオレンジ色の丸い実を鈴なりにつけ、二度楽しめます。",
@@ -5835,6 +5897,13 @@ export const SPECIAL_FLOWERS: Record<string, FlowerData> = {
     "flowerColor": "#ffffff",
     "secondaryColor": "#10b981",
     "bgGradient": "from-emerald-400/10 via-teal-100/30 to-white",
+    "subFlowers": [
+      {
+        "name": "野良にんじん（ノラニンジン・クイーンアンズレース）",
+        "meanings": ["幼い夢", "繊細な美", "幻想"],
+        "note": "7月19日の誕生花。レースのように繊細な白い散形花序を広げ、中央にポツンと一輪咲く黒紫色の小花が特徴"
+      }
+    ],
     "triviaList": [
       "風が吹くと花がゆらゆら揺れることから「揺すり」が転じて「ユリ」になったとされます。",
       "根元にたくさんの鱗片が重なり合っていることから「百合（百枚の合わさり）」の漢字があてられました。",
@@ -8964,6 +9033,33 @@ export const SPECIAL_FLOWERS: Record<string, FlowerData> = {
 
 export const GACHA_SPECIAL_FLOWERS: FlowerData[] = [
   {
+    "id": "gacha-silene-gallica",
+    "name": "シロバナマンテマ（白花マンテマ）",
+    "reading": "しろばなまんてま",
+    "scientificName": "Silene gallica",
+    "month": 0,
+    "day": 0,
+    "meanings": [
+      "慎み深さ",
+      "気品",
+      "恋の予感",
+      "偽りの愛"
+    ],
+    "description": "ヨーロッパ原産のナデシコ科の越年草。縦縞模様の入ったぷっくりと膨らむ萼筒（がくとう）の先から、清楚で愛らしい純白の5弁花を咲かせます。砂地や海岸、野原にひっそりと佇む野の宝石です。",
+    "category": "野草・ナデシコ科",
+    "svgType": "silene",
+    "flowerColor": "#f8fafc",
+    "secondaryColor": "#cbd5e1",
+    "bgGradient": "from-emerald-400/15 via-teal-200/10 to-slate-400/10",
+    "isGachaSpecial": true,
+    "rarity": "SSR ガチャ限定",
+    "triviaList": [
+      "ぷっくりと膨らんだ萼（がく）に赤褐色の筋が10本縦に走り、ユニークで可愛らしい提灯のような形をしています。",
+      "花弁の中央に赤紫色の斑点が入るものは「マンテマ」、斑点がなく純白の花を咲かせるものが「シロバナマンテマ」と呼ばれます。",
+      "江戸時代末期に日本へ渡来し、今では各地の海辺や野原に自然に咲き誇る初夏の風物詩となっています。"
+    ]
+  },
+  {
     "id": "gacha-purslane",
     "name": "スベリヒユ（滑莧・ヒョウ）",
     "reading": "すべりひゆ",
@@ -9854,6 +9950,28 @@ export function getAllGachaPool(): FlowerData[] {
         else if (sub.name.includes('ハツユキソウ')) subSvg = 'snowdrop';
         else if (sub.name.includes('ストロベリーキャンドル')) subSvg = 'clover';
         else if (sub.name.includes('イブキジャコウソウ')) subSvg = 'ibuki_thyme';
+        else if (sub.name.includes('パキスタキス')) subSvg = 'pachystachys';
+        else if (sub.name.includes('ジャガイモ')) subSvg = 'potato';
+        else if (sub.name.includes('ハナニラ')) subSvg = 'ipheion';
+        else if (sub.name.includes('野良にんじん') || sub.name.includes('ノラニンジン')) subSvg = 'wild_carrot';
+        else if (sub.name.includes('マンテマ')) subSvg = 'silene';
+
+        let subColor = f.flowerColor;
+        let subBg = f.bgGradient || 'from-emerald-500/15 via-teal-400/10 to-green-600/15';
+
+        if (sub.name.includes('パキスタキス')) {
+          subColor = '#facc15';
+          subBg = 'from-amber-400/20 via-yellow-300/10 to-emerald-500/10';
+        } else if (sub.name.includes('ジャガイモ')) {
+          subColor = '#818cf8';
+          subBg = 'from-indigo-400/15 via-purple-300/10 to-amber-500/10';
+        } else if (sub.name.includes('ハナニラ')) {
+          subColor = '#38bdf8';
+          subBg = 'from-sky-400/15 via-blue-200/10 to-teal-500/10';
+        } else if (sub.name.includes('野良にんじん') || sub.name.includes('ノラニンジン')) {
+          subColor = '#ffffff';
+          subBg = 'from-slate-300/20 via-emerald-200/10 to-teal-600/10';
+        }
 
         pool.push({
           id: `sub-${f.id}-${idx}`,
@@ -9865,9 +9983,9 @@ export function getAllGachaPool(): FlowerData[] {
           description: `${f.month}月${f.day}日のもう一つの誕生花。${sub.note ? sub.note + '。' : ''}${f.name}とともに親しまれる伝統の花言葉です。`,
           category: `${f.month}月${f.day}日 補足誕生花`,
           svgType: subSvg,
-          flowerColor: f.flowerColor,
+          flowerColor: subColor,
           secondaryColor: f.secondaryColor || '#ffffff',
-          bgGradient: f.bgGradient || 'from-emerald-500/15 via-teal-400/10 to-green-600/15',
+          bgGradient: subBg,
           rarity: '補足誕生花',
           isGachaSpecial: false,
         });

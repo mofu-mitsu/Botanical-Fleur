@@ -126,14 +126,27 @@ export const FlowerListModal: React.FC<FlowerListModalProps> = ({
                         </p>
                         {f.subFlowers && f.subFlowers.length > 0 && (
                           <div className="flex flex-wrap gap-1 mt-1">
-                            {f.subFlowers.map((sub, sIdx) => (
-                              <span
-                                key={sIdx}
-                                className="text-[10px] bg-teal-50 text-teal-700 px-1.5 py-0.5 rounded border border-teal-100"
-                              >
-                                🌿 {sub.name}
-                              </span>
-                            ))}
+                            {f.subFlowers.map((sub, sIdx) => {
+                              const isMatch =
+                                searchTerm.trim() &&
+                                (sub.name.toLowerCase().includes(searchTerm.toLowerCase().trim()) ||
+                                  (sub.meanings &&
+                                    sub.meanings.some((m) =>
+                                      m.toLowerCase().includes(searchTerm.toLowerCase().trim())
+                                    )));
+                              return (
+                                <span
+                                  key={sIdx}
+                                  className={`text-[10px] px-1.5 py-0.5 rounded border transition-colors ${
+                                    isMatch
+                                      ? 'bg-amber-100 text-amber-900 border-amber-300 font-bold shadow-2xs'
+                                      : 'bg-teal-50 text-teal-700 border-teal-100'
+                                  }`}
+                                >
+                                  🌿 {sub.name}
+                                </span>
+                              );
+                            })}
                           </div>
                         )}
                       </div>

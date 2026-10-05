@@ -3573,6 +3573,288 @@ export const FlowerSvg: React.FC<FlowerSvgProps> = ({
           </g>
         );
 
+
+
+      // 6/8 デイゴ（梯梧 / Erythrina）: 初夏の青空に燃え立つ情熱的な真紅の総状花序と三出複葉
+      case 'deigo':
+      case 'erythrina':
+        return (
+          <g>
+            {/* 太い枝と花茎 */}
+            <path d="M50 185 Q75 160 90 135 L100 45" stroke="#78350f" strokeWidth="4.5" strokeLinecap="round" />
+            <path d="M90 135 L100 45" stroke="#15803d" strokeWidth="3.5" />
+            
+            {/* デイゴ特有の艶やかなハート形〜卵形の三出複葉 */}
+            <g transform="translate(65, 140)">
+              <path d="M0 0 Q-25 -5 -35 15 Q-15 25 0 0 Z" fill="#15803d" />
+              <path d="M-5 10 L-25 10" stroke="#86efac" strokeWidth="1" />
+            </g>
+            <g transform="translate(115, 130)">
+              <path d="M0 0 Q25 -10 38 10 Q20 25 0 0 Z" fill="#16a34a" />
+              <path d="M5 8 L25 8" stroke="#86efac" strokeWidth="1" />
+            </g>
+
+            {/* 天に向かって燃え立つ真紅の総状花序（刀・オウムの嘴状の花弁が連なる） */}
+            {[
+              { y: 110, s: 0.95, side: -1 },
+              { y: 95, s: 1.0, side: 1 },
+              { y: 80, s: 0.92, side: -1 },
+              { y: 65, s: 0.85, side: 1 },
+              { y: 50, s: 0.75, side: -1 },
+              { y: 38, s: 0.65, side: 0 },
+            ].map((fl, idx) => (
+              <g
+                key={idx}
+                transform={`translate(100, ${fl.y}) scale(${fl.s})`}
+              >
+                {/* 萼（暗紅〜黒褐色の筒状萼） */}
+                <ellipse cx={fl.side * 4} cy="4" rx="6" ry="4" fill="#450a0a" />
+
+                {/* 炎のように反り返る情熱的な深紅の大旗弁（主花弁） */}
+                <g transform={`rotate(${fl.side * 28})`}>
+                  {/* 外側の深い真紅 */}
+                  <path
+                    d="M0 4 C-8 -15 -14 -35 0 -48 C14 -35 8 -15 0 4 Z"
+                    fill="#991b1b"
+                  />
+                  {/* メインの燃えるような深紅 */}
+                  <path
+                    d="M0 2 C-6 -14 -11 -32 0 -44 C11 -32 6 -14 0 2 Z"
+                    fill="#dc2626"
+                  />
+                  {/* 鮮烈な朱赤とハイライト */}
+                  <path
+                    d="M0 0 C-4 -12 -7 -28 0 -38 C7 -28 4 -12 0 0 Z"
+                    fill="#ef4444"
+                  />
+                  <line x1="0" y1="0" x2="0" y2="-34" stroke="#f87171" strokeWidth="1.2" opacity="0.8" />
+                </g>
+
+                {/* 突き出る雄しべ */}
+                <line
+                  x1={fl.side * 2}
+                  y1="-5"
+                  x2={fl.side * 12}
+                  y2="-22"
+                  stroke="#fca5a5"
+                  strokeWidth="1.2"
+                />
+                <circle
+                  cx={fl.side * 12}
+                  cy="-22"
+                  r="1.2"
+                  fill="#facc15"
+                />
+              </g>
+            ))}
+          </g>
+        );
+
+      // パキスタキス（ウコンサンゴ・パキスタキス・ルテア）: 重なり合う黄金色の苞葉とそこから飛び出す純白の小花
+      case 'pachystachys':
+        return (
+          <g>
+            <path d="M100 185 L100 120" stroke="#15803d" strokeWidth="4" />
+            <path d="M100 150 Q70 140 60 150" stroke="#16a34a" strokeWidth="2.5" fill="none" />
+            <path d="M100 135 Q130 125 140 135" stroke="#16a34a" strokeWidth="2.5" fill="none" />
+            <ellipse cx="55" cy="152" rx="14" ry="7" fill="#15803d" transform="rotate(-15 55 152)" />
+            <ellipse cx="145" cy="137" rx="14" ry="7" fill="#15803d" transform="rotate(15 145 137)" />
+            {/* 黄金色の重なり合う苞葉（四角錐状の穂） */}
+            <g transform="translate(100, 75)">
+              {[
+                { y: 40, s: 1.0 },
+                { y: 22, s: 0.92 },
+                { y: 5, s: 0.84 },
+                { y: -12, s: 0.74 },
+                { y: -28, s: 0.62 },
+                { y: -42, s: 0.48 },
+              ].map((tier, idx) => (
+                <g key={idx} transform={`translate(0, ${tier.y}) scale(${tier.s})`}>
+                  {/* 左右の鮮やかな黄色の苞葉 */}
+                  <path d="M0 0 C-18 -8 -26 12 0 16 C26 12 18 -8 0 0 Z" fill="#eab308" />
+                  <path d="M0 -4 C-22 -2 -28 10 0 12 C28 10 22 -2 0 -4 Z" fill="#facc15" />
+                  <ellipse cx="-16" cy="3" rx="10" ry="6" fill="#facc15" transform="rotate(-25 -16 3)" />
+                  <ellipse cx="16" cy="3" rx="10" ry="6" fill="#facc15" transform="rotate(25 16 3)" />
+                </g>
+              ))}
+              {/* 苞葉の隙間からピュッと突き出る純白の二唇形小花 */}
+              <g transform="translate(-18, 10) rotate(-35)">
+                <path d="M0 0 C-10 -2 -18 6 -24 0 C-18 -8 -8 -4 0 0 Z" fill="#ffffff" stroke="#e2e8f0" strokeWidth="0.8" />
+                <path d="M-6 0 C-12 8 -22 6 -20 2 Z" fill="#ffffff" />
+              </g>
+              <g transform="translate(18, -8) rotate(35)">
+                <path d="M0 0 C10 -2 18 6 24 0 C18 -8 8 -4 0 0 Z" fill="#ffffff" stroke="#e2e8f0" strokeWidth="0.8" />
+                <path d="M6 0 C12 8 22 6 20 2 Z" fill="#ffffff" />
+              </g>
+            </g>
+          </g>
+        );
+
+      // ジャガイモ（馬鈴薯）: ナス科特有の星形紫・白の花、黄色い雄しべの柱、根元のじゃがいも
+      case 'potato':
+        return (
+          <g>
+            {/* 地面ライン */}
+            <line x1="30" y1="140" x2="170" y2="140" stroke="#78350f" strokeWidth="1.8" strokeDasharray="3 3" opacity="0.6" />
+            {/* 地上の茎と緑の羽状葉 */}
+            <path d="M100 140 L100 65" stroke="#16a34a" strokeWidth="3.5" />
+            <path d="M100 115 Q75 105 60 115" stroke="#15803d" strokeWidth="2" fill="none" />
+            <path d="M100 95 Q125 85 140 95" stroke="#15803d" strokeWidth="2" fill="none" />
+            <ellipse cx="55" cy="115" rx="12" ry="7" fill="#16a34a" transform="rotate(-15 55 115)" />
+            <ellipse cx="145" cy="95" rx="12" ry="7" fill="#16a34a" transform="rotate(15 145 95)" />
+            {/* 星形の薄紫・白のナス科花 */}
+            <g transform="translate(100, 60)">
+              {/* 5角星形の花弁（淡紫〜白） */}
+              <polygon
+                points="0,-24 7,-8 23,-7 11,4 15,20 0,10 -15,20 -11,4 -23,-7 -7,-8"
+                fill="#e0e7ff"
+                stroke="#a5b4fc"
+                strokeWidth="1.5"
+              />
+              <circle cx="0" cy="0" r="10" fill="#c7d2fe" />
+              {/* 中央に円錐状に合着した鮮烈な黄色い葯（雄しべ）の柱 */}
+              <polygon points="0,-10 4,4 -4,4" fill="#facc15" />
+              <circle cx="0" cy="-10" r="1.5" fill="#ca8a04" />
+            </g>
+            {/* 地中のじゃがいも（新じゃが・実り） */}
+            <g transform="translate(80, 165) rotate(-10)">
+              <ellipse cx="0" cy="0" rx="16" ry="12" fill="#ca8a04" />
+              <ellipse cx="0" cy="0" rx="14" ry="10" fill="#eab308" />
+              <circle cx="-5" cy="-2" r="1" fill="#854d0e" />
+              <circle cx="4" cy="3" r="1" fill="#854d0e" />
+              <path d="M20 -25 Q15 -10 0 0" stroke="#ca8a04" strokeWidth="1.5" fill="none" />
+            </g>
+            <g transform="translate(122, 170) rotate(15)">
+              <ellipse cx="0" cy="0" rx="13" ry="10" fill="#ca8a04" />
+              <ellipse cx="0" cy="0" rx="11" ry="8" fill="#eab308" />
+              <circle cx="-2" cy="1" r="1" fill="#854d0e" />
+              <path d="M-22 -30 Q-12 -15 0 0" stroke="#ca8a04" strokeWidth="1.5" fill="none" />
+            </g>
+          </g>
+        );
+
+      // ハナニラ（花韮・イフェイオン・スターフラワー）: 星形に開く澄んだ淡青・白の6弁花と青い一本筋
+      case 'ipheion':
+      case 'starflower':
+        return (
+          <g>
+            {/* 地際の細長い線形葉 */}
+            <path d="M100 185 Q80 160 65 175" stroke="#15803d" strokeWidth="2.5" fill="none" />
+            <path d="M100 185 Q120 160 135 175" stroke="#15803d" strokeWidth="2.5" fill="none" />
+            <path d="M100 185 L100 85" stroke="#16a34a" strokeWidth="3" />
+            {/* 星形の清楚な6弁花 */}
+            <g transform="translate(100, 80)">
+              {[0, 60, 120, 180, 240, 300].map((ang, i) => (
+                <g key={i} transform={`rotate(${ang})`}>
+                  {/* 花弁（先がやや尖った長楕円形・淡青紫） */}
+                  <path
+                    d="M0 0 C-7 -15 -9 -30 0 -38 C9 -30 7 -15 0 0 Z"
+                    fill="#f0f9ff"
+                    stroke="#bae6fd"
+                    strokeWidth="1.2"
+                  />
+                  {/* 花被片の中央を走る特徴的な青い一本筋 */}
+                  <line x1="0" y1="-5" x2="0" y2="-34" stroke="#0284c7" strokeWidth="1.5" strokeLinecap="round" />
+                </g>
+              ))}
+              {/* 花心と黄色い雄しべ */}
+              <circle cx="0" cy="0" r="6" fill="#e0f2fe" />
+              {[0, 60, 120, 180, 240, 300].map((ang, i) => (
+                <circle
+                  key={i}
+                  cx={Math.cos((ang * Math.PI) / 180) * 4}
+                  cy={Math.sin((ang * Math.PI) / 180) * 4}
+                  r="1.5"
+                  fill="#facc15"
+                />
+              ))}
+            </g>
+          </g>
+        );
+
+      // 野良にんじん（ノラニンジン・クイーンアンズレース）: 繊細なレース状の白い散形花序と中央の黒紫色小花
+      case 'wild_carrot':
+      case 'queen_annes_lace':
+        return (
+          <g>
+            <path d="M100 185 L100 115" stroke="#15803d" strokeWidth="3" />
+            <path d="M100 150 Q75 140 65 155" stroke="#16a34a" strokeWidth="2" fill="none" />
+            <path d="M100 135 Q125 125 135 140" stroke="#16a34a" strokeWidth="2" fill="none" />
+            {/* 放射状に広がる繊細な花柄（レースの傘の骨組み） */}
+            <g transform="translate(100, 110)">
+              {[-55, -40, -25, -10, 0, 10, 25, 40, 55].map((ang, i) => (
+                <line
+                  key={i}
+                  x1="0"
+                  y1="0"
+                  x2={Math.sin((ang * Math.PI) / 180) * 45}
+                  y2={-Math.cos((ang * Math.PI) / 180) * 45}
+                  stroke="#16a34a"
+                  strokeWidth="1.2"
+                />
+              ))}
+            </g>
+            {/* レースのように広がる無数の純白小花群（傘状） */}
+            <g transform="translate(100, 70)">
+              {/* 外周と全体のふんわりした白い小花群 */}
+              {[-50, -35, -20, -10, 0, 10, 20, 35, 50].map((x, i) => (
+                <g key={i} transform={`translate(${x}, ${Math.abs(x) * 0.15})`}>
+                  <circle cx="-5" cy="-6" r="3.5" fill="#ffffff" stroke="#e2e8f0" strokeWidth="0.5" />
+                  <circle cx="5" cy="-6" r="3.5" fill="#ffffff" stroke="#e2e8f0" strokeWidth="0.5" />
+                  <circle cx="0" cy="-10" r="3.5" fill="#ffffff" stroke="#e2e8f0" strokeWidth="0.5" />
+                  <circle cx="0" cy="-2" r="3.5" fill="#ffffff" stroke="#e2e8f0" strokeWidth="0.5" />
+                  <circle cx="0" cy="-5" r="2" fill="#f8fafc" />
+                </g>
+              ))}
+              {/* クイーンアンズレースの決定的なシンボル：中央にぽつんと咲く一粒の黒紫色・暗紅色の小花 */}
+              <circle cx="0" cy="5" r="3" fill="#4a044e" />
+              <circle cx="0" cy="5" r="1.5" fill="#701a75" />
+            </g>
+          </g>
+        );
+
+      // シロバナマンテマ（白花マンテマ・Silene）: 縞模様のぷっくり膨らむ萼筒と清楚な純白の5弁花
+      case 'silene':
+      case 'silene_gallica':
+        return (
+          <g>
+            <path d="M100 185 L100 110" stroke="#15803d" strokeWidth="3" />
+            <path d="M100 150 Q75 145 65 155" stroke="#16a34a" strokeWidth="2" fill="none" />
+            <path d="M100 130 Q125 125 135 135" stroke="#16a34a" strokeWidth="2" fill="none" />
+            <ellipse cx="60" cy="155" rx="12" ry="5" fill="#15803d" transform="rotate(-15 60 155)" />
+            <ellipse cx="140" cy="135" rx="12" ry="5" fill="#15803d" transform="rotate(15 140 135)" />
+            {/* ぷっくりと膨らんだ萼筒（がくとう・提灯状で10本の赤褐色筋） */}
+            <g transform="translate(100, 105)">
+              <ellipse cx="0" cy="0" rx="15" ry="24" fill="#dcfce7" stroke="#15803d" strokeWidth="1.2" />
+              {/* 特徴的な縦縞模様（赤褐色〜深緑の縦スジ） */}
+              <path d="M0 -24 L0 24" stroke="#991b1b" strokeWidth="1.2" opacity="0.75" />
+              <path d="M-6 -23 Q-9 0 -6 23" stroke="#991b1b" strokeWidth="1.2" opacity="0.7" fill="none" />
+              <path d="M6 -23 Q9 0 6 23" stroke="#991b1b" strokeWidth="1.2" opacity="0.7" fill="none" />
+              <path d="M-11 -18 Q-14 0 -11 18" stroke="#991b1b" strokeWidth="1.2" opacity="0.65" fill="none" />
+              <path d="M11 -18 Q14 0 11 18" stroke="#991b1b" strokeWidth="1.2" opacity="0.65" fill="none" />
+            </g>
+            {/* 萼筒の先からパッと開く純白の可憐な5弁花 */}
+            <g transform="translate(100, 75)">
+              {[0, 72, 144, 216, 288].map((ang, i) => (
+                <path
+                  key={i}
+                  d="M0 0 C-8 -10 -12 -22 0 -24 C12 -22 8 -10 0 0 Z"
+                  fill="#ffffff"
+                  stroke="#e2e8f0"
+                  strokeWidth="1"
+                  transform={`rotate(${ang})`}
+                />
+              ))}
+              {/* 花心と突き出る繊細な雌しべ・雄しべ */}
+              <circle cx="0" cy="0" r="4.5" fill="#f8fafc" />
+              <circle cx="0" cy="0" r="2" fill="#86efac" />
+              {[-3, 0, 3].map((dx, i) => (
+                <line key={i} x1="0" y1="0" x2={dx * 2} y2="-10" stroke="#fbcfe8" strokeWidth="1" />
+              ))}
+            </g>
+          </g>
+        );
+
       // デフォルト / 一般花（優雅なボタニカルフラワー）
       default:
         return (
