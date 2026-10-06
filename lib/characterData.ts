@@ -116,7 +116,7 @@ export const CHARACTERS_MAP: Record<string, CharacterProfile[]> = {
       "day": 12,
       "flowerName": "キンセンカ",
       "mbti": "ENFJ",
-      "socionics": "EIE",
+      "socionics": "EII",
       "enneagram": "2w3",
       "motif": "ウグイス",
       "dialogueBadge": "友達想いの春告げ鳥",
