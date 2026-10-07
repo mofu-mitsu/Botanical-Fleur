@@ -3575,6 +3575,106 @@ export const FlowerSvg: React.FC<FlowerSvgProps> = ({
 
 
 
+
+      // ジャメスブリテニア（サンブリテニア）: 鮮やかなローズピンクの5弁小花と中心の黄色いアイ（目）
+      case 'jamesbrittenia':
+        return (
+          <g>
+            {/* こんもり茂る細い茎と小さな緑の葉 */}
+            <path d="M100 185 Q85 145 75 105" stroke="#15803d" strokeWidth="2.5" fill="none" />
+            <path d="M100 185 Q115 145 125 105" stroke="#15803d" strokeWidth="2.5" fill="none" />
+            <path d="M100 185 L100 75" stroke="#16a34a" strokeWidth="3" />
+            {/* 茂る葉 */}
+            {[
+              { x: 75, y: 145, rot: -30 }, { x: 125, y: 145, rot: 30 },
+              { x: 85, y: 120, rot: -20 }, { x: 115, y: 120, rot: 20 },
+              { x: 70, y: 95, rot: -40 }, { x: 130, y: 95, rot: 40 }
+            ].map((lf, i) => (
+              <ellipse key={i} cx={lf.x} cy={lf.y} rx="9" ry="5" fill="#15803d" transform={`rotate(${lf.rot} ${lf.x} ${lf.y})`} />
+            ))}
+
+            {/* 愛らしく咲きこぼれる5弁花たち */}
+            {[
+              { x: 100, y: 65, s: 1.1, rot: 0 },
+              { x: 62, y: 90, s: 0.85, rot: -25 },
+              { x: 138, y: 88, s: 0.9, rot: 20 },
+              { x: 80, y: 115, s: 0.75, rot: 15 },
+              { x: 122, y: 118, s: 0.72, rot: -15 }
+            ].map((fl, idx) => (
+              <g key={idx} transform={`translate(${fl.x}, ${fl.y}) scale(${fl.s}) rotate(${fl.rot})`}>
+                {/* 5枚の花弁（鮮やかなローズレッド〜深紅） */}
+                {[0, 72, 144, 216, 288].map((ang, i) => (
+                  <ellipse
+                    key={i}
+                    cx={Math.cos((ang * Math.PI) / 180) * 11}
+                    cy={Math.sin((ang * Math.PI) / 180) * 11}
+                    rx="8"
+                    ry="10"
+                    fill="#f43f5e"
+                    stroke="#e11d48"
+                    strokeWidth="0.8"
+                    transform={`rotate(${ang + 90} ${Math.cos((ang * Math.PI) / 180) * 11} ${Math.sin((ang * Math.PI) / 180) * 11})`}
+                  />
+                ))}
+                {/* ジャメスブリテニアの大きな特徴：中心部の鮮やかな黄色・オレンジのアイ（目） */}
+                <circle cx="0" cy="0" r="6" fill="#facc15" stroke="#ea580c" strokeWidth="1" />
+                <circle cx="0" cy="0" r="3.5" fill="#f59e0b" />
+                <circle cx="0" cy="0" r="1.5" fill="#78350f" />
+              </g>
+            ))}
+          </g>
+        );
+
+      // キダチチョウセンアサガオ（エンジェルストランペット・Brugmansia）: 下向きに垂れ下がる巨大で優美なラッパ状花
+      case 'angel_trumpet':
+      case 'brugmansia':
+        return (
+          <g>
+            {/* 上部から伸びる太い木質化した枝 */}
+            <path d="M30 40 Q80 45 130 50" stroke="#78350f" strokeWidth="5" strokeLinecap="round" fill="none" />
+            <path d="M130 50 Q160 55 180 50" stroke="#78350f" strokeWidth="4" strokeLinecap="round" fill="none" />
+            {/* 大きな卵形の緑葉 */}
+            <path d="M60 42 Q40 65 35 95 Q65 90 75 55 Z" fill="#15803d" />
+            <path d="M125 50 Q150 75 165 100 Q145 95 130 65 Z" fill="#16a34a" />
+
+            {/* 下向きに優雅にぶら下がるエンジェルストランペット（ラッパ型の大きな花弁） */}
+            <g transform="translate(100, 48)">
+              {/* 吊り下がる緑の萼筒 */}
+              <path d="M-6 0 L-8 28 L8 28 L6 0 Z" fill="#15803d" />
+              {/* 長いトランペットの筒部（上から下へ広がる優美な曲線） */}
+              <path
+                d="M-8 28 C-8 60 -18 95 -38 125 C-15 132 15 132 38 125 C18 95 8 60 8 28 Z"
+                fill="#fef08a"
+                stroke="#facc15"
+                strokeWidth="1.2"
+              />
+              {/* 筒部内側の温かみあるアプリコット〜黄色の陰影 */}
+              <path
+                d="M-5 40 C-5 70 -12 100 -28 122 C-10 128 10 128 28 122 C12 100 5 70 5 40 Z"
+                fill="#fde047"
+                opacity="0.8"
+              />
+              {/* ラッパの開口部（フリル状に反り返り、角状の突起が外へ伸びる） */}
+              <ellipse cx="0" cy="125" rx="38" ry="12" fill="#fef9c3" stroke="#eab308" strokeWidth="1" />
+              {/* 反り返る5つの尖った角（トランペットの角） */}
+              <path d="M-38 125 Q-48 120 -52 110 Q-42 124 -36 128 Z" fill="#fef08a" />
+              <path d="M38 125 Q48 120 52 110 Q42 124 36 128 Z" fill="#fef08a" />
+              <path d="M-15 136 Q-18 145 -22 150 Q-12 142 -10 136 Z" fill="#fef08a" />
+              <path d="M15 136 Q18 145 22 150 Q12 142 10 136 Z" fill="#fef08a" />
+              <path d="M0 137 Q0 148 0 152 Q2 144 0 137 Z" fill="#fef08a" />
+              {/* 開口部から下向きに覗く雌しべ */}
+              <line x1="0" y1="125" x2="0" y2="155" stroke="#ca8a04" strokeWidth="1.5" />
+              <circle cx="0" cy="155" r="2" fill="#854d0e" />
+            </g>
+
+            {/* 左側に少し小ぶりのつぼみ〜開き始めの花 */}
+            <g transform="translate(65, 45) rotate(15) scale(0.65)">
+              <path d="M-4 0 L-6 25 L6 25 L4 0 Z" fill="#15803d" />
+              <path d="M-6 25 C-6 50 -12 75 -24 95 C-8 100 8 100 24 95 C12 75 6 50 6 25 Z" fill="#fef08a" stroke="#facc15" strokeWidth="1" />
+            </g>
+          </g>
+        );
+
       // 6/8 デイゴ（梯梧 / Erythrina）: 初夏の青空に燃え立つ情熱的な真紅の総状花序と三出複葉
       case 'deigo':
       case 'erythrina':

@@ -4054,11 +4054,19 @@ export const SPECIAL_FLOWERS: Record<string, FlowerData> = {
     "flowerColor": "#0ea5e9",
     "secondaryColor": "#bae6fd",
     "bgGradient": "from-sky-500/15 via-blue-300/10 to-teal-500/10",
+    "subFlowers": [
+      {
+        "name": "キダチチョウセンアサガオ（エンジェルストランペット・木立朝鮮朝顔）",
+        "meanings": ["変装", "偽りの魅力", "愛敬"],
+        "note": "10月23日の誕生花。下向きに垂れ下がる巨大で優美なラッパ状の花を咲かせ、夕方から甘美な芳香を漂わせるナス科花木"
+      }
+    ],
     "triviaList": [
       "ジャスミン（茉莉花）に似た涼やかな瑠璃色の花を咲かせることから「瑠璃茉莉」と名付けられました。",
       "花の萼（がく）の部分に腺毛があり、ネバネバして服や動物の毛にくっつく性質があるため「ひっつき虫」の性質を持ちます。",
       "南アフリカ原産で、夏の直射日光にも負けずに秋遅くまで空色の花を咲かせ続ける頼もしい植物です。"
-    ]
+    ],
+    "rarity": "Normal"
   },
   "10-25": {
   "id": "10-25",
@@ -9033,6 +9041,31 @@ export const SPECIAL_FLOWERS: Record<string, FlowerData> = {
 
 export const GACHA_SPECIAL_FLOWERS: FlowerData[] = [
   {
+    "id": "gacha-jamesbrittenia",
+    "name": "ジャメスブリテニア（サンブリテニア）",
+    "reading": "じゃめすぶりてにあ",
+    "scientificName": "Jamesbrittenia",
+    "month": 0,
+    "day": 0,
+    "meanings": [
+      "純愛",
+      "小さな強さ"
+    ],
+    "description": "南アフリカ原産のゴマノハグサ科の植物。春から秋まで、鮮やかな色彩の小花を株一面に星屑のように咲かせ続けます。夏の暑さにも負けず凛として咲き誇る姿から「純愛」「小さな強さ」の花言葉を持ちます。",
+    "category": "草花・ゴマノハグサ科",
+    "svgType": "jamesbrittenia",
+    "flowerColor": "#f43f5e",
+    "secondaryColor": "#fde047",
+    "bgGradient": "from-rose-500/15 via-pink-400/10 to-amber-400/10",
+    "isGachaSpecial": true,
+    "rarity": "SSR ガチャ限定",
+    "triviaList": [
+      "花の中心部にパッと輝く鮮やかな黄色やオレンジの「目（アイ）」が入り、遠目にもパッと目を惹くコントラストが魅力です。",
+      "かつては「ステラ（バコパ）」の近縁とされていましたが、より耐暑性が高く鮮明な色合いを持つことから独自の人気を獲得しました。",
+      "次々と休むことなく秋遅くまで咲き続けるバイタリティがあり、寄せ植えやハンギングの主役として愛されます。"
+    ]
+  },
+  {
     "id": "gacha-silene-gallica",
     "name": "シロバナマンテマ（白花マンテマ）",
     "reading": "しろばなまんてま",
@@ -9955,6 +9988,7 @@ export function getAllGachaPool(): FlowerData[] {
         else if (sub.name.includes('ハナニラ')) subSvg = 'ipheion';
         else if (sub.name.includes('野良にんじん') || sub.name.includes('ノラニンジン')) subSvg = 'wild_carrot';
         else if (sub.name.includes('マンテマ')) subSvg = 'silene';
+        else if (sub.name.includes('キダチチョウセンアサガオ') || sub.name.includes('エンジェルストランペット')) subSvg = 'angel_trumpet';
 
         let subColor = f.flowerColor;
         let subBg = f.bgGradient || 'from-emerald-500/15 via-teal-400/10 to-green-600/15';
@@ -9968,6 +10002,9 @@ export function getAllGachaPool(): FlowerData[] {
         } else if (sub.name.includes('ハナニラ')) {
           subColor = '#38bdf8';
           subBg = 'from-sky-400/15 via-blue-200/10 to-teal-500/10';
+        } else if (sub.name.includes('キダチチョウセンアサガオ') || sub.name.includes('エンジェルストランペット')) {
+          subColor = '#facc15';
+          subBg = 'from-amber-400/15 via-yellow-200/10 to-emerald-500/10';
         } else if (sub.name.includes('野良にんじん') || sub.name.includes('ノラニンジン')) {
           subColor = '#ffffff';
           subBg = 'from-slate-300/20 via-emerald-200/10 to-teal-600/10';
