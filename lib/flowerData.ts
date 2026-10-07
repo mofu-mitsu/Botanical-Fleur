@@ -287,24 +287,36 @@ export const SPECIAL_FLOWERS: Record<string, FlowerData> = {
       "bgGradient": "from-red-500/15 via-amber-300/10 to-emerald-400/10"
   },
   "5-22": {
-      "id": "5-22",
-      "name": "アスチルベ（泡盛草）",
-      "reading": "あすちるべ",
-      "scientificName": "Astilbe",
-      "month": 5,
-      "day": 22,
-      "meanings": [
-          "恋の訪れ",
-          "自由",
-          "気まま",
-          "熱心な気持ち"
-      ],
-      "description": "ふんわりと立ち上がる円錐花序が泡立つ波のように幻想的で美しい宿根草。シェードガーデンの女王です。",
-      "category": "宿根草",
-      "svgType": "wildflower",
-      "flowerColor": "#f472b6",
-      "secondaryColor": "#fda4af",
-      "bgGradient": "from-pink-400/15 via-rose-300/10 to-purple-400/10"
+    "id": "5-22",
+    "name": "レモン（檸檬）",
+    "reading": "れもん",
+    "scientificName": "Citrus limon",
+    "month": 5,
+    "day": 22,
+    "meanings": [
+      "心からの思慕",
+      "香気",
+      "誠実"
+    ],
+    "description": "みずみずしい爽快な酸味と芳醇な香りを放つ黄金色の柑橘果実。春には清楚な白い芳香花を咲かせ、人々の心に清々しい誠実さと元気を届けます。",
+    "category": "果樹",
+    "svgType": "lemon",
+    "flowerColor": "#facc15",
+    "secondaryColor": "#fef08a",
+    "bgGradient": "from-yellow-400/20 via-amber-200/10 to-emerald-500/10",
+    "subFlowers": [
+      {
+        "name": "アスチルベ（泡盛草）",
+        "meanings": ["恋の訪れ", "落ち着いた明るさ"],
+        "note": "5月22日のもう一つの誕生花。初夏の庭をふんわり煙るような円錐花序の小花で彩る優美な宿根草"
+      }
+    ],
+    "triviaList": [
+      "レモンの花は白くて甘美な芳香を持ち、果実だけでなく花自体もブーケや香水として愛されてきました。",
+      "ビタミンCとクエン酸の宝庫で、古代から船乗りの健康を守る貴重な果実として珍重されました。",
+      "カリフォルニアや地中海沿岸など、温暖で陽光あふれる気候でたわわに黄色い実を結びます。"
+    ],
+    "rarity": "Normal"
   },
   "5-16": {
       "id": "5-16",
@@ -450,7 +462,17 @@ export const SPECIAL_FLOWERS: Record<string, FlowerData> = {
       "flowerColor": "#facc15",
       "secondaryColor": "#eab308",
       "bgGradient": "from-yellow-400/15 via-amber-300/10 to-emerald-400/10",
-      "triviaList": [
+          "subFlowers": [
+      {
+      "name": "アマナ（甘菜）",
+      "meanings": [
+            "運が向いてくる",
+            "お天気屋"
+      ],
+      "note": "3月31日の誕生花。晴れた日にだけパッと開き、外側に紫褐色の筋が入る清楚な白花を咲かせる早春の山野草"
+}
+    ],
+"triviaList": [
           "「ムルチコーレ」はラテン語で「多くの茎を持つ」という意味です。"
       ]
   },
@@ -1200,7 +1222,17 @@ export const SPECIAL_FLOWERS: Record<string, FlowerData> = {
     "flowerColor": "#84cc16",
     "secondaryColor": "#bef264",
     "bgGradient": "from-lime-500/15 via-emerald-400/10 to-teal-600/10",
-    "triviaList": [
+        "subFlowers": [
+      {
+      "name": "ジューンベリー（アメリカザイフリボク）",
+      "meanings": [
+            "穏やかな笑顔",
+            "穏やかな表情"
+      ],
+      "note": "4月25日の誕生花。春に純白の星形花を一斉に咲かせ、初夏に甘く熟す赤紫の小果実が愛される"
+}
+    ],
+"triviaList": [
       "地下にある白い球根が、二枚貝を合わせたような形をしていることから「貝母（ばいも）」と名付けられました。",
       "花の内部を覗くと、淡い黄緑地に繊細な紫の網目模様が広がっており「アミガサユリ」の別名もあります。",
       "生薬としては「貝母（ばいも）」と呼ばれ、咳止めや去痰の特効薬として古来珍重されてきました。"
@@ -1380,28 +1412,40 @@ export const SPECIAL_FLOWERS: Record<string, FlowerData> = {
   },
     "6-22": {
     "id": "6-22",
-    "name": "アジサイ（紫陽花）",
-    "reading": "あじさい",
-    "scientificName": "Hydrangea macrophylla",
+    "name": "スイカズラ（吸葛・ハニーサックル）",
+    "reading": "すいかずら",
+    "scientificName": "Lonicera japonica",
     "month": 6,
     "day": 22,
-    "meanings": ["移り気", "辛抱強さ", "団結", "和気あいあい"],
-    "description": "雨の季節にしっとりと咲き誇る日本の初夏の象徴。土壌の酸度によって青から紫、ピンクへと七変化する幻想的な花色が魅了します。",
-    "category": "花木・落葉低木",
-    "svgType": "hydrangea",
-    "flowerColor": "#38bdf8",
-    "secondaryColor": "#818cf8",
-    "bgGradient": "from-sky-500/15 via-indigo-300/10 to-teal-400/10",
+    "meanings": [
+      "愛の絆",
+      "献身的な愛",
+      "友愛"
+    ],
+    "description": "甘い蜜と芳香を放ち、咲き進むにつれて白から黄色へと色を変えることから『金銀花』とも称される優美なつる植物。初夏の風に揺れて『愛の絆』を結びます。",
+    "category": "つる植物",
+    "svgType": "honeysuckle",
+    "flowerColor": "#fef08a",
+    "secondaryColor": "#ffffff",
+    "bgGradient": "from-amber-200/15 via-yellow-100/10 to-emerald-500/10",
     "subFlowers": [
       {
-        "name": "ガザニア（勲章菊）",
-        "meanings": ["あなたを誇りに思う", "身近な愛", "きらびやか"],
-        "note": "勲章のような鮮烈な輝きを放つ夏の花"
+        "name": "マンドラゴラ（マンドレイク）",
+        "meanings": ["幻惑"],
+        "note": "6月22日の誕生花。地中に人型の奇妙な根を伸ばし、神秘的な薬効と伝説に包まれたナス科の秘草"
+      },
+      {
+        "name": "アジサイ（紫陽花）",
+        "meanings": ["移り気", "辛抱強さ", "団結"],
+        "note": "6月22日の伝統的な誕生花。雨の季節を幻想的に彩る名花"
       }
     ],
     "triviaList": [
-      "アジサイの青〜赤の色彩変化は、土壌中のアルミニウムイオンを吸い上げる量によって変化します。"
-    ]
+      "白い花と黄色い花が同時に咲き並ぶため、生薬名は『金銀花（きんぎんか）』と呼ばれ古くから珍重されます。",
+      "子どもたちが花の根元をちぎって甘い蜜を吸ったことから『吸葛（すいかずら）』と名付けられました。",
+      "冬でも青々とした葉を丸めて枯れずに耐え忍ぶことから『忍冬（ニンドウ）』の別名も持ちます。"
+    ],
+    "rarity": "Normal"
   },
   "6-23": {
     "id": "6-23",
@@ -1681,7 +1725,17 @@ export const SPECIAL_FLOWERS: Record<string, FlowerData> = {
     "secondaryColor": "#f87171",
     "bgGradient": "from-red-600/20 via-rose-500/10 to-emerald-500/10",
     "anniversaryNote": "秋分の日・お彼岸",
-    "triviaList": [
+        "subFlowers": [
+      {
+      "name": "イチイ（櫟・一位）",
+      "meanings": [
+            "高尚",
+            "高貴"
+      ],
+      "note": "9月23日の誕生花。濃緑の針葉の間にルビーのように赤く透き通るカップ状の果実を実らせる銘木"
+}
+    ],
+"triviaList": [
       "仏教の経典では「曼珠沙華（まんじゅしゃげ）」と呼ばれ、天から降ってくるめでたい吉兆の花とされます。",
       "花が咲く時には葉がなく、葉が伸びる時には花がないことから「葉見ず花見ず（お互いを想い合う）」の別名があります。",
       "田んぼのあぜ道に多いのは、球根の毒性でモグラやネズミがあぜに穴を開けるのを防ぐ先人の知恵でした。"
@@ -2365,7 +2419,17 @@ export const SPECIAL_FLOWERS: Record<string, FlowerData> = {
     "flowerColor": "#e11d48",
     "secondaryColor": "#fda4af",
     "bgGradient": "from-rose-500/15 via-pink-400/10 to-emerald-500/10",
-    "rarity": "Super Rare"
+        "subFlowers": [
+      {
+      "name": "ブラックベリー",
+      "meanings": [
+            "思いやり",
+            "慈愛"
+      ],
+      "note": "4月26日の誕生花。初夏に淡紅の花を咲かせ、夏に黒く輝く甘美な果実をたわわに実らせるキイチゴの仲間"
+}
+    ],
+"rarity": "Super Rare"
   },
   "5-9": {
     "id": "5-9",
@@ -2635,7 +2699,19 @@ export const SPECIAL_FLOWERS: Record<string, FlowerData> = {
     "flowerColor": "#10b981",
     "secondaryColor": "#dcfce7",
     "bgGradient": "from-emerald-400/15 via-teal-300/10 to-green-500/15",
-    "rarity": "Rare"
+        "subFlowers": [
+      {
+      "name": "とうもろこし（玉蜀黍）",
+      "meanings": [
+            "財宝",
+            "豊富",
+            "同意",
+            "洗練"
+      ],
+      "note": "8月4日の誕生花。夏の太陽を浴びて黄金色の粒がびっしりと並び、大地の豊かな恵みを象徴する穀物"
+}
+    ],
+"rarity": "Rare"
   },
   "9-1": {
     "id": "9-1",
@@ -4376,7 +4452,19 @@ export const SPECIAL_FLOWERS: Record<string, FlowerData> = {
     "flowerColor": "#c026d3",
     "secondaryColor": "#f5d0fe",
     "bgGradient": "from-fuchsia-500/15 via-purple-300/10 to-teal-500/10",
-    "triviaList": [
+        "subFlowers": [
+      {
+      "name": "パイナップル",
+      "meanings": [
+            "完璧",
+            "完全無欠",
+            "蓄える",
+            "満足"
+      ],
+      "note": "12月20日の誕生花。頭頂に冠のような葉を戴き、黄金色の豊かな実りと芳醇な香りを湛えるトロピカルフルーツ"
+}
+    ],
+"triviaList": [
       "イギリスの植物収集家ウィリアム・カトレイ（William Cattley）が初めて栽培・開花に成功させたことから命名されました。",
       "「洋蘭の女王」としてパーティーのコサージュや格式高い式典の装花として世界最高峰のステータスを持ちます。",
       "中南米の熱帯雨林の樹木に着生して育ち、甘く高貴な香りで数週間咲き続ける驚異的な美しさを誇ります。"
@@ -5599,7 +5687,19 @@ export const SPECIAL_FLOWERS: Record<string, FlowerData> = {
     "flowerColor": "#ffffff",
     "secondaryColor": "#eab308",
     "bgGradient": "from-amber-400/15 via-yellow-200/10 to-emerald-500/10",
-    "triviaList": [
+        "subFlowers": [
+      {
+      "name": "サンザシ（山査子）",
+      "meanings": [
+            "希望",
+            "慎重",
+            "成功",
+            "ただ一つの愛"
+      ],
+      "note": "5月13日の誕生花。春に清楚な白花を咲かせ、秋にルビーのような甘酸っぱい赤果実を実らせる銘木"
+}
+    ],
+"triviaList": [
       "ギリシャ語で「大地のリンゴ（chamaimelon）」が語源で、フルーティな芳香が特徴です。",
       "ピーターラビットのお話でお母さんが淹れてくれるおやすみ前のハーブティーとしても世界中で親しまれます。",
       "弱った他の植物の隣に植えると元気を取り戻させる「植物のお医者さん」としても知られます。"
@@ -6415,7 +6515,18 @@ export const SPECIAL_FLOWERS: Record<string, FlowerData> = {
     "flowerColor": "#ea580c",
     "secondaryColor": "#fb923c",
     "bgGradient": "from-orange-500/15 via-amber-300/10 to-emerald-500/10",
-    "triviaList": [
+        "subFlowers": [
+      {
+      "name": "ヤグルマギク（矢車菊・コーンフラワー）",
+      "meanings": [
+            "繊細",
+            "優美",
+            "信頼"
+      ],
+      "note": "3月5日の誕生花。放射状に広がる矢車のような鮮烈な青紫の花を咲かせ、気品あふれる姿で愛される名花"
+}
+    ],
+"triviaList": [
       "名前に「蘭」と付きますが、実はヒガンバナ科の植物でアマリリスの近縁種です。",
       "学名Clivia（クリビア）は、イギリスのノーサンバーランド公爵夫人シャーロット・クライヴの名にちなみます。",
       "寿命が数十年と非常に長く、手入れをすれば親子三代にわたって咲き続ける長寿の植物です。"
@@ -6919,7 +7030,18 @@ export const SPECIAL_FLOWERS: Record<string, FlowerData> = {
     "flowerColor": "#2563eb",
     "secondaryColor": "#60a5fa",
     "bgGradient": "from-blue-600/15 via-sky-400/10 to-teal-500/10",
-    "triviaList": [
+        "subFlowers": [
+      {
+      "name": "ヒオウギ（檜扇・ぬばたま）",
+      "meanings": [
+            "誠意",
+            "誠実",
+            "個性美"
+      ],
+      "note": "8月25日の誕生花。扇状の葉と橙色に濃赤の斑点が散る雅な花を咲かせ、黒い艶やかな種子（ぬばたま）を実らせる"
+}
+    ],
+"triviaList": [
       "ハワイやフロリダなど熱帯アメリカ原産で、日本には1980年代に輸入され一躍大ブームとなりました。",
       "暑さや乾燥に極めて強く、太陽の光を浴びると次々と新しい青い小花を開きます。",
       "青い花が次から次へと溢れ出すように咲く姿から「あふれる思い」の花言葉が生まれました。"
@@ -7342,7 +7464,19 @@ export const SPECIAL_FLOWERS: Record<string, FlowerData> = {
     "flowerColor": "#f43f5e",
     "secondaryColor": "#fbcfe8",
     "bgGradient": "from-pink-500/15 via-rose-400/10 to-emerald-500/10",
-    "triviaList": [
+        "subFlowers": [
+      {
+      "name": "ボロニア",
+      "meanings": [
+            "芳香",
+            "心が和む",
+            "印象的",
+            "打てば響く"
+      ],
+      "note": "2月1日の誕生花。鐘形・星形の愛らしいピンク小花を鈴なりに咲かせ、柑橘系の爽やかな芳香を放つ"
+}
+    ],
+"triviaList": [
       "江戸時代に武士の間で大流行し、数千もの園芸品種が生み出された由緒ある日本の銘花です。",
       "花言葉の「初恋」は、咲き始めの初々しいピンクの愛らしい花姿に由来しています。",
       "埼玉県と東京都の都県花にも指定されており、自生地の荒川河川敷は国の特別天然記念物です。"
@@ -8110,7 +8244,18 @@ export const SPECIAL_FLOWERS: Record<string, FlowerData> = {
     "flowerColor": "#be123c",
     "secondaryColor": "#fecdd3",
     "bgGradient": "from-rose-600/15 via-red-400/10 to-amber-500/10",
-    "triviaList": [
+        "subFlowers": [
+      {
+      "name": "ヨウシュヤマゴボウ（洋種山牛蒡）",
+      "meanings": [
+            "野生",
+            "元気",
+            "内縁の妻"
+      ],
+      "note": "9月16日の誕生花。紅紫色の茎に艶やかな黒紫色の粒々が房状に実る生命力豊かな野草"
+}
+    ],
+"triviaList": [
       "「私を思って」と「媚び」が並ぶ、恋愛や人間関係の絶妙に怪しい距離感が面白い名花！",
       "万葉集の「あかねさす紫野行き標野行き…」の枕詞でも名高い、日本最古の赤色染料です。",
       "綺麗事だけでは生きられない現実を知りつつ、したたかに輝く人にふさわしい花です。"
@@ -9040,6 +9185,32 @@ export const SPECIAL_FLOWERS: Record<string, FlowerData> = {
 };
 
 export const GACHA_SPECIAL_FLOWERS: FlowerData[] = [
+  {
+    "id": "gacha-water-sunflower",
+    "name": "ミズヒマワリ（水向日葵）",
+    "reading": "みずひまわり",
+    "scientificName": "Gymnocoronis spilanthoides",
+    "month": 0,
+    "day": 0,
+    "meanings": [
+      "元気",
+      "笑顔",
+      "快活"
+    ],
+    "description": "水辺や水中に茂り、初夏から秋にかけて白いポンポン状・羽毛状の愛らしい頭状花序を咲かせる南米原産の抽水植物。水辺を明るく彩る姿から「元気」「笑顔」の花言葉を持ちます。",
+    "category": "水生植物・キク科",
+    "svgType": "water_sunflower",
+    "flowerColor": "#f8fafc",
+    "secondaryColor": "#86efac",
+    "bgGradient": "from-emerald-400/15 via-teal-200/10 to-sky-400/10",
+    "isGachaSpecial": true,
+    "rarity": "SSR ガチャ限定",
+    "triviaList": [
+      "キク科の植物でありながら水辺や湿地、浅瀬にぐんぐん育つ珍しい生態を持っています。",
+      "白くて丸いアザミのような頭状花序が水面に映え、アクアリウムやビオトープでも親しまれます。",
+      "非常に旺盛な生命力を持ち、水辺の光を浴びて元気に青々とした葉と花を広げ続けます。"
+    ]
+  },
   {
     "id": "gacha-jamesbrittenia",
     "name": "ジャメスブリテニア（サンブリテニア）",
@@ -9989,6 +10160,20 @@ export function getAllGachaPool(): FlowerData[] {
         else if (sub.name.includes('野良にんじん') || sub.name.includes('ノラニンジン')) subSvg = 'wild_carrot';
         else if (sub.name.includes('マンテマ')) subSvg = 'silene';
         else if (sub.name.includes('キダチチョウセンアサガオ') || sub.name.includes('エンジェルストランペット')) subSvg = 'angel_trumpet';
+        else if (sub.name.includes('ボロニア')) subSvg = 'boronia';
+        else if (sub.name.includes('ヨウシュヤマゴボウ')) subSvg = 'pokeweed';
+        else if (sub.name.includes('サンザシ')) subSvg = 'hawthorn';
+        else if (sub.name.includes('ブラックベリー')) subSvg = 'blackberry';
+        else if (sub.name.includes('ヒオウギ')) subSvg = 'hiougi';
+        else if (sub.name.includes('パイナップル')) subSvg = 'pineapple';
+        else if (sub.name.includes('ジューンベリー')) subSvg = 'juneberry';
+        else if (sub.name.includes('イチイ')) subSvg = 'yew';
+        else if (sub.name.includes('マンドラゴラ') || sub.name.includes('マンドレイク')) subSvg = 'mandragora';
+        else if (sub.name.includes('とうもろこし') || sub.name.includes('トウモロコシ')) subSvg = 'corn';
+        else if (sub.name.includes('ヤグルマギク')) subSvg = 'cornflower';
+        else if (sub.name.includes('アスチルベ')) subSvg = 'astilbe';
+        else if (sub.name.includes('アマナ')) subSvg = 'amana';
+        else if (sub.name.includes('ミズヒマワリ')) subSvg = 'water_sunflower';
 
         let subColor = f.flowerColor;
         let subBg = f.bgGradient || 'from-emerald-500/15 via-teal-400/10 to-green-600/15';
@@ -10002,6 +10187,45 @@ export function getAllGachaPool(): FlowerData[] {
         } else if (sub.name.includes('ハナニラ')) {
           subColor = '#38bdf8';
           subBg = 'from-sky-400/15 via-blue-200/10 to-teal-500/10';
+        } else if (sub.name.includes('ボロニア')) {
+          subColor = '#f43f5e';
+          subBg = 'from-rose-400/15 via-pink-300/10 to-amber-400/10';
+        } else if (sub.name.includes('ヨウシュヤマゴボウ')) {
+          subColor = '#4c0519';
+          subBg = 'from-purple-900/15 via-fuchsia-900/10 to-emerald-600/10';
+        } else if (sub.name.includes('サンザシ')) {
+          subColor = '#ffffff';
+          subBg = 'from-rose-500/15 via-red-300/10 to-emerald-500/10';
+        } else if (sub.name.includes('ブラックベリー')) {
+          subColor = '#0f172a';
+          subBg = 'from-slate-900/15 via-purple-950/10 to-emerald-600/10';
+        } else if (sub.name.includes('ヒオウギ')) {
+          subColor = '#f97316';
+          subBg = 'from-orange-500/15 via-amber-400/10 to-red-500/10';
+        } else if (sub.name.includes('パイナップル')) {
+          subColor = '#eab308';
+          subBg = 'from-yellow-400/20 via-amber-300/10 to-emerald-500/10';
+        } else if (sub.name.includes('ジューンベリー')) {
+          subColor = '#ffffff';
+          subBg = 'from-rose-400/15 via-pink-200/10 to-teal-500/10';
+        } else if (sub.name.includes('イチイ')) {
+          subColor = '#dc2626';
+          subBg = 'from-emerald-700/15 via-red-600/10 to-green-800/10';
+        } else if (sub.name.includes('マンドラゴラ') || sub.name.includes('マンドレイク')) {
+          subColor = '#a855f7';
+          subBg = 'from-purple-600/15 via-violet-500/10 to-slate-800/10';
+        } else if (sub.name.includes('とうもろこし') || sub.name.includes('トウモロコシ')) {
+          subColor = '#facc15';
+          subBg = 'from-amber-400/20 via-yellow-200/10 to-emerald-500/10';
+        } else if (sub.name.includes('ヤグルマギク')) {
+          subColor = '#2563eb';
+          subBg = 'from-blue-600/15 via-sky-400/10 to-teal-500/10';
+        } else if (sub.name.includes('アスチルベ')) {
+          subColor = '#fda4af';
+          subBg = 'from-rose-300/15 via-pink-200/10 to-emerald-400/10';
+        } else if (sub.name.includes('アマナ')) {
+          subColor = '#ffffff';
+          subBg = 'from-slate-300/15 via-purple-200/10 to-emerald-500/10';
         } else if (sub.name.includes('キダチチョウセンアサガオ') || sub.name.includes('エンジェルストランペット')) {
           subColor = '#facc15';
           subBg = 'from-amber-400/15 via-yellow-200/10 to-emerald-500/10';
