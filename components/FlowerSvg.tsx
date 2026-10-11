@@ -3577,6 +3577,145 @@ export const FlowerSvg: React.FC<FlowerSvgProps> = ({
 
 
 
+
+      // ヒロハホウキギク（広葉箒菊 / Aster subulatus）: 箒状に細かく枝分かれする枝先と星屑のような極小白花群
+      case 'hirohahoukigiku':
+      case 'broom_aster':
+        return (
+          <g>
+            {/* 箒状に細かく枝分かれする繊細な緑の茎 */}
+            <path d="M100 185 L100 135" stroke="#15803d" strokeWidth="3" />
+            <path d="M100 135 Q75 110 55 75" stroke="#16a34a" strokeWidth="2" fill="none" />
+            <path d="M100 135 Q125 110 145 75" stroke="#16a34a" strokeWidth="2" fill="none" />
+            <path d="M100 135 L100 55" stroke="#16a34a" strokeWidth="2" />
+            <path d="M75 110 Q50 95 40 65" stroke="#16a34a" strokeWidth="1.5" fill="none" />
+            <path d="M125 110 Q150 95 160 65" stroke="#16a34a" strokeWidth="1.5" fill="none" />
+            <path d="M100 95 Q80 75 70 50" stroke="#16a34a" strokeWidth="1.5" fill="none" />
+            <path d="M100 95 Q120 75 130 50" stroke="#16a34a" strokeWidth="1.5" fill="none" />
+            {/* 細い披針形の葉 */}
+            {[
+              { x: 80, y: 130, rot: -40 }, { x: 120, y: 130, rot: 40 },
+              { x: 65, y: 100, rot: -30 }, { x: 135, y: 100, rot: 30 }
+            ].map((lf, i) => (
+              <ellipse key={i} cx={lf.x} cy={lf.y} rx="12" ry="3" fill="#15803d" transform={`rotate(${lf.rot} ${lf.x} ${lf.y})`} />
+            ))}
+            {/* 枝先に散りばめられた無数の星屑のような極小頭花 */}
+            {[
+              { x: 100, y: 50, s: 1.0 },
+              { x: 55, y: 72, s: 0.85 },
+              { x: 145, y: 72, s: 0.85 },
+              { x: 40, y: 62, s: 0.75 },
+              { x: 160, y: 62, s: 0.75 },
+              { x: 70, y: 48, s: 0.8 },
+              { x: 130, y: 48, s: 0.8 },
+              { x: 85, y: 75, s: 0.75 },
+              { x: 115, y: 75, s: 0.75 }
+            ].map((fl, idx) => (
+              <g key={idx} transform={`translate(${fl.x}, ${fl.y}) scale(${fl.s})`}>
+                {/* 繊細な舌状花（白〜淡紫） */}
+                {[0, 30, 60, 90, 120, 150, 180, 210, 240, 270, 300, 330].map((ang, i) => (
+                  <line key={i} x1="0" y1="0" x2={Math.cos(ang * Math.PI / 180) * 8} y2={Math.sin(ang * Math.PI / 180) * 8} stroke="#f8fafc" strokeWidth="1.2" strokeLinecap="round" />
+                ))}
+                {/* 中心部の黄色い筒状花 */}
+                <circle cx="0" cy="0" r="2.8" fill="#facc15" />
+                <circle cx="0" cy="0" r="1.2" fill="#ca8a04" />
+              </g>
+            ))}
+          </g>
+        );
+
+      // ニラ（韮・花韮 / Allium tuberosum / Garlic Chives）: 直立する花茎の先にパッと咲く星形白花序
+      case 'garlic_chives':
+      case 'chives_flower':
+        return (
+          <g>
+            {/* 地際の細長い線形葉（ニラの葉） */}
+            <path d="M100 185 Q70 150 50 175" stroke="#15803d" strokeWidth="3" fill="none" />
+            <path d="M100 185 Q60 130 40 160" stroke="#15803d" strokeWidth="2.5" fill="none" />
+            <path d="M100 185 Q130 150 150 175" stroke="#15803d" strokeWidth="3" fill="none" />
+            <path d="M100 185 Q140 130 160 160" stroke="#15803d" strokeWidth="2.5" fill="none" />
+            {/* スッと伸びる直立した緑の花茎 */}
+            <path d="M100 185 L100 95" stroke="#16a34a" strokeWidth="3.5" />
+            {/* 放射状に広がる小花柄（散形花序） */}
+            <g transform="translate(100, 95)">
+              {[-45, -30, -15, 0, 15, 30, 45].map((ang, i) => (
+                <line key={i} x1="0" y1="0" x2={Math.sin(ang * Math.PI / 180) * 35} y2={-Math.cos(ang * Math.PI / 180) * 35} stroke="#16a34a" strokeWidth="1.5" />
+              ))}
+            </g>
+            {/* 散形花序の先端に咲く星形6弁の純白小花たち */}
+            {[
+              { x: 100, y: 60, s: 1.1 },
+              { x: 75, y: 68, s: 0.9 },
+              { x: 125, y: 68, s: 0.9 },
+              { x: 55, y: 82, s: 0.8 },
+              { x: 145, y: 82, s: 0.8 },
+              { x: 88, y: 82, s: 0.85 },
+              { x: 112, y: 82, s: 0.85 }
+            ].map((fl, idx) => (
+              <g key={idx} transform={`translate(${fl.x}, ${fl.y}) scale(${fl.s})`}>
+                {/* 6枚の星形花被片 */}
+                {[0, 60, 120, 180, 240, 300].map((ang, i) => (
+                  <g key={i} transform={`rotate(${ang})`}>
+                    <path d="M0 0 C-2.5 -6 -3.5 -12 0 -15 C3.5 -12 2.5 -6 0 0 Z" fill="#ffffff" stroke="#e2e8f0" strokeWidth="0.8" />
+                    {/* 花弁中央の緑の縦スジ */}
+                    <line x1="0" y1="-2" x2="0" y2="-12" stroke="#86efac" strokeWidth="0.8" />
+                  </g>
+                ))}
+                {/* 葯（雄しべ）と花心 */}
+                <circle cx="0" cy="0" r="2.5" fill="#86efac" />
+                {[0, 60, 120, 180, 240, 300].map((ang, i) => (
+                  <circle key={i} cx={Math.cos(ang * Math.PI / 180) * 4} cy={Math.sin(ang * Math.PI / 180) * 4} r="0.9" fill="#ca8a04" />
+                ))}
+              </g>
+            ))}
+          </g>
+        );
+
+      // ユウゲショウ（アカバナユウゲショウ・夕化粧 / Oenothera rosea）: 淡紅色の4弁花と中央に白く映える十字形の雌しべ
+      case 'yuugeshou':
+      case 'oenothera_rosea':
+        return (
+          <g>
+            <path d="M100 185 L100 70" stroke="#16a34a" strokeWidth="3" />
+            <path d="M100 150 Q75 140 60 148" stroke="#15803d" strokeWidth="2" fill="none" />
+            <path d="M100 130 Q125 120 140 128" stroke="#15803d" strokeWidth="2" fill="none" />
+            <path d="M100 100 Q80 90 70 98" stroke="#15803d" strokeWidth="1.8" fill="none" />
+            {/* 互生する長楕円形の波打つ緑葉 */}
+            <ellipse cx="55" cy="148" rx="14" ry="6" fill="#15803d" transform="rotate(-15 55 148)" />
+            <ellipse cx="145" cy="128" rx="14" ry="6" fill="#15803d" transform="rotate(15 145 128)" />
+            <ellipse cx="65" cy="98" rx="12" ry="5" fill="#16a34a" transform="rotate(-15 65 98)" />
+
+            {/* 愛らしく咲く淡紅色のユウゲショウ花 */}
+            <g transform="translate(100, 65)">
+              {/* 4枚のふっくら丸い淡紅色花弁 */}
+              {[0, 90, 180, 270].map((ang, i) => (
+                <g key={i} transform={`rotate(${ang + 45})`}>
+                  <path d="M0 0 C-12 -12 -18 -26 0 -32 C18 -26 12 -12 0 0 Z" fill="#f472b6" stroke="#db2777" strokeWidth="0.8" />
+                  {/* 花弁に走る濃い紅色の繊細な葉脈スジ */}
+                  <line x1="0" y1="-5" x2="0" y2="-28" stroke="#be185d" strokeWidth="1" opacity="0.75" />
+                  <line x1="0" y1="-12" x2="-6" y2="-22" stroke="#be185d" strokeWidth="0.8" opacity="0.6" />
+                  <line x1="0" y1="-12" x2="6" y2="-22" stroke="#be185d" strokeWidth="0.8" opacity="0.6" />
+                </g>
+              ))}
+              {/* 黄緑色の花心 */}
+              <circle cx="0" cy="0" r="7" fill="#fef08a" />
+              {/* ユウゲショウの決定的な特徴：中央にパッと白く開く「十字形の雌しべ」 */}
+              <line x1="-5" y1="0" x2="5" y2="0" stroke="#ffffff" strokeWidth="2.2" strokeLinecap="round" />
+              <line x1="0" y1="-5" x2="0" y2="5" stroke="#ffffff" strokeWidth="2.2" strokeLinecap="round" />
+              {/* 8本の黄色い雄しべ */}
+              {[22.5, 67.5, 112.5, 157.5, 202.5, 247.5, 292.5, 337.5].map((ang, i) => (
+                <circle key={i} cx={Math.cos(ang * Math.PI / 180) * 8.5} cy={Math.sin(ang * Math.PI / 180) * 8.5} r="1.4" fill="#facc15" />
+              ))}
+            </g>
+
+            {/* 枝先の可憐なつぼみ */}
+            <g transform="translate(125, 90) rotate(25)">
+              <ellipse cx="0" cy="0" rx="4" ry="9" fill="#f472b6" stroke="#db2777" strokeWidth="0.8" />
+              <path d="M-3 5 L0 9 L3 5 Z" fill="#15803d" />
+            </g>
+          </g>
+        );
+
       // ボロニア（Boronia）: 鐘形・星形の愛らしいピンク小花が鈴なりに咲く柑橘ハーブ花木
       case 'boronia':
         return (

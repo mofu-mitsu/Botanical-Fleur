@@ -2379,7 +2379,17 @@ export const SPECIAL_FLOWERS: Record<string, FlowerData> = {
     "flowerColor": "#8b5cf6",
     "secondaryColor": "#c4b5fd",
     "bgGradient": "from-violet-500/15 via-purple-400/10 to-emerald-500/10",
-    "rarity": "Rare"
+        "subFlowers": [
+      {
+      "name": "ニラ（韮・花韮）",
+      "meanings": [
+            "星への願い",
+            "多幸"
+      ],
+      "note": "4月18日の誕生花。晩夏から秋にかけてスッと伸びる茎の先に、星型に輝く可憐な白い小花を傘状に咲かせる"
+}
+    ],
+"rarity": "Rare"
   },
   "4-24": {
     "id": "4-24",
@@ -3710,7 +3720,16 @@ export const SPECIAL_FLOWERS: Record<string, FlowerData> = {
     "flowerColor": "#a855f7",
     "secondaryColor": "#e9d5ff",
     "bgGradient": "from-purple-500/15 via-violet-300/10 to-teal-500/10",
-    "triviaList": [
+        "subFlowers": [
+      {
+      "name": "ユウゲショウ（アカバナユウゲショウ・夕化粧）",
+      "meanings": [
+            "臆病"
+      ],
+      "note": "7月22日の誕生花。初夏から秋の道端に、淡い紅色の愛らしい4弁花を咲かせ、中心に十字形の白い雌しべが映える野草"
+}
+    ],
+"triviaList": [
       "通常多くの穂状の花は下から上へ咲きますが、リアトリスは「てっぺんから下へ向かって」咲き進む非常に珍しい特徴があります。",
       "槍のような堂々とした花姿から和名では「槍鶏頭（ヤリゲイトウ）」や「百々千鳥（モモチドリ）」とも呼ばれます。",
       "北米原産で、夏の強烈な暑さや乾燥にもびくともしない強健な宿根草です。"
@@ -9186,6 +9205,30 @@ export const SPECIAL_FLOWERS: Record<string, FlowerData> = {
 
 export const GACHA_SPECIAL_FLOWERS: FlowerData[] = [
   {
+    "id": "gacha-hirohahoukigiku",
+    "name": "ヒロハホウキギク（広葉箒菊）",
+    "reading": "ひろはほうきぎく",
+    "scientificName": "Symphyotrichum subulatum var. squamatum",
+    "month": 0,
+    "day": 0,
+    "meanings": [
+      "誠実"
+    ],
+    "description": "秋の野原や道端に、細かく箒状に枝分かれした茎の先に多数の極小の星屑のような白〜淡紫色の頭花を散りばめるキク科の野草。ひたむきに野に咲き誇る姿から「誠実」の花言葉を持ちます。",
+    "category": "野草・キク科",
+    "svgType": "hirohahoukigiku",
+    "flowerColor": "#f8fafc",
+    "secondaryColor": "#e0e7ff",
+    "bgGradient": "from-slate-400/15 via-emerald-200/10 to-teal-500/10",
+    "isGachaSpecial": true,
+    "rarity": "SSR ガチャ限定",
+    "triviaList": [
+      "細かく枝分かれする箒（ほうき）のような草姿から「箒菊（ホウキギク）」の名が付きました。",
+      "花は直径5mmほどと非常に小さく控えめですが、秋風に揺れて無数に咲き誇る姿はまるで星屑のようです。",
+      "熱帯アメリカ原産で、今では日本の秋の原野にすっかり馴染んだ風情ある野の花です。"
+    ]
+  },
+  {
     "id": "gacha-water-sunflower",
     "name": "ミズヒマワリ（水向日葵）",
     "reading": "みずひまわり",
@@ -10174,6 +10217,9 @@ export function getAllGachaPool(): FlowerData[] {
         else if (sub.name.includes('アスチルベ')) subSvg = 'astilbe';
         else if (sub.name.includes('アマナ')) subSvg = 'amana';
         else if (sub.name.includes('ミズヒマワリ')) subSvg = 'water_sunflower';
+        else if (sub.name.startsWith('ニラ') || sub.name.includes('（韮')) subSvg = 'garlic_chives';
+        else if (sub.name.includes('ユウゲショウ')) subSvg = 'yuugeshou';
+        else if (sub.name.includes('ヒロハホウキギク')) subSvg = 'hirohahoukigiku';
 
         let subColor = f.flowerColor;
         let subBg = f.bgGradient || 'from-emerald-500/15 via-teal-400/10 to-green-600/15';
@@ -10187,6 +10233,15 @@ export function getAllGachaPool(): FlowerData[] {
         } else if (sub.name.includes('ハナニラ')) {
           subColor = '#38bdf8';
           subBg = 'from-sky-400/15 via-blue-200/10 to-teal-500/10';
+        } else if (sub.name.startsWith('ニラ') || sub.name.includes('（韮')) {
+          subColor = '#ffffff';
+          subBg = 'from-slate-300/15 via-emerald-200/10 to-teal-600/10';
+        } else if (sub.name.includes('ユウゲショウ')) {
+          subColor = '#f472b6';
+          subBg = 'from-rose-400/15 via-pink-200/10 to-emerald-500/10';
+        } else if (sub.name.includes('ヒロハホウキギク')) {
+          subColor = '#f8fafc';
+          subBg = 'from-slate-400/15 via-emerald-200/10 to-teal-500/10';
         } else if (sub.name.includes('ボロニア')) {
           subColor = '#f43f5e';
           subBg = 'from-rose-400/15 via-pink-300/10 to-amber-400/10';
