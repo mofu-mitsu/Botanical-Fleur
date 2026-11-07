@@ -548,7 +548,7 @@ export const CHARACTERS_MAP: Record<string, CharacterProfile[]> = {
       "day": 30,
       "flowerName": "エニシダ",
       "mbti": "ISFP",
-      "socionics": "SEI",
+      "socionics": "ILE",
       "enneagram": "7w6",
       "motif": "黒猫風船",
       "dialogueBadge": "陽気ないたずらっ子",
@@ -2632,7 +2632,7 @@ export const CHARACTERS_MAP: Record<string, CharacterProfile[]> = {
       "themeColor": "#831843",
       "accentColor": "#9d174d",
       "imageFileName": "ron.png",
-      "comment": "11月15日。僕と同じ誕生日だね。曖昧で中途半端な基準は許容できないけれど、君が生まれたという事実とチョコレートコスモスの『移り変わらぬ気持ち』には明確な論理性がある。壊れかけの妥協はやめて、すべてを正しく再構築していこう。おめでとう。"
+      "comment": "11月15日。おれと同じ誕生日だね。あいまいなことや、中途半端なままなのは気になるんだ。でも、君が生まれた日なんだから、今日は特別な日だと思うよ。チョコレートコスモスの花言葉は「移り変わらぬ気持ち」なんだって。ずっと大切に思えるものがあるって、いいことだよね。お誕生日おめでとう。"
     }
   ],
   "11-29": [
@@ -2650,7 +2650,7 @@ export const CHARACTERS_MAP: Record<string, CharacterProfile[]> = {
       "themeColor": "#fb7185",
       "accentColor": "#f43f5e",
       "imageFileName": "homare.png",
-      "comment": "ケロ〜、11月29日！ぼくと一緒の誕生日じゃ！難しい計算とか世間のルールはよう分からんけど、積み木とおやつには自信があるんよね！ベゴニアの『親切』みたいに、のんびり楽しく探究しよ〜！おめでとー！"
+      "comment": "ケロ〜、11月29日！おいらと一緒の誕生日じゃ！難しい計算とか世間のルールはよう分からんけど、積み木とおやつには自信があるんよね！ベゴニアの『親切』みたいに、のんびり楽しく探究しよ〜！おめでとー！"
     }
   ],
   "4-29": [
@@ -2876,9 +2876,9 @@ export const CHARACTERS_MAP: Record<string, CharacterProfile[]> = {
       "month": 9,
       "day": 17,
       "flowerName": "リクニス",
-      "mbti": "ESTP",
+      "mbti": "ISTJ",
       "socionics": "LSI",
-      "enneagram": "9w1",
+      "enneagram": "6w7",
       "motif": "クリオネ",
       "dialogueBadge": "温厚二重人格クリオネ",
       "themeColor": "#d946ef",
@@ -3846,7 +3846,7 @@ export const CHARACTERS_MAP: Record<string, CharacterProfile[]> = {
       "month": 8,
       "day": 31,
       "flowerName": "ヒマワリ",
-      "mbti": "ESFP",
+      "mbti": "ENFJ",
       "socionics": "ESI",
       "enneagram": "1w2",
       "motif": "ひまわり",
