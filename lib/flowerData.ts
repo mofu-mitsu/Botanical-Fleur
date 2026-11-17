@@ -4591,6 +4591,42 @@ export const SPECIAL_FLOWERS: Record<string, FlowerData> = {
     ],
     "rarity": "Normal"
   },
+  "1-4": {
+    "id": "1-4",
+    "name": "スイセン（水仙）",
+    "reading": "すいせん",
+    "scientificName": "Narcissus",
+    "month": 1,
+    "day": 4,
+    "meanings": [
+      "自己愛",
+      "神秘",
+      "尊敬"
+    ],
+    "description": "清らかな冬の気配を運ぶ、凛とした気品あふれる球根花。雪の中でもまっすぐに伸びる葉と、中心にカップ（副花冠）を持つ端正な花姿が冬の空気を澄み渡らせます。",
+    "category": "球根",
+    "svgType": "daffodil",
+    "flowerColor": "#fef08a",
+    "secondaryColor": "#ffffff",
+    "bgGradient": "from-emerald-500/15 via-teal-400/10 to-green-600/15",
+    "triviaList": [
+      "ギリシャ神話の美少年ナルキッソスに由来し、英語では「ナルシサス」、ナルシシズムの語源としても知られます。",
+      "花の中央にある杯のような部分は「副花冠（ふくかかん）」と呼ばれ、スイセンならではの立体的な造形美を作っています。",
+      "漢名の「水仙」は、水辺に咲く清らかな姿がまるで仙人のようであることから名付けられました。"
+    ],
+    "subFlowers": [
+      {
+        "name": "フクジュソウ（福寿草・元日草）",
+        "meanings": [
+          "永久の幸福",
+          "幸せを招く",
+          "回想"
+        ],
+        "note": "1月4日の誕生花。早春に黄金色の椀状の花を咲かせ、新年の幸福を祝う縁起の良い山野草"
+      }
+    ],
+    "rarity": "Normal"
+  },
   "1-8": {
     "id": "1-8",
     "name": "マンサク（万作）",
@@ -9205,6 +9241,31 @@ export const SPECIAL_FLOWERS: Record<string, FlowerData> = {
 
 export const GACHA_SPECIAL_FLOWERS: FlowerData[] = [
   {
+    "id": "gacha-benimatsuri",
+    "name": "ベニマツリ（紅茉莉・ロンドレティア）",
+    "reading": "べにまつり",
+    "scientificName": "Rondeletia odorata",
+    "month": 0,
+    "day": 0,
+    "meanings": [
+      "情熱",
+      "初恋"
+    ],
+    "description": "キューバやパナマなどの中南米原産のアカネ科の常緑低木。枝先に集散花序をつくり、鮮やかな朱紅色・緋色の星形の小花をボール状にぎゅっと咲かせます。花の中心に浮かぶ明るい黄色のリングが愛らしいアクセントです。",
+    "category": "常緑低木・アカネ科",
+    "svgType": "benimatsuri",
+    "flowerColor": "#f97316",
+    "secondaryColor": "#facc15",
+    "bgGradient": "from-orange-500/15 via-red-400/10 to-amber-300/10",
+    "isGachaSpecial": true,
+    "rarity": "SSR ガチャ限定",
+    "triviaList": [
+      "花の形がジャスミン（茉莉花）に似ていて鮮やかな紅色を帯びることから「紅茉莉（ベニマツリ）」という美しい和名がつきました。",
+      "燃えるような朱紅色の5弁花の喉元に、くっきりとした黄金色のリング模様が入るのが最大の特徴です。",
+      "属名のロンドレティア（Rondeletia）は16世紀のフランスの医師・博物学者ギヨーム・ロンドレに献名されたものです。"
+    ]
+  },
+  {
     "id": "gacha-hirohahoukigiku",
     "name": "ヒロハホウキギク（広葉箒菊）",
     "reading": "ひろはほうきぎく",
@@ -10220,6 +10281,8 @@ export function getAllGachaPool(): FlowerData[] {
         else if (sub.name.startsWith('ニラ') || sub.name.includes('（韮')) subSvg = 'garlic_chives';
         else if (sub.name.includes('ユウゲショウ')) subSvg = 'yuugeshou';
         else if (sub.name.includes('ヒロハホウキギク')) subSvg = 'hirohahoukigiku';
+        else if (sub.name.includes('フクジュソウ')) subSvg = 'fukujuso';
+        else if (sub.name.includes('ベニマツリ')) subSvg = 'benimatsuri';
 
         let subColor = f.flowerColor;
         let subBg = f.bgGradient || 'from-emerald-500/15 via-teal-400/10 to-green-600/15';
@@ -10227,6 +10290,12 @@ export function getAllGachaPool(): FlowerData[] {
         if (sub.name.includes('パキスタキス')) {
           subColor = '#facc15';
           subBg = 'from-amber-400/20 via-yellow-300/10 to-emerald-500/10';
+        } else if (sub.name.includes('フクジュソウ')) {
+          subColor = '#eab308';
+          subBg = 'from-yellow-400/20 via-amber-300/10 to-emerald-500/10';
+        } else if (sub.name.includes('ベニマツリ')) {
+          subColor = '#f97316';
+          subBg = 'from-orange-500/15 via-red-400/10 to-amber-300/10';
         } else if (sub.name.includes('ジャガイモ')) {
           subColor = '#818cf8';
           subBg = 'from-indigo-400/15 via-purple-300/10 to-amber-500/10';

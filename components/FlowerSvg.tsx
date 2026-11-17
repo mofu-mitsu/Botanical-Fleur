@@ -4594,6 +4594,182 @@ export const FlowerSvg: React.FC<FlowerSvgProps> = ({
           </g>
         );
 
+      // フクジュソウ（福寿草・元日草 / Adonis ramosa）: 黄金色の光沢ある椀状花と細かく裂けた羽状複葉
+      case 'fukujuso':
+      case 'adonis':
+        return (
+          <g>
+            {/* 地際の芽鱗（茶褐色の袴） */}
+            <path d="M90 185 Q100 162 110 185 Z" fill="#78350f" opacity="0.85" />
+            <path d="M93 185 Q82 172 86 164 Q95 170 98 185 Z" fill="#92400e" />
+            <path d="M107 185 Q118 172 114 164 Q105 170 102 185 Z" fill="#92400e" />
+            {/* しっかりとした早春の茎 */}
+            <path d="M100 185 Q97 140 96 92" stroke="#15803d" strokeWidth="4" strokeLinecap="round" fill="none" />
+            <path d="M100 168 Q122 145 138 118" stroke="#16a34a" strokeWidth="3" strokeLinecap="round" fill="none" />
+            {/* 細かく裂けた特徴的な羽状複葉（ニンジン葉） */}
+            {[
+              { x: 96, y: 148, rot: -45, s: 1 },
+              { x: 102, y: 152, rot: 45, s: 0.9 },
+              { x: 95, y: 122, rot: -55, s: 0.85 },
+              { x: 125, y: 138, rot: 40, s: 0.8 },
+            ].map((lf, idx) => (
+              <g key={idx} transform={`translate(${lf.x}, ${lf.y}) rotate(${lf.rot}) scale(${lf.s})`}>
+                <path d="M0 0 L0 -28" stroke="#15803d" strokeWidth="1.8" strokeLinecap="round" />
+                {[-8, -15, -22].map((ly, i) => (
+                  <g key={i}>
+                    <path d={`M0 ${ly} Q-8 ${ly - 3} -12 ${ly - 7}`} stroke="#16a34a" strokeWidth="1.6" strokeLinecap="round" fill="none" />
+                    <path d={`M0 ${ly} Q8 ${ly - 3} 12 ${ly - 7}`} stroke="#16a34a" strokeWidth="1.6" strokeLinecap="round" fill="none" />
+                    <path d={`M-6 ${ly - 3} L-10 ${ly + 1}`} stroke="#22c55e" strokeWidth="1.2" strokeLinecap="round" />
+                    <path d={`M6 ${ly - 3} L10 ${ly + 1}`} stroke="#22c55e" strokeWidth="1.2" strokeLinecap="round" />
+                  </g>
+                ))}
+              </g>
+            ))}
+            {/* 右側の小花（ほころびかけの花） */}
+            <g transform="translate(138, 114) scale(0.68)">
+              <circle cx="0" cy="4" r="14" fill="#65a30d" opacity="0.85" />
+              {[0, 36, 72, 108, 144, 180, 216, 252, 288, 324].map((ang, i) => (
+                <path
+                  key={i}
+                  d="M0 0 C-5 -10 -7 -26 0 -30 C7 -26 5 -10 0 0 Z"
+                  fill={i % 2 === 0 ? '#facc15' : '#eab308'}
+                  stroke="#ca8a04"
+                  strokeWidth="0.6"
+                  transform={`rotate(${ang})`}
+                />
+              ))}
+              <circle cx="0" cy="0" r="8" fill="#ca8a04" />
+              <circle cx="0" cy="0" r="4" fill="#84cc16" />
+            </g>
+            {/* メインの福寿草（光沢ある黄金色の多弁椀状花） */}
+            <g transform="translate(96, 86)">
+              {/* 外側の暗緑〜茶褐色の萼片 */}
+              {[18, 78, 138, 198, 258, 318].map((ang, i) => (
+                <ellipse
+                  key={i}
+                  cx="0"
+                  cy="-22"
+                  rx="7"
+                  ry="14"
+                  fill="#65a30d"
+                  stroke="#4d7c0f"
+                  strokeWidth="0.8"
+                  transform={`rotate(${ang})`}
+                />
+              ))}
+              {/* 外層の花弁（12枚・艶やかな山吹色） */}
+              {Array.from({ length: 12 }, (_, i) => i * 30).map((ang, i) => (
+                <path
+                  key={i}
+                  d="M0 0 C-6 -14 -9 -32 0 -37 C9 -32 6 -14 0 0 Z"
+                  fill="#eab308"
+                  stroke="#ca8a04"
+                  strokeWidth="0.7"
+                  transform={`rotate(${ang})`}
+                />
+              ))}
+              {/* 内層の花弁（12枚・鮮やかな黄金イエロー） */}
+              {Array.from({ length: 12 }, (_, i) => i * 30 + 15).map((ang, i) => (
+                <path
+                  key={i}
+                  d="M0 0 C-5 -12 -7 -27 0 -32 C7 -27 5 -12 0 0 Z"
+                  fill="#fde047"
+                  stroke="#facc15"
+                  strokeWidth="0.6"
+                  transform={`rotate(${ang})`}
+                />
+              ))}
+              {/* 密集した黄金色の雄しべ */}
+              <circle cx="0" cy="0" r="11" fill="#f59e0b" opacity="0.9" />
+              {Array.from({ length: 14 }, (_, i) => i * (360 / 14)).map((ang, i) => (
+                <g key={i} transform={`rotate(${ang})`}>
+                  <line x1="0" y1="0" x2="0" y2="-11" stroke="#fef08a" strokeWidth="1" />
+                  <circle cx="0" cy="-11.5" r="1.4" fill="#ca8a04" />
+                </g>
+              ))}
+              {/* 中央の薄緑色の雌しべ（心皮） */}
+              <circle cx="0" cy="0" r="4.5" fill="#84cc16" stroke="#4d7c0f" strokeWidth="0.8" />
+              <circle cx="-1.2" cy="-1" r="1.2" fill="#bef264" />
+            </g>
+          </g>
+        );
+
+      // ベニマツリ（紅茉莉・ロンドレティア / Rondeletia odorata）: 朱紅色の5弁星花と中心の鮮やかな黄色い輪
+      case 'benimatsuri':
+      case 'rondeletia':
+        return (
+          <g>
+            {/* 木質化した枝と緑の若い枝 */}
+            <path d="M100 185 L100 120" stroke="#78350f" strokeWidth="4" strokeLinecap="round" />
+            <path d="M100 125 Q82 105 74 88" stroke="#15803d" strokeWidth="2.5" strokeLinecap="round" fill="none" />
+            <path d="M100 125 Q118 105 126 88" stroke="#15803d" strokeWidth="2.5" strokeLinecap="round" fill="none" />
+            <path d="M100 125 L100 80" stroke="#16a34a" strokeWidth="2.5" strokeLinecap="round" />
+            {/* 対生する厚手の広卵形の葉 */}
+            {[
+              { x: 75, y: 145, rot: -35, s: 1 },
+              { x: 125, y: 145, rot: 35, s: 1 },
+              { x: 65, y: 112, rot: -48, s: 0.9 },
+              { x: 135, y: 112, rot: 48, s: 0.9 },
+            ].map((lf, i) => (
+              <g key={i} transform={`translate(${lf.x}, ${lf.y}) rotate(${lf.rot}) scale(${lf.s})`}>
+                <path d="M0 14 C-13 6 -13 -12 0 -18 C13 -12 13 6 0 14 Z" fill="#166534" stroke="#14532d" strokeWidth="0.8" />
+                <path d="M0 14 L0 -15" stroke="#4ade80" strokeWidth="1" opacity="0.55" />
+              </g>
+            ))}
+            {/* 外周のふっくらした朱紅色の蕾たち */}
+            {[
+              { x: 60, y: 84 },
+              { x: 140, y: 84 },
+              { x: 66, y: 60 },
+              { x: 134, y: 60 },
+            ].map((b, i) => (
+              <g key={i} transform={`translate(${b.x}, ${b.y})`}>
+                <circle cx="0" cy="0" r="5" fill="#dc2626" stroke="#991b1b" strokeWidth="0.8" />
+                <circle cx="-1.5" cy="-1.5" r="1.5" fill="#fb923c" opacity="0.7" />
+              </g>
+            ))}
+            {/* ドーム状に集まって咲く朱紅色（スカーレットオレンジ）の5弁小花群 */}
+            {[
+              { x: 74, y: 92, s: 0.88, rot: -15 },
+              { x: 126, y: 92, s: 0.88, rot: 15 },
+              { x: 100, y: 96, s: 0.95, rot: 10 },
+              { x: 66, y: 74, s: 0.9, rot: 25 },
+              { x: 134, y: 74, s: 0.9, rot: -25 },
+              { x: 85, y: 66, s: 0.98, rot: 5 },
+              { x: 115, y: 66, s: 0.98, rot: -5 },
+              { x: 100, y: 52, s: 1.0, rot: 0 },
+              { x: 100, y: 76, s: 1.08, rot: 18 },
+            ].map((fl, idx) => (
+              <g key={idx} transform={`translate(${fl.x}, ${fl.y}) rotate(${fl.rot}) scale(${fl.s})`}>
+                {/* 5枚の朱紅色・緋色の花弁 */}
+                {[0, 72, 144, 216, 288].map((ang, i) => (
+                  <path
+                    key={i}
+                    d="M0 0 C-5 -6 -7 -14 0 -16 C7 -14 5 -6 0 0 Z"
+                    fill="#f97316"
+                    stroke="#c2410c"
+                    strokeWidth="0.7"
+                    transform={`rotate(${ang})`}
+                  />
+                ))}
+                {/* 花弁の内側の緋色の深み */}
+                {[0, 72, 144, 216, 288].map((ang, i) => (
+                  <path
+                    key={i}
+                    d="M0 0 C-2.5 -4 -3.5 -9 0 -10.5 C3.5 -9 2.5 -4 0 0 Z"
+                    fill="#ef4444"
+                    opacity="0.7"
+                    transform={`rotate(${ang})`}
+                  />
+                ))}
+                {/* ベニマツリ最大の特徴：花の中心の鮮やかな黄色いリング */}
+                <circle cx="0" cy="0" r="5" fill="#facc15" stroke="#eab308" strokeWidth="0.6" />
+                <circle cx="0" cy="0" r="2.2" fill="#9a3412" />
+              </g>
+            ))}
+          </g>
+        );
+
       // デフォルト / 一般花（優雅なボタニカルフラワー）
       default:
         return (
