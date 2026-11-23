@@ -1495,6 +1495,32 @@ export const SPECIAL_FLOWERS: Record<string, FlowerData> = {
       "花びらは古くからハーブティーや染料、お菓子の天然着色料として利用されてきました。"
     ]
   },
+  "6-24": {
+    "id": "6-24",
+    "name": "さくらんぼ（桜桃）",
+    "reading": "さくらんぼ",
+    "scientificName": "Prunus avium",
+    "month": 6,
+    "day": 24,
+    "meanings": [
+      "小さな恋人",
+      "上品",
+      "善良な教育",
+      "幼い心"
+    ],
+    "description": "艶やかなルビー色に熟したふたつの実が、一本の枝先で寄り添うように実る初夏の甘酸っぱい果実。その愛らしい姿から「小さな恋人」というロマンチックな花言葉を持ちます。",
+    "category": "果樹・バラ科",
+    "svgType": "cherry",
+    "flowerColor": "#e11d48",
+    "secondaryColor": "#fecdd3",
+    "bgGradient": "from-rose-500/15 via-red-300/10 to-emerald-500/10",
+    "triviaList": [
+      "「さくらんぼ」の語源は「桜の坊（さくらのぼう＝桜の子ども）」が転じたものと言われています。",
+      "ひとつの果柄に2つの実が並んで揺れる姿が仲睦まじいことから「小さな恋人」の花言葉が生まれました。",
+      "初夏の宝石とも呼ばれる甘酸っぱい果実だけでなく、春に咲く可憐な白い花や美しい桜の木肌も古くから愛されています。"
+    ],
+    "rarity": "Normal"
+  },
   "7-9": {
     "id": "7-9",
     "name": "セルリア（ブラッシングブライド）",
@@ -3652,6 +3678,17 @@ export const SPECIAL_FLOWERS: Record<string, FlowerData> = {
       "名前はギリシャ語の「astron（星）」に由来し、夜空にきらめく星のような花姿から名付けられました。",
       "ヨーロッパのアルプス山脈などの冷涼な森や草原に自生し、イングリッシュガーデンの貴婦人として大人気です。",
       "星形に見える部分は花びらではなく「苞（ほう）」と呼ばれる葉で、触るとカサカサとした独特の質感があります。"
+    ],
+    "subFlowers": [
+      {
+        "name": "ペンステモン（釣鐘柳）",
+        "meanings": [
+          "あなたに見とれています",
+          "勇気",
+          "美しさへの憧れ"
+        ],
+        "note": "6月6日の誕生花。スラリと伸びた花茎に釣鐘状の華やかな筒花を咲かせる気品ある宿根草"
+      }
     ]
   },
   "6-15": {
@@ -4617,36 +4654,36 @@ export const SPECIAL_FLOWERS: Record<string, FlowerData> = {
   },
   "1-4": {
     "id": "1-4",
-    "name": "スイセン（水仙）",
-    "reading": "すいせん",
-    "scientificName": "Narcissus",
+    "name": "フクジュソウ（福寿草・元日草）",
+    "reading": "ふくじゅそう",
+    "scientificName": "Adonis ramosa",
     "month": 1,
     "day": 4,
     "meanings": [
-      "自己愛",
-      "神秘",
-      "尊敬"
+      "永久の幸福",
+      "幸せを招く",
+      "回想"
     ],
-    "description": "清らかな冬の気配を運ぶ、凛とした気品あふれる球根花。雪の中でもまっすぐに伸びる葉と、中心にカップ（副花冠）を持つ端正な花姿が冬の空気を澄み渡らせます。",
-    "category": "球根",
-    "svgType": "daffodil",
-    "flowerColor": "#fef08a",
-    "secondaryColor": "#ffffff",
-    "bgGradient": "from-emerald-500/15 via-teal-400/10 to-green-600/15",
+    "description": "厳しい寒さが残る早春の地面から、黄金色の光沢ある椀状の花を力強く開くお正月・新春のお祝い花。縁起の良い名前とともに「永久の幸福」「幸せを招く」という祝福の花言葉を持ちます。",
+    "category": "山野草・キンポウゲ科",
+    "svgType": "fukujuso",
+    "flowerColor": "#eab308",
+    "secondaryColor": "#fde047",
+    "bgGradient": "from-yellow-400/20 via-amber-300/10 to-emerald-500/10",
     "triviaList": [
-      "ギリシャ神話の美少年ナルキッソスに由来し、英語では「ナルシサス」、ナルシシズムの語源としても知られます。",
-      "花の中央にある杯のような部分は「副花冠（ふくかかん）」と呼ばれ、スイセンならではの立体的な造形美を作っています。",
-      "漢名の「水仙」は、水辺に咲く清らかな姿がまるで仙人のようであることから名付けられました。"
+      "旧暦の元日頃に咲き始めることから「元日草（がんじつそう）」というおめでたい別名も持っています。",
+      "太陽の光を追って花を開き、日差しをたっぷり集めるお椀のような花形をしているのが特徴です。",
+      "「福」と「寿」という2つの縁起の良い文字が並ぶ名前から、日本の新春を彩る幸福の象徴として親しまれています。"
     ],
     "subFlowers": [
       {
-        "name": "フクジュソウ（福寿草・元日草）",
+        "name": "スイセン（水仙）",
         "meanings": [
-          "永久の幸福",
-          "幸せを招く",
-          "回想"
+          "自己愛",
+          "神秘",
+          "尊敬"
         ],
-        "note": "1月4日の誕生花。早春に黄金色の椀状の花を咲かせ、新年の幸福を祝う縁起の良い山野草"
+        "note": "1月4日の誕生花。清らかな冬の気配を運ぶ、中心の副花冠が美しい凛とした球根花"
       }
     ],
     "rarity": "Normal"
@@ -10342,6 +10379,8 @@ export function getAllGachaPool(): FlowerData[] {
         else if (sub.name.includes('フクジュソウ')) subSvg = 'fukujuso';
         else if (sub.name.includes('ベニマツリ')) subSvg = 'benimatsuri';
         else if (sub.name.includes('パールアカシア')) subSvg = 'pearl_acacia';
+        else if (sub.name.includes('ペンステモン')) subSvg = 'penstemon';
+        else if (sub.name.startsWith('スイセン')) subSvg = 'daffodil';
 
         let subColor = f.flowerColor;
         let subBg = f.bgGradient || 'from-emerald-500/15 via-teal-400/10 to-green-600/15';
@@ -10352,6 +10391,12 @@ export function getAllGachaPool(): FlowerData[] {
         } else if (sub.name.includes('フクジュソウ')) {
           subColor = '#eab308';
           subBg = 'from-yellow-400/20 via-amber-300/10 to-emerald-500/10';
+        } else if (sub.name.startsWith('スイセン')) {
+          subColor = '#fef08a';
+          subBg = 'from-emerald-500/15 via-teal-400/10 to-green-600/15';
+        } else if (sub.name.includes('ペンステモン')) {
+          subColor = '#db2777';
+          subBg = 'from-pink-500/15 via-fuchsia-400/10 to-emerald-500/10';
         } else if (sub.name.includes('ベニマツリ')) {
           subColor = '#f97316';
           subBg = 'from-orange-500/15 via-red-400/10 to-amber-300/10';

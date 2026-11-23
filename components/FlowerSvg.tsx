@@ -4897,6 +4897,74 @@ export const FlowerSvg: React.FC<FlowerSvgProps> = ({
           </g>
         );
 
+      // ペンステモン（釣鐘柳 / Penstemon）: すらりと伸びた花茎に連なる鮮やかな釣鐘状の筒花と白い喉元の縞模様
+      case 'penstemon':
+        return (
+          <g>
+            {/* まっすぐ伸びる赤みを帯びた緑の花茎 */}
+            <path d="M100 185 L100 42" stroke="#15803d" strokeWidth="3.5" strokeLinecap="round" />
+            {/* 対生する細長い披針形の葉 */}
+            {[
+              { x: 100, y: 162, rot: -48, len: 32 },
+              { x: 100, y: 162, rot: 48, len: 32 },
+              { x: 100, y: 136, rot: -42, len: 26 },
+              { x: 100, y: 136, rot: 42, len: 26 },
+            ].map((lf, i) => (
+              <g key={i} transform={`translate(${lf.x}, ${lf.y}) rotate(${lf.rot})`}>
+                <path
+                  d={`M0 0 C-6 -${lf.len * 0.35} -5 -${lf.len * 0.8} 0 -${lf.len} C5 -${lf.len * 0.8} 6 -${lf.len * 0.35} 0 0 Z`}
+                  fill="#16a34a"
+                  stroke="#15803d"
+                  strokeWidth="0.8"
+                />
+                <line x1="0" y1="-2" x2="0" y2={-lf.len * 0.85} stroke="#86efac" strokeWidth="0.9" opacity="0.65" />
+              </g>
+            ))}
+            {/* 頂部の小さなつぼみ */}
+            <ellipse cx="100" cy="40" rx="4.5" ry="7" fill="#be185d" />
+            <ellipse cx="95" cy="52" rx="4" ry="6" fill="#db2777" />
+            <ellipse cx="105" cy="56" rx="4" ry="6" fill="#ec4899" />
+            {/* 花穂に沿って左右に開く華やかな釣鐘状の筒花 */}
+            {[
+              { x: 80, y: 112, dir: -1, s: 1.05, c1: '#db2777', c2: '#f472b6' },
+              { x: 120, y: 102, dir: 1, s: 1.0, c1: '#be185d', c2: '#ec4899' },
+              { x: 82, y: 82, dir: -1, s: 0.92, c1: '#ec4899', c2: '#f9a8d4' },
+              { x: 118, y: 74, dir: 1, s: 0.88, c1: '#db2777', c2: '#f472b6' },
+            ].map((bl, idx) => (
+              <g key={idx}>
+                {/* 細い花柄 */}
+                <path
+                  d={`M100 ${bl.y + 4} Q${100 + bl.dir * 10} ${bl.y - 2} ${bl.x} ${bl.y}`}
+                  stroke="#16a34a"
+                  strokeWidth="1.8"
+                  fill="none"
+                />
+                <g transform={`translate(${bl.x}, ${bl.y}) scale(${bl.dir * bl.s}, ${bl.s}) rotate(18)`}>
+                  {/* 緑の萼 */}
+                  <path d="M-4 -4 L2 -6 L2 6 L-4 4 Z" fill="#15803d" />
+                  {/* ふっくらと広がる筒状花冠 */}
+                  <path
+                    d="M0 -4 C8 -10 22 -14 30 -10 C32 -5 30 0 28 3 C31 8 28 14 22 15 C14 14 6 8 0 4 Z"
+                    fill={bl.c1}
+                    stroke="#9d174d"
+                    strokeWidth="0.7"
+                  />
+                  {/* 花冠の明るいリップとグラデーション */}
+                  <path
+                    d="M18 -10 C26 -13 33 -8 30 0 C33 7 27 14 20 13 C23 5 23 -3 18 -10 Z"
+                    fill={bl.c2}
+                  />
+                  {/* 白い喉元と蜜標の筋 */}
+                  <ellipse cx="22" cy="2" rx="6" ry="7.5" fill="#fff1f2" />
+                  <line x1="16" y1="0" x2="25" y2="-1" stroke="#9d174d" strokeWidth="0.9" opacity="0.7" />
+                  <line x1="16" y1="3" x2="25" y2="3" stroke="#9d174d" strokeWidth="0.9" opacity="0.7" />
+                  <line x1="17" y1="6" x2="24" y2="6.5" stroke="#9d174d" strokeWidth="0.9" opacity="0.7" />
+                </g>
+              </g>
+            ))}
+          </g>
+        );
+
       // デフォルト / 一般花（優雅なボタニカルフラワー）
       default:
         return (
