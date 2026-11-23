@@ -444,6 +444,30 @@ export const SPECIAL_FLOWERS: Record<string, FlowerData> = {
           "梨の白花は和歌や古典でも春の季語として愛されてきました。"
       ]
   },
+  "4-21": {
+    "id": "4-21",
+    "name": "ミムラス（モンキーフラワー）",
+    "reading": "みむらす",
+    "scientificName": "Mimulus",
+    "month": 4,
+    "day": 21,
+    "meanings": [
+      "笑顔を見せて",
+      "おしゃべり"
+    ],
+    "description": "鮮やかな黄色やオレンジの筒状の花に、愛嬌たっぷりの赤褐色の斑点模様が浮かぶお花。そのユニークで陽気な花姿がお猿さんの笑顔に見えることから、英語では「モンキーフラワー」と呼ばれ、「笑顔を見せて」「おしゃべり」という楽しい花言葉を持ちます。",
+    "category": "草花・ハエドクソウ科",
+    "svgType": "mimulus",
+    "flowerColor": "#facc15",
+    "secondaryColor": "#ea580c",
+    "bgGradient": "from-yellow-400/15 via-orange-300/10 to-emerald-500/10",
+    "triviaList": [
+      "属名の「Mimulus」はラテン語で「道化師・ものまね役者」を意味し、花びらの模様がユーモラスな顔に見えることに由来します。",
+      "英名では「モンキーフラワー（Monkey flower）」と呼ばれ、見ていると思わず笑顔になってしまう陽気な魅力があります。",
+      "湿り気のある水辺や春の日差しを好み、次々と元気なラッパ状の花を咲かせることから「おしゃべり」の花言葉がつきました。"
+    ],
+    "rarity": "Normal"
+  },
   "3-31": {
       "id": "3-31",
       "name": "ムルチコーレ（黄花小菊）",
@@ -5646,6 +5670,16 @@ export const SPECIAL_FLOWERS: Record<string, FlowerData> = {
       "ミヤマヨメナ（深山嫁菜）の園芸品種で、江戸時代から茶花として広く愛されてきました。",
       "静かで落ち着いた佇まいは、大切な人との再会を願う祈りの象徴です。"
     ],
+    "subFlowers": [
+      {
+        "name": "パールアカシア（真珠葉アカシア）",
+        "meanings": [
+          "愛情",
+          "友情"
+        ],
+        "note": "4月9日の誕生花。白銀がかった丸い真珠のような葉と、ふわふわと咲く甘い香りの黄色いポンポン花が特徴のアカシア"
+      }
+    ],
     "rarity": "Normal"
   },
   "11-28": {
@@ -7754,6 +7788,30 @@ export const SPECIAL_FLOWERS: Record<string, FlowerData> = {
       "ギリシャ語の「アディエントス（濡れない）」が語源で、葉に水をかけると水滴がコロコロ弾かれます。",
       "空気中の湿度を好み、風にそよそよと揺れる姿が観葉植物として抜群の清涼感を演出します。",
       "日陰でも爽やかに葉を繁らせることから、繊細ながら強い生命力のシンボルとされます。"
+    ],
+    "rarity": "Normal"
+  },
+  "4-8": {
+    "id": "4-8",
+    "name": "ジャスミン（素馨）",
+    "reading": "じゃすみん",
+    "scientificName": "Jasminum",
+    "month": 4,
+    "day": 8,
+    "meanings": [
+      "優美",
+      "可憐"
+    ],
+    "description": "星のように端正な純白の花弁と、夜や朝露に甘く深く香る芳醇な香りで古くから「花の王」とも讃えられるつる性植物。優雅な芳香と愛らしい小花の調和が「優美」「可憐」の象徴とされています。",
+    "category": "つる性低木・モクセイ科",
+    "svgType": "jasmine",
+    "flowerColor": "#ffffff",
+    "secondaryColor": "#fef08a",
+    "bgGradient": "from-emerald-400/15 via-teal-200/10 to-slate-200/20",
+    "triviaList": [
+      "名前の由来はペルシア語の「ヤースミーン（神からの贈り物）」とされ、古くから香水やジャスミン茶の香りづけに愛されてきました。",
+      "夜から明け方にかけて香りが最も強く漂う性質があり、インドなどでは愛や祝福を象徴する花飾りとしても親しまれます。",
+      "4月の春風に揺れる可憐な星形の花姿は、気品と愛らしさをあわせ持つ大切な人への贈り物にぴったりです。"
     ],
     "rarity": "Normal"
   },
@@ -10283,6 +10341,7 @@ export function getAllGachaPool(): FlowerData[] {
         else if (sub.name.includes('ヒロハホウキギク')) subSvg = 'hirohahoukigiku';
         else if (sub.name.includes('フクジュソウ')) subSvg = 'fukujuso';
         else if (sub.name.includes('ベニマツリ')) subSvg = 'benimatsuri';
+        else if (sub.name.includes('パールアカシア')) subSvg = 'pearl_acacia';
 
         let subColor = f.flowerColor;
         let subBg = f.bgGradient || 'from-emerald-500/15 via-teal-400/10 to-green-600/15';
@@ -10296,6 +10355,9 @@ export function getAllGachaPool(): FlowerData[] {
         } else if (sub.name.includes('ベニマツリ')) {
           subColor = '#f97316';
           subBg = 'from-orange-500/15 via-red-400/10 to-amber-300/10';
+        } else if (sub.name.includes('パールアカシア')) {
+          subColor = '#facc15';
+          subBg = 'from-yellow-400/20 via-amber-200/15 to-sky-300/10';
         } else if (sub.name.includes('ジャガイモ')) {
           subColor = '#818cf8';
           subBg = 'from-indigo-400/15 via-purple-300/10 to-amber-500/10';

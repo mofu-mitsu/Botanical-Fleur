@@ -51,12 +51,23 @@ export async function GET(request: NextRequest) {
         // fallback
       }
 
-      for (const kw of keywords.slice(0, 2)) {
-        // クレマチスの場合は「スイセイ2号（彗星2号）」を最優先で検索！
-        // なければ「クレマチス 花」「クレマチス」へと自動フォールバック
-        const searchQueriesToTry = kw.includes('クレマチス')
-          ? ['クレマチス スイセイ2号', 'クレマチス 彗星2号', `${kw} 花`, kw]
-          : [`${kw} 花`, kw];
+      // メイン花（primaryKeyword）を最優先で検索！
+      // 複数キーワードがあっても「〇〇＆△△」で同時検索せず、1キーワードずつ綺麗に検索し、
+      // メイン花で十分な結果が出た場合はAPIレート制限回避のため追加リクエストを控える
+      const prioritizedKeywords = keywords.slice(0, 2);
+
+      for (const kw of prioritizedKeywords) {
+        if (allItems.length > 0) break;
+
+        // 特定の植物名は楽天市場で正確に植物ヒットするよう検索クエリを最適化
+        let searchQueriesToTry: string[];
+        if (kw.includes('クレマチス')) {
+          searchQueriesToTry = ['クレマチス スイセイ2号', 'クレマチス 彗星2号', `${kw} 花`, kw];
+        } else if (kw === 'ナシ' || kw === 'なし') {
+          searchQueriesToTry = ['梨 苗木', '梨 花', 'ナシ 苗'];
+        } else {
+          searchQueriesToTry = [`${kw} 花`, kw];
+        }
 
         // 1. まずOpenAPI（accessKeyがある場合）または標準APIエンドポイントを試す
         const endpointsToTry: { url: string; useAccessKey: boolean }[] = [];
@@ -86,7 +97,7 @@ export async function GET(request: NextRequest) {
               }
               url.searchParams.set('keyword', queryTerm);
               url.searchParams.set('format', 'json');
-              url.searchParams.set('hits', keywords.length > 1 ? '3' : '6');
+              url.searchParams.set('hits', '6');
 
               const reqHeaders: Record<string, string> = {
                 'Referer': incomingReferer || `${siteOrigin}/`,

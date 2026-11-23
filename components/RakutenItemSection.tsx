@@ -58,6 +58,7 @@ export const RakutenItemSection: React.FC<RakutenItemSectionProps> = ({ flowerNa
 
   // 花の名前から検索キーワード候補（複数花や補足植物の場合は分割してそれぞれ検索・表示）
   const keywords = extractFlowerKeywords(flowerName, subFlowerNames);
+  const primaryKeyword = keywords[0] || flowerName;
   const [selectedFilter, setSelectedFilter] = useState<string | null>(null);
   const [prevFlowerName, setPrevFlowerName] = useState(flowerName);
 
@@ -67,17 +68,21 @@ export const RakutenItemSection: React.FC<RakutenItemSectionProps> = ({ flowerNa
     setSelectedFilter(null);
   }
 
+  // デフォルトではメイン花（primaryKeyword）を優先検索し、タブ切替時のみ選択した花名で個別検索
+  const activeSearchKeyword = selectedFilter || primaryKeyword;
+
   useEffect(() => {
     let isMounted = true;
 
     async function fetchItems() {
       setLoading(true);
       try {
-        // 全キーワード（＆で繋がれた名前全体）を渡し、API側で各お花ごとに商品を取得・生成
-        const res = await fetch(`/api/rakuten?keyword=${encodeURIComponent(flowerName)}`);
+        // 「〇〇＆△△」のまま検索せず、メイン花（または選択中の花）1つに絞って確実に検索
+        const res = await fetch(`/api/rakuten?keyword=${encodeURIComponent(activeSearchKeyword)}`);
         const data = await res.json();
         console.log('🌸 [Rakuten API Debug]:', {
           flowerName,
+          activeSearchKeyword,
           status: res.status,
           isLiveApi: data.isLiveApi,
           debug: data.debug,
@@ -102,16 +107,9 @@ export const RakutenItemSection: React.FC<RakutenItemSectionProps> = ({ flowerNa
     return () => {
       isMounted = false;
     };
-  }, [flowerName]);
+  }, [activeSearchKeyword, flowerName]);
 
-  // 選択フィルターに応じたアイテムの絞り込み
-  const displayedItems = selectedFilter
-    ? items.filter(
-        (it) =>
-          it.itemName.includes(selectedFilter) ||
-          (it as any).categoryKeyword === selectedFilter
-      )
-    : items;
+  const displayedItems = items;
 
   return (
     <div className="w-full mt-10 pt-8 border-t border-emerald-100">
@@ -149,33 +147,29 @@ export const RakutenItemSection: React.FC<RakutenItemSectionProps> = ({ flowerNa
         </div>
       </div>
 
-      {/* 複数のお花がある場合の表示切り替えタブ */}
+      {/* 複数のお花がある場合の検索対象切り替えタブ（初期状態はメイン花を優先検索） */}
       {keywords.length > 1 && (
         <div className="flex items-center gap-2 mb-5 overflow-x-auto pb-1 scrollbar-none">
           <span className="text-xs font-bold text-emerald-900 shrink-0">表示切替:</span>
-          <button
-            onClick={() => setSelectedFilter(null)}
-            className={`px-3 py-1.5 rounded-xl text-xs font-bold transition-all cursor-pointer whitespace-nowrap shrink-0 ${
-              selectedFilter === null
-                ? 'bg-emerald-700 text-white shadow-sm'
-                : 'bg-emerald-50 text-emerald-900 border border-emerald-200 hover:bg-emerald-100'
-            }`}
-          >
-            すべて表示
-          </button>
-          {keywords.map((kw) => (
-            <button
-              key={kw}
-              onClick={() => setSelectedFilter(kw)}
-              className={`px-3 py-1.5 rounded-xl text-xs font-bold transition-all cursor-pointer whitespace-nowrap shrink-0 ${
-                selectedFilter === kw
-                  ? 'bg-emerald-700 text-white shadow-sm'
-                  : 'bg-emerald-50 text-emerald-900 border border-emerald-200 hover:bg-emerald-100'
-              }`}
-            >
-              🌸 {kw} のみ
-            </button>
-          ))}
+          {keywords.map((kw, idx) => {
+            const isActive =
+              idx === 0
+                ? selectedFilter === null || selectedFilter === kw
+                : selectedFilter === kw;
+            return (
+              <button
+                key={kw}
+                onClick={() => setSelectedFilter(idx === 0 ? null : kw)}
+                className={`px-3 py-1.5 rounded-xl text-xs font-bold transition-all cursor-pointer whitespace-nowrap shrink-0 ${
+                  isActive
+                    ? 'bg-emerald-700 text-white shadow-sm'
+                    : 'bg-emerald-50 text-emerald-900 border border-emerald-200 hover:bg-emerald-100'
+                }`}
+              >
+                {idx === 0 ? `🌟 ${kw}（メイン）` : `🌸 ${kw}`}
+              </button>
+            );
+          })}
         </div>
       )}
 

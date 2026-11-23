@@ -4770,6 +4770,133 @@ export const FlowerSvg: React.FC<FlowerSvgProps> = ({
           </g>
         );
 
+      // パールアカシア（真珠葉アカシア / Acacia podalyriifolia）: 白銀がかった丸い真珠葉と黄金色のふわふわポンポン花
+      case 'pearl_acacia':
+        return (
+          <g>
+            {/* 柔らかく湾曲する枝と花序の茎 */}
+            <path d="M72 185 Q92 140 105 90 Q114 60 124 40" stroke="#78350f" strokeWidth="3.2" strokeLinecap="round" fill="none" />
+            <path d="M96 125 Q74 108 58 95" stroke="#64748b" strokeWidth="2" strokeLinecap="round" fill="none" />
+            <path d="M104 95 Q128 84 146 72" stroke="#64748b" strokeWidth="2" strokeLinecap="round" fill="none" />
+            <path d="M110 72 Q90 56 76 46" stroke="#64748b" strokeWidth="1.8" strokeLinecap="round" fill="none" />
+
+            {/* パールアカシア最大の特徴：真珠を思わせる白銀ブルーの丸い葉（仮葉） */}
+            {[
+              { x: 65, y: 150, rx: 14, ry: 11, rot: -25 },
+              { x: 108, y: 144, rx: 15, ry: 11.5, rot: 20 },
+              { x: 64, y: 118, rx: 13, ry: 10, rot: -35 },
+              { x: 128, y: 114, rx: 13.5, ry: 10.5, rot: 30 },
+              { x: 82, y: 84, rx: 11.5, ry: 9, rot: -20 },
+              { x: 134, y: 88, rx: 11, ry: 8.5, rot: 28 },
+            ].map((lf, i) => (
+              <g key={i} transform={`translate(${lf.x}, ${lf.y}) rotate(${lf.rot})`}>
+                <ellipse cx="0" cy="0" rx={lf.rx} ry={lf.ry} fill="#94a3b8" stroke="#64748b" strokeWidth="0.9" />
+                <ellipse cx="-1.5" cy="-1.5" rx={lf.rx * 0.78} ry={lf.ry * 0.72} fill="#cbd5e1" opacity="0.65" />
+                <line x1={-lf.rx * 0.75} y1="0" x2={lf.rx * 0.75} y2="0" stroke="#e2e8f0" strokeWidth="0.8" opacity="0.8" />
+              </g>
+            ))}
+
+            {/* 枝先にたっぷり房になって咲く黄金色のふわふわポンポン花 */}
+            {[
+              { x: 56, y: 94, r: 9.5 },
+              { x: 70, y: 100, r: 8.5 },
+              { x: 48, y: 78, r: 7.5 },
+              { x: 76, y: 46, r: 9.5 },
+              { x: 92, y: 54, r: 10 },
+              { x: 86, y: 36, r: 8 },
+              { x: 114, y: 66, r: 11 },
+              { x: 124, y: 42, r: 10 },
+              { x: 106, y: 44, r: 9 },
+              { x: 146, y: 72, r: 9.5 },
+              { x: 136, y: 58, r: 8.5 },
+              { x: 154, y: 86, r: 7.5 },
+            ].map((p, idx) => (
+              <g key={idx} transform={`translate(${p.x}, ${p.y})`}>
+                {/* ふわふわした雄しべの外輪 */}
+                <circle cx="0" cy="0" r={p.r} fill="#fde047" />
+                <circle cx="0" cy="0" r={p.r * 0.8} fill="#facc15" />
+                <circle cx={-p.r * 0.25} cy={-p.r * 0.25} r={p.r * 0.35} fill="#fef9c3" opacity="0.75" />
+                {/* 繊細な放射状の雄しべ感 */}
+                {[0, 45, 90, 135, 180, 225, 270, 315].map((ang, k) => (
+                  <circle
+                    key={k}
+                    cx={Math.cos((ang * Math.PI) / 180) * p.r * 0.78}
+                    cy={Math.sin((ang * Math.PI) / 180) * p.r * 0.78}
+                    r={p.r * 0.24}
+                    fill="#facc15"
+                    opacity="0.9"
+                  />
+                ))}
+                <circle cx="0" cy="0" r={p.r * 0.42} fill="#eab308" opacity="0.55" />
+              </g>
+            ))}
+          </g>
+        );
+
+      // ミムラス（モンキーフラワー / Mimulus）: 明るい黄金色の二唇形花と愛嬌ある赤褐色の斑点模様
+      case 'mimulus':
+        return (
+          <g>
+            {/* みずみずしい緑の茎 */}
+            <path d="M100 185 Q96 140 94 95" stroke="#15803d" strokeWidth="3.5" strokeLinecap="round" fill="none" />
+            <path d="M98 145 Q122 128 136 105" stroke="#16a34a" strokeWidth="2.8" strokeLinecap="round" fill="none" />
+            {/* 対生するギザギザのある卵形の葉 */}
+            {[
+              { x: 74, y: 152, rot: -35, s: 1 },
+              { x: 124, y: 148, rot: 35, s: 0.95 },
+              { x: 72, y: 120, rot: -45, s: 0.85 },
+              { x: 132, y: 126, rot: 45, s: 0.8 },
+            ].map((lf, i) => (
+              <g key={i} transform={`translate(${lf.x}, ${lf.y}) rotate(${lf.rot}) scale(${lf.s})`}>
+                <path
+                  d="M0 15 C-12 7 -13 -10 0 -18 C13 -10 12 7 0 15 Z"
+                  fill="#16a34a"
+                  stroke="#15803d"
+                  strokeWidth="0.9"
+                />
+                <path d="M0 14 L0 -15" stroke="#86efac" strokeWidth="1" opacity="0.65" />
+              </g>
+            ))}
+            {/* 右側の小花（横向き気味の愛らしいつぼみ〜咲きかけ） */}
+            <g transform="translate(136, 102) rotate(22) scale(0.68)">
+              <path d="M-8 14 L0 -2 L8 14 Z" fill="#15803d" />
+              <ellipse cx="-11" cy="-12" rx="12" ry="11" fill="#fde047" stroke="#eab308" strokeWidth="0.8" />
+              <ellipse cx="11" cy="-12" rx="12" ry="11" fill="#fde047" stroke="#eab308" strokeWidth="0.8" />
+              <ellipse cx="0" cy="4" rx="13" ry="11" fill="#facc15" stroke="#eab308" strokeWidth="0.8" />
+              <circle cx="0" cy="-2" r="6" fill="#f97316" opacity="0.85" />
+              <circle cx="-3" cy="-2" r="1.6" fill="#9a3412" />
+              <circle cx="3" cy="-2" r="1.6" fill="#9a3412" />
+              <circle cx="0" cy="3" r="1.8" fill="#9a3412" />
+            </g>
+            {/* メインのミムラス（上唇2裂・下唇3裂の明るい二唇形花＆モンキーフェイスの斑点） */}
+            <g transform="translate(94, 80)">
+              {/* 筒状の萼 */}
+              <path d="M-9 22 Q0 28 9 22 L7 6 L-7 6 Z" fill="#16a34a" stroke="#15803d" strokeWidth="0.9" />
+              {/* 上唇（2枚の大きく丸い花弁） */}
+              <path d="M0 0 C-18 -6 -30 -24 -14 -32 C-4 -36 0 -18 0 0 Z" fill="#fde047" stroke="#eab308" strokeWidth="0.9" />
+              <path d="M0 0 C18 -6 30 -24 14 -32 C4 -36 0 -18 0 0 Z" fill="#fde047" stroke="#eab308" strokeWidth="0.9" />
+              {/* 下唇（左右と中央の3枚の丸い花弁） */}
+              <path d="M0 0 C-22 -4 -34 10 -22 22 C-12 28 -4 14 0 0 Z" fill="#facc15" stroke="#eab308" strokeWidth="0.9" />
+              <path d="M0 0 C22 -4 34 10 22 22 C12 28 4 14 0 0 Z" fill="#facc15" stroke="#eab308" strokeWidth="0.9" />
+              <path d="M0 0 C-14 14 -14 32 0 32 C14 32 14 14 0 0 Z" fill="#facc15" stroke="#eab308" strokeWidth="0.9" />
+              {/* 喉元の温かなオレンジ色のぼかし */}
+              <ellipse cx="0" cy="2" rx="13" ry="11" fill="#fb923c" opacity="0.45" />
+              {/* ミムラス最大の特徴：笑顔のような赤褐色の斑点模様 */}
+              <circle cx="-11" cy="-9" r="3" fill="#c2410c" />
+              <circle cx="11" cy="-9" r="3" fill="#c2410c" />
+              <circle cx="-13" cy="8" r="2.6" fill="#ea580c" />
+              <circle cx="13" cy="8" r="2.6" fill="#ea580c" />
+              <circle cx="-5" cy="14" r="2.5" fill="#9a3412" />
+              <circle cx="5" cy="14" r="2.5" fill="#9a3412" />
+              <circle cx="0" cy="20" r="2.2" fill="#c2410c" />
+              {/* 中心の白い雌しべ・雄しべ */}
+              <circle cx="0" cy="1" r="4" fill="#fef9c3" />
+              <circle cx="-1.5" cy="-1" r="1.4" fill="#ea580c" />
+              <circle cx="1.5" cy="-1" r="1.4" fill="#ea580c" />
+            </g>
+          </g>
+        );
+
       // デフォルト / 一般花（優雅なボタニカルフラワー）
       default:
         return (
